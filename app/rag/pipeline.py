@@ -1,6 +1,7 @@
 """Orkiestracja: historia -> condense -> retrieval -> gate -> LLM -> post-check -> zapis + trace."""
 from __future__ import annotations
 import json
+import re
 import time
 import uuid
 
@@ -47,6 +48,9 @@ def answer(req: ChatRequest, index: Index, store: SessionStore) -> ChatResponse:
         citations.append(Citation(n=n, chunk_id=c.id, source_title=c.source_title, citation=c.citation,
                                   snippet=c.text[:400], doc_type=c.doc_type, page=c.page, score=round(h.score, 3)))
 
+    if not result["abstained"]:
+        citations += _legal_mention_citations(result["answer"], hits_used, index, {c.chunk_id for c in citations})
+
     resp = ChatResponse(answer=result["answer"], citations=citations, abstained=result["abstained"],
                         confidence=_confidence(hits_used, result), rewritten_query=rewritten,
                         latency_ms=int((time.time() - t0) * 1000), trace_id=trace_id)
@@ -55,6 +59,40 @@ def answer(req: ChatRequest, index: Index, store: SessionStore) -> ChatResponse:
     store.add(req.session_id, "assistant", resp.answer, [c.model_dump() for c in citations])
     _trace(trace_id, req, rewritten, hits, resp)
     return resp
+
+
+_LEGAL_REF = re.compile(r"(§\s*\d+[a-z]?(?:\s*ust\.\s*\d+)?(?:\s*pkt\s*\d+)?|art\.\s*\d+[a-z]?(?:\s*ust\.\s*\d+)?)", re.I)
+
+
+def _norm(s: str) -> str:
+    return re.sub(r"\s+", " ", s.replace(" ", " ")).strip().lower()
+
+
+def _mentions(text: str, ref: str) -> bool:
+    """ref as a whole unit: "§ 1" must not match "§ 11", "ust. 1" must not match "ust. 10"."""
+    return re.search(r"(?<!\w)" + re.escape(ref) + r"(?!\d)", text) is not None
+
+
+def _legal_mention_citations(answer_text: str, hits, index: Index, already: set[str]) -> list[Citation]:
+    """The LLM often sees a whole § via parent expansion and names the exact unit ("§ 11 ust. 1 pkt 4")
+    while its [n] points at a sibling chunk. Add a citation for the named unit, but only if that unit was
+    actually in the model's context: retrieved itself, a sibling under an expanded parent, or quoted in a hit."""
+    out: list[Citation] = []
+    for ref in dict.fromkeys(_norm(m) for m in _LEGAL_REF.findall(answer_text)):
+        for cid in index.by_citation.get(ref, []):
+            if cid in already:
+                continue
+            c = index.by_id[cid]
+            src = next((i for i, h in enumerate(hits, start=1)
+                        if h.chunk.id == cid
+                        or (c.parent_id and h.chunk.parent_id == c.parent_id and h.chunk.doc_type == "akt_prawny")
+                        or _mentions(_norm(h.context_text or h.chunk.text), ref)), None)
+            if src is None:
+                continue
+            already.add(cid)
+            out.append(Citation(n=src, chunk_id=cid, source_title=c.source_title, citation=c.citation,
+                                snippet=c.text[:400], doc_type=c.doc_type, page=c.page, score=round(hits[src - 1].score, 3)))
+    return out
 
 
 def _trace(trace_id, req, rewritten, hits, resp) -> None:

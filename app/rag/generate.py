@@ -45,13 +45,37 @@ def condense_question(history: list[dict], question: str) -> str:
         return question
 
 
+_JSON_START = re.compile(r'(```(?:json)?\s*)?\{\s*"(?:answer|citations|abstained)"\s*:', re.S)
+_DECODER = json.JSONDecoder()
+
+
 def _parse_json(raw: str) -> dict:
+    """Models sometimes write prose and then repeat it as a (possibly truncated) ```json block.
+    Order: any complete JSON object with an "answer" key (key order and trailing text don't matter)
+    -> prose before the JSON -> "answer" value salvaged from truncated JSON -> raw text."""
     raw = raw.strip()
-    m = re.search(r"\{.*\}", raw, re.S)
-    try:
-        return json.loads(m.group(0) if m else raw)
-    except Exception:
-        return {"answer": raw, "citations": [int(n) for n in re.findall(r"\[(\d+)\]", raw)], "abstained": ABSTAIN_SENTENCE in raw}
+    for m in re.finditer(r"\{", raw):
+        try:
+            data, _ = _DECODER.raw_decode(raw, m.start())
+        except ValueError:
+            continue
+        if isinstance(data, dict) and "answer" in data:
+            return data
+    start = _JSON_START.search(raw)
+    if start:
+        prose = raw[:start.start()].strip()
+        if not prose:
+            m = re.search(r'"answer"\s*:\s*"((?:[^"\\]|\\.)*)', raw[start.start():], re.S)
+            if m:
+                try:
+                    prose = json.loads(f'"{m.group(1)}"')
+                except Exception:
+                    prose = m.group(1)
+        text = prose.strip()
+    else:
+        text = raw
+    return {"answer": text, "citations": [int(n) for n in re.findall(r"\[(\d+)\]", text)],
+            "abstained": ABSTAIN_SENTENCE in text}
 
 
 def generate_answer(question: str, hits_text: list[str], history: list[dict], app_context: dict, mode: str) -> dict:
@@ -68,6 +92,8 @@ def generate_answer(question: str, hits_text: list[str], history: list[dict], ap
     # strip references to non-existent fragments
     answer = re.sub(r"\[(\d+)\]", lambda m: m.group(0) if 1 <= int(m.group(1)) <= n else "", answer)
     abstained = bool(data.get("abstained")) or ABSTAIN_SENTENCE in answer
+    if not answer:      # never return an empty answer: an empty reply is treated as an abstain
+        return {**abstain_answer(), "raw": raw}
     return {"answer": answer, "citations": citations, "abstained": abstained, "raw": raw}
 
 

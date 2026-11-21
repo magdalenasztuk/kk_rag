@@ -42,7 +42,11 @@ def retrieval_metrics(index, items, k=5):
         if not exp:
             continue
         proc = it.get("process") if it.get("process") in ("okresowa", "pierwsza") else None
-        hits = retrieve(index, it["question"], process=proc, top_k=k)
+        q = it["question"]
+        if len(it.get("messages", [])) > 1:
+            # no LLM condense here -> prepend earlier user turns so follow-ups ("a kto o tym decyduje?") are fair
+            q = " ".join(m["content"] for m in it["messages"][:-1] if m["role"] == "user") + " " + q
+        hits = retrieve(index, q, process=proc, top_k=k)
         ids = [h.chunk.id for h in hits]
         recalls.append(len(exp & set(ids)) / len(exp))
         rr = 0.0

@@ -27,6 +27,8 @@ class Settings(BaseSettings):
     final_top_k: int = 5
     rrf_k: int = 60
     faq_boost: float = 1.3
+    faq_linked_pin: int = 1                       # after rerank, keep N best FAQ-cited legal chunks right below the FAQ hit
+    min_legal_in_top: int = 2                     # reserve slots in final top-k for the best akt_prawny chunks
     abstain_threshold: float = 0.30               # reranker score; calibrate on golden set
 
     # --- generation (litellm model strings) ---
@@ -36,7 +38,7 @@ class Settings(BaseSettings):
     gemini_answer_model: str = "gemini/gemini-2.5-flash"
     ollama_answer_model: str = "ollama/bielik"
     max_history_messages: int = 6
-    answer_max_tokens: int = 900
+    answer_max_tokens: int = 2000                   # 900 truncated longer legal answers mid-JSON; 1500 was borderline
     temperature: float = 0.0
 
     # --- api ---

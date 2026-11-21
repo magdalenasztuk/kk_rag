@@ -80,6 +80,44 @@ def expand_faq_citations(index: Index, hits: list[Hit]) -> list[Hit]:
     return sorted(hits + extra, key=lambda x: -x.rrf)
 
 
+def _pin_faq_links(hits: list[Hit], n_linked: int) -> list[Hit]:
+    """Move the n best-reranked FAQ-cited chunks up to directly after the first FAQ hit.
+    Only ever moves a chunk up: one the reranker already placed above the FAQ stays where it is."""
+    if n_linked <= 0:
+        return hits
+    faq_pos = next((i for i, h in enumerate(hits) if h.chunk.doc_type == "faq"), None)
+    if faq_pos is None:
+        return hits
+    linked = [(i, h) for i, h in enumerate(hits) if "faq_link" in (h.sources or [])][:n_linked]
+    move = [h for i, h in linked if i > faq_pos + 1]
+    if not move:
+        return hits
+    move_ids = {h.chunk.id for h in move}
+    rest = [h for h in hits if h.chunk.id not in move_ids]
+    return rest[:faq_pos + 1] + move + rest[faq_pos + 1:]   # faq_pos unchanged: moved items were all below it
+
+
+def _reserve_legal(hits: list[Hit], k: int, n: int) -> list[Hit]:
+    """Ensure at least n akt_prawny chunks in the first k by swapping in the best ones from below
+    (the top-ranked hit is never displaced, so abstain decisions are unchanged)."""
+    if n <= 0 or len(hits) <= k:
+        return hits
+    top, rest = hits[:k], hits[k:]
+    missing = n - sum(h.chunk.doc_type == "akt_prawny" for h in top)
+    if missing <= 0:
+        return hits
+    # make room only by demoting the lowest-ranked non-legal hits (never position 0)
+    droppable = [i for i in range(k - 1, 0, -1) if top[i].chunk.doc_type != "akt_prawny"]
+    extra = [h for h in rest if h.chunk.doc_type == "akt_prawny"][:min(missing, len(droppable))]
+    if not extra:
+        return hits
+    drop_idx = set(droppable[:len(extra)])
+    kept = [h for i, h in enumerate(top) if i not in drop_idx]
+    dropped = [top[i] for i in sorted(drop_idx)]
+    extra_ids = {h.chunk.id for h in extra}
+    return kept + extra + dropped + [h for h in rest if h.chunk.id not in extra_ids]
+
+
 def retrieve(index: Index, query: str, process: str | None = None, top_k: int | None = None) -> list[Hit]:
     top_k = top_k or settings.final_top_k
     dense = index.dense(query, settings.dense_top_k, process)
@@ -94,6 +132,10 @@ def retrieve(index: Index, query: str, process: str | None = None, top_k: int | 
         for h, s in zip(fused, scores):
             h.rerank = 1 / (1 + math.exp(-float(s)))      # sigmoid -> 0..1, comparable across queries
         fused.sort(key=lambda h: (-(h.rerank or 0), -h.chunk.authority))
+        # The reranker scores short legal ustępy below long poradnik passages, undoing the FAQ link
+        # and crowding the primary source out of the top-k -> restore both.
+        fused = _pin_faq_links(fused, settings.faq_linked_pin)
+        fused = _reserve_legal(fused, top_k, settings.min_legal_in_top)
 
     hits = fused[:top_k]
     for h in hits:
