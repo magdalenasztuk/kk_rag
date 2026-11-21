@@ -9,3 +9,5 @@ data/*.sqlite
 data/traces.jsonl
 eval/results/*.json
 .vercel
+.env*
+!.env.example
