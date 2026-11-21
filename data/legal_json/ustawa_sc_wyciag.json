@@ -1,0 +1,22 @@
+{
+  "source_id": "ustawa_sc",
+  "source_title": "Ustawa z dnia 21 listopada 2008 r. o służbie cywilnej – wyciąg (art. 81, 83, 89) – TREŚĆ DO ZWERYFIKOWANIA Z TEKSTEM UJEDNOLICONYM (ISAP) PRZED DEMO",
+  "short_title": "Ustawa o służbie cywilnej (wyciąg)",
+  "process": "okresowa",
+  "_note": "Treść poniżej odtworzona z poradnika KPRM (2016) i przypisów arkuszy. Przed demo wkleić brzmienie z isap.sejm.gov.pl i usunąć tę notatkę.",
+  "units": [
+    {"citation": "art. 81 ust. 1", "parent": "art. 81", "text": "Urzędnik służby cywilnej oraz pracownik służby cywilnej zatrudniony na podstawie umowy o pracę na czas nieokreślony podlega ocenie okresowej dokonywanej przez bezpośredniego przełożonego."},
+    {"citation": "art. 81 ust. 3", "parent": "art. 81", "text": "Ocena okresowa dotyczy wykonywania przez członka korpusu służby cywilnej obowiązków wynikających z opisu zajmowanego przez niego stanowiska pracy. Ocenę okresową sporządza się na piśmie i niezwłocznie zapoznaje z nią ocenianego."},
+    {"citation": "art. 81 ust. 4", "parent": "art. 81", "text": "Ocena okresowa zawiera wnioski dotyczące indywidualnego programu rozwoju zawodowego."},
+    {"citation": "art. 81 ust. 5", "parent": "art. 81", "text": "Ocenę okresową sporządza się co 24 miesiące."},
+    {"citation": "art. 81 ust. 6", "parent": "art. 81", "text": "Ocena okresowa jest sporządzana w razie zmiany stanowiska pracy wiążącej się z istotną zmianą zakresu obowiązków, jeżeli od dnia sporządzenia ostatniej oceny okresowej upłynęło więcej niż 6 miesięcy. W przypadku osób ocenianych po raz pierwszy ocenę sporządza się, jeżeli okres podlegania ocenie jest dłuższy niż 6 miesięcy."},
+    {"citation": "art. 81 ust. 7", "parent": "art. 81", "text": "W razie usprawiedliwionej nieobecności ocenianego w pracy, trwającej dłużej niż miesiąc, termin sporządzenia oceny okresowej (24 miesiące) ulega przedłużeniu o czas tej nieobecności."},
+    {"citation": "art. 81 ust. 8", "parent": "art. 81", "text": "Bezpośredni przełożony może zmienić termin sporządzenia oceny okresowej (w szczególności w związku ze zmianą stanowiska lub istotną zmianą zakresu obowiązków, jeżeli od ostatniej oceny upłynęło więcej niż 6 miesięcy); o nowym terminie zawiadamia się ocenianego na piśmie."},
+    {"citation": "art. 81 ust. 9", "parent": "art. 81", "text": "W razie uzyskania negatywnej oceny okresowej oceniany podlega ponownej ocenie po upływie 6 miesięcy od dnia zapoznania się z oceną."},
+    {"citation": "art. 83 ust. 1", "parent": "art. 83", "text": "Od oceny okresowej służy sprzeciw do dyrektora generalnego urzędu w terminie 7 dni od dnia zapoznania się z oceną."},
+    {"citation": "art. 83 ust. 3", "parent": "art. 83", "text": "Sprzeciw rozpatruje się w terminie 14 dni od dnia wniesienia."},
+    {"citation": "art. 83 ust. 4", "parent": "art. 83", "text": "W razie uwzględnienia sprzeciwu ocenę okresową zmienia się albo sporządza po raz drugi. Od oceny okresowej sporządzonej po raz drugi przysługuje sprzeciw na zasadach ogólnych."},
+    {"citation": "art. 83 ust. 5", "parent": "art. 83", "text": "W razie nierozpatrzenia sprzeciwu w terminie albo nieuwzględnienia sprzeciwu od oceny okresowej członek korpusu służby cywilnej może, w terminie 14 dni od dnia doręczenia decyzji albo od dnia upływu terminu na rozpatrzenie sprzeciwu, odwołać się do sądu pracy."},
+    {"citation": "art. 89 ust. 1", "parent": "art. 89", "text": "Urzędnikowi służby cywilnej, który uzyskał pozytywną ocenę okresową, bezpośredni przełożony może złożyć umotywowany wniosek o przyznanie kolejnego stopnia służbowego (część III arkusza oceny)."}
+  ]
+}

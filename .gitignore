@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.hf/
+data/chroma/
+data/*.sqlite
+data/traces.jsonl
+data/chunks.jsonl
+eval/results/*.json
