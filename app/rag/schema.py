@@ -1,7 +1,7 @@
 from typing import Literal, Optional
 from pydantic import BaseModel, Field
 
-DocType = Literal["akt_prawny", "poradnik", "model_kompetencji", "arkusz", "faq"]
+DocType = Literal["akt_prawny", "poradnik", "model_kompetencji", "arkusz", "faq", "regula_narzedzia"]
 Process = Literal["okresowa", "pierwsza", "both"]
 
 

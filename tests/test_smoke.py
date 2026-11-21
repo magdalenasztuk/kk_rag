@@ -5,7 +5,9 @@ from fastapi.testclient import TestClient
 from app.main import app
 
 
-def test_chat_and_memory():
+def test_chat_and_memory(monkeypatch):
+    from app.core.config import settings
+    monkeypatch.setattr(settings, "llm_provider", "mock")
     with TestClient(app) as c:
         assert c.get("/health").json()["status"] == "ok"
         r = c.post("/api/v1/chat", json={"session_id": "t1", "message": "Ile kryteriów dodatkowych mogę wybrać?",

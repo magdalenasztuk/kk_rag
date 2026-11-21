@@ -1,0 +1,9 @@
+# Pełny pipeline lokalny: dense (bge-m3 + Chroma), reranker, ingest źródeł, inni dostawcy LLM, testy.
+-r requirements.txt
+chromadb>=0.5
+sentence-transformers>=3.0
+litellm>=1.50
+openpyxl>=3.1
+python-docx>=1.1
+pypdf>=4.2
+pytest>=8.2

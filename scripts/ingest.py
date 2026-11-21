@@ -8,11 +8,13 @@ from pathlib import Path
 
 from app.core.config import settings
 from app.rag.index import write_chunks
+from app.rag.ingest.app_knowledge import load_app_chunks
 from app.rag.ingest.guides_faq import load_faq_chunks, load_guide_chunks
 from app.rag.ingest.legal_json import load_all_legal
 from app.rag.ingest.xlsx_model import load_model_chunks
 
 RAW = settings.data_dir / "raw"
+APP_SEED = Path(__file__).resolve().parents[1] / "app" / "kompas" / "seed"
 
 GUIDES = [  # (filename in data/raw, source_id, title, process)
     ("poradnik_oceny_okresowe_2016.pdf", "poradnik_okresowa",
@@ -36,6 +38,7 @@ def collect():
             print(f"[warn] missing {p.name} – skipped")
     for p in sorted((settings.data_dir / "faq").glob("*.jsonl")):
         chunks += load_faq_chunks(p)
+    chunks += load_app_chunks(APP_SEED, chunks)
     ids = [c.id for c in chunks]
     dups = {i for i in ids if ids.count(i) > 1}
     assert not dups, f"duplicate chunk ids: {sorted(dups)[:10]}"

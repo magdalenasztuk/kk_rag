@@ -50,8 +50,13 @@ def write_chunks(chunks: list[Chunk], path: Path = settings.chunks_path) -> None
             f.write(c.model_dump_json() + "\n")
 
 
+def is_searchable(chunk: Chunk) -> bool:
+    return chunk.extra.get("searchable", True) is not False
+
+
 def build_chroma(chunks: list[Chunk], embedder: Embedder) -> None:
     import chromadb
+    chunks = [c for c in chunks if is_searchable(c)]
     client = chromadb.PersistentClient(path=str(settings.chroma_dir))
     try:
         client.delete_collection(settings.collection_name)
@@ -77,19 +82,21 @@ class Index:
 
     def __init__(self, chunks: list[Chunk], embedder: Embedder | None = None):
         from rank_bm25 import BM25Okapi
-        import chromadb
-        self.chunks = chunks
+        self.all_chunks = chunks
         self.by_id = {c.id: c for c in chunks}
+        # Non-searchable chunks (app copies of legal units) only back citation previews.
+        self.chunks = [c for c in chunks if is_searchable(c)]
         self.by_citation: dict[str, list[str]] = {}
-        for c in chunks:
+        for c in self.chunks:
             if c.doc_type in ("akt_prawny", "model_kompetencji") and c.citation:
                 self.by_citation.setdefault(c.citation.lower(), []).append(c.id)
-        self.bm25_ids = [c.id for c in chunks]
-        self.bm25 = BM25Okapi([tokenize_pl(c.text) for c in chunks])
+        self.bm25_ids = [c.id for c in self.chunks]
+        self.bm25 = BM25Okapi([tokenize_pl(c.text) for c in self.chunks])
         self.dense_enabled = settings.dense_enabled
         self.embedder, self.col = None, None
         if self.dense_enabled:
             try:
+                import chromadb
                 self.embedder = embedder or Embedder()
                 self.col = chromadb.PersistentClient(path=str(settings.chroma_dir)).get_collection(settings.collection_name)
             except Exception as e:  # no model / no collection -> lexical-only fallback (offline demo mode)

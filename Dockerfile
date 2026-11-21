@@ -1,7 +1,7 @@
 FROM python:3.12-slim
 WORKDIR /srv
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+COPY requirements.txt requirements-ml.txt ./
+RUN pip install --no-cache-dir -r requirements-ml.txt
 COPY . .
 # modele pobierane przy pierwszym starcie; w CI/demo zbuduj obraz z gotowym data/chroma i cache HF
 ENV HF_HOME=/srv/.hf

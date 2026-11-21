@@ -1,0 +1,885 @@
+{
+ "users": [
+  {
+   "id": "u-piotr",
+   "fullName": "Piotr Zieliński",
+   "jobTitle": "Naczelnik wydziału",
+   "orgUnitId": "dc-wzksoic",
+   "roles": [
+    "manager"
+   ],
+   "email": "piotr.zielinski@kompas.demo",
+   "avatarUrl": "/avatars/piotr-zielinski.png"
+  },
+  {
+   "id": "u-marta",
+   "fullName": "Marta Wiśniewska",
+   "jobTitle": "Główny specjalista ds. kadr",
+   "orgUnitId": "bdg-wk",
+   "roles": [
+    "hr"
+   ],
+   "email": "marta.wisniewska@kompas.demo"
+  },
+  {
+   "id": "u-ewa-mazur",
+   "fullName": "Ewa Mazur",
+   "jobTitle": "Naczelnik wydziału",
+   "orgUnitId": "dsi-wwi",
+   "roles": [
+    "manager"
+   ],
+   "email": "ewa.mazur@kompas.demo"
+  },
+  {
+   "id": "u-karolina",
+   "fullName": "Karolina Sowa",
+   "jobTitle": "Zastępca dyrektora departamentu",
+   "orgUnitId": "dwm",
+   "roles": [
+    "manager"
+   ],
+   "email": "karolina.sowa@kompas.demo"
+  },
+  {
+   "id": "u-tomasz",
+   "fullName": "Tomasz Lis",
+   "jobTitle": "Naczelnik wydziału",
+   "orgUnitId": "bdg-wop",
+   "roles": [
+    "manager"
+   ],
+   "email": "tomasz.lis@kompas.demo"
+  },
+  {
+   "id": "u-adam",
+   "fullName": "Adam Sikora",
+   "jobTitle": "Dyrektor departamentu",
+   "orgUnitId": "dc",
+   "roles": [
+    "manager"
+   ],
+   "email": "adam.sikora@kompas.demo"
+  }
+ ],
+ "employees": [
+  {
+   "id": "e-anna",
+   "firstName": "Anna",
+   "lastName": "Nowak",
+   "fullName": "Anna Nowak",
+   "positionId": "pos-dc-wzksoic-6",
+   "orgUnitId": "dc-wzksoic",
+   "supervisorId": "u-piotr",
+   "status": "pracownik-sc",
+   "employment": {
+    "since": "2019-03-01",
+    "basis": "czas-nieokreslony"
+   },
+   "absences": [
+    {
+     "from": "2025-04-07",
+     "to": "2025-05-18",
+     "reason": "Zwolnienie lekarskie"
+    }
+   ],
+   "previousAssessment": {
+    "draftedAt": "2024-10-10",
+    "acknowledgedAt": "2024-10-14",
+    "outcome": "pozytywna",
+    "level": "na-poziomie"
+   }
+  },
+  {
+   "id": "e-ewa-jankowska",
+   "firstName": "Ewa",
+   "lastName": "Jankowska",
+   "fullName": "Ewa Jankowska",
+   "positionId": "pos-dc-wzksoic-8",
+   "orgUnitId": "dc-wzksoic",
+   "supervisorId": "u-piotr",
+   "status": "pracownik-sc",
+   "employment": {
+    "since": "2018-06-01",
+    "basis": "czas-nieokreslony"
+   },
+   "absences": [],
+   "previousAssessment": {
+    "draftedAt": "2026-11-06",
+    "acknowledgedAt": "2026-11-09",
+    "outcome": "pozytywna",
+    "level": "powyzej"
+   }
+  },
+  {
+   "id": "e-michal",
+   "firstName": "Michał",
+   "lastName": "Kamiński",
+   "fullName": "Michał Kamiński",
+   "positionId": "pos-dc-wzksoic-4",
+   "orgUnitId": "dc-wzksoic",
+   "supervisorId": "u-piotr",
+   "status": "pracownik-sc",
+   "employment": {
+    "since": "2021-02-01",
+    "basis": "czas-nieokreslony"
+   },
+   "absences": [],
+   "previousAssessment": {
+    "draftedAt": "2024-12-15",
+    "acknowledgedAt": "2024-12-18",
+    "outcome": "pozytywna",
+    "level": "na-poziomie"
+   }
+  },
+  {
+   "id": "e-marek",
+   "firstName": "Marek",
+   "lastName": "Wysocki",
+   "fullName": "Marek Wysocki",
+   "positionId": "pos-dc-wzksoic-3",
+   "orgUnitId": "dc-wzksoic",
+   "supervisorId": "u-piotr",
+   "status": "urzednik-sc",
+   "employment": {
+    "since": "2014-09-01",
+    "basis": "czas-nieokreslony"
+   },
+   "absences": [],
+   "previousAssessment": {
+    "draftedAt": "2026-11-12",
+    "acknowledgedAt": "2026-11-13",
+    "outcome": "pozytywna",
+    "level": "znacznie-powyzej"
+   },
+   "civilServant": {
+    "appointedYear": 2017,
+    "grade": "drugi",
+    "gradeGrantedAt": "2021-12-01"
+   }
+  },
+  {
+   "id": "e-zofia",
+   "firstName": "Zofia",
+   "lastName": "Krawczyk",
+   "fullName": "Zofia Krawczyk",
+   "positionId": "pos-dc-wzksoic-9",
+   "orgUnitId": "dc-wzksoic",
+   "supervisorId": "u-piotr",
+   "status": "pracownik-sc",
+   "employment": {
+    "since": "2026-03-02",
+    "basis": "pierwsza-umowa",
+    "firstContractEnd": "2027-03-01"
+   },
+   "absences": []
+  },
+  {
+   "id": "e-jan",
+   "firstName": "Jan",
+   "lastName": "Kowalski",
+   "fullName": "Jan Kowalski",
+   "positionId": "pos-dsi-wwi-5",
+   "orgUnitId": "dsi-wwi",
+   "supervisorId": "u-ewa-mazur",
+   "status": "pracownik-sc",
+   "employment": {
+    "since": "2020-10-01",
+    "basis": "czas-nieokreslony"
+   },
+   "absences": [],
+   "previousAssessment": {
+    "draftedAt": "2026-10-28",
+    "acknowledgedAt": "2026-10-30",
+    "outcome": "pozytywna",
+    "level": "na-poziomie"
+   }
+  },
+  {
+   "id": "e-pawel",
+   "firstName": "Paweł",
+   "lastName": "Wróbel",
+   "fullName": "Paweł Wróbel",
+   "positionId": "pos-dwm-wkam-1",
+   "orgUnitId": "dwm-wkam",
+   "supervisorId": "u-karolina",
+   "status": "urzednik-sc",
+   "employment": {
+    "since": "2012-04-01",
+    "basis": "czas-nieokreslony"
+   },
+   "absences": [],
+   "previousAssessment": {
+    "draftedAt": "2026-10-30",
+    "acknowledgedAt": "2026-11-03",
+    "outcome": "pozytywna",
+    "level": "powyzej"
+   },
+   "civilServant": {
+    "appointedYear": 2015,
+    "grade": "trzeci",
+    "gradeGrantedAt": "2023-03-01"
+   }
+  },
+  {
+   "id": "e-katarzyna",
+   "firstName": "Katarzyna",
+   "lastName": "Wójcik",
+   "fullName": "Katarzyna Wójcik",
+   "positionId": "pos-bdg-wop-3",
+   "orgUnitId": "bdg-wop",
+   "supervisorId": "u-tomasz",
+   "status": "urzednik-sc",
+   "employment": {
+    "since": "2013-01-02",
+    "basis": "czas-nieokreslony"
+   },
+   "absences": [],
+   "previousAssessment": {
+    "draftedAt": "2024-11-20",
+    "acknowledgedAt": "2024-11-22",
+    "outcome": "pozytywna",
+    "level": "powyzej"
+   },
+   "civilServant": {
+    "appointedYear": 2016,
+    "grade": "drugi",
+    "gradeGrantedAt": "2022-07-01"
+   }
+  }
+ ],
+ "orgUnits": [
+  {
+   "id": "mc",
+   "code": "MC",
+   "name": "Ministerstwo Cyfryzacji",
+   "kind": "urzad"
+  },
+  {
+   "id": "dc",
+   "code": "DC",
+   "name": "Departament Cyberbezpieczeństwa",
+   "kind": "departament",
+   "parentId": "mc"
+  },
+  {
+   "id": "dc-wzksoic",
+   "code": "DC WZKSOiC",
+   "name": "Wydział Zarządzania Kryzysowego, Spraw Obronnych i Cyberbezpieczeństwa",
+   "kind": "wydzial",
+   "parentId": "dc"
+  },
+  {
+   "id": "dsi",
+   "code": "DSI",
+   "name": "Departament Rozwoju i Bezpieczeństwa Sztucznej Inteligencji",
+   "kind": "departament",
+   "parentId": "mc"
+  },
+  {
+   "id": "dsi-wwi",
+   "code": "DSI WWI",
+   "name": "Wydział Wspierania Innowacyjności",
+   "kind": "wydzial",
+   "parentId": "dsi"
+  },
+  {
+   "id": "dwm",
+   "code": "DWM",
+   "name": "Departament Współpracy Międzynarodowej",
+   "kind": "departament",
+   "parentId": "mc"
+  },
+  {
+   "id": "dwm-wkam",
+   "code": "DWM WKAM",
+   "name": "Wydział Koordynacji Aktywności Międzynarodowych",
+   "kind": "wydzial",
+   "parentId": "dwm"
+  },
+  {
+   "id": "bdg",
+   "code": "BDG",
+   "name": "Biuro Dyrektora Generalnego",
+   "kind": "biuro",
+   "parentId": "mc"
+  },
+  {
+   "id": "bdg-wk",
+   "code": "BDG WK",
+   "name": "Wydział Kadr",
+   "kind": "wydzial",
+   "parentId": "bdg"
+  },
+  {
+   "id": "bdg-wop",
+   "code": "BDG WOP",
+   "name": "Wydział Organizacji Pracy",
+   "kind": "wydzial",
+   "parentId": "bdg"
+  }
+ ],
+ "positions": [
+  {
+   "id": "pos-dc-wzksoic-6",
+   "code": "DC WZKSOiC 6",
+   "title": "Starszy specjalista",
+   "orgUnitId": "dc-wzksoic",
+   "office": "Ministerstwo Cyfryzacji",
+   "department": "Departament Cyberbezpieczeństwa",
+   "division": "Wydział Zarządzania Kryzysowego, Spraw Obronnych i Cyberbezpieczeństwa",
+   "documentName": "OSP DC WZKSOiC 6 starszy specjalista.docx",
+   "fromOrganizer": true,
+   "purpose": "Prowadzenie spraw dotyczących zarządzania kryzysowego w cyberprzestrzeni pozostających w zakresie ministra właściwego ds. informatyzacji.",
+   "supervisedBy": {
+    "direct": "naczelnik wydziału",
+    "indirect": "dyrektor"
+   },
+   "subordinates": {
+    "range": "brak",
+    "quote": "☒ brak podległych pracowników"
+   },
+   "tasks": [
+    {
+     "id": "dc6-t1",
+     "no": 1,
+     "kind": "dominujace",
+     "text": "Bierze udział w opracowaniu i aktualizacji dokumentacji w zakresie zarządzania kryzysowego (np. Krajowego planu reagowania na incydenty i sytuacje kryzysowe w cyberbezpieczeństwie na dużą skalę) w celu zapewnienia obsługi zadań Ministra w zakresie zarządzania kryzysowego w cyberprzestrzeni."
+    },
+    {
+     "id": "dc6-t2",
+     "no": 2,
+     "kind": "dominujace",
+     "text": "Bierze udział w realizacji zadań z obszaru zarządzania kryzysowego wynikających z członkostwa Polski w Organizacji Paktu Północnoatlantyckiego (NATO), Unii Europejskiej (UE) i Organizacji Narodów Zjednoczonych (ONZ) w celu zapewnienia stałej gotowości do reagowania na zagrożenia płynące z cyberprzestrzeni."
+    },
+    {
+     "id": "dc6-t3",
+     "no": 3,
+     "kind": "dominujace",
+     "text": "Współpracuje z zespołami CSIRT i organami właściwymi do spraw cyberbezpieczeństwa w celu wzmocnienia krajowego systemu cyberbezpieczeństwa."
+    },
+    {
+     "id": "dc6-t4",
+     "no": 4,
+     "kind": "pozostale",
+     "text": "Bierze udział w wykonywaniu działań zmierzających do integracji krajowego systemu cyberbezpieczeństwa z krajowym systemem zarządzania kryzysowego poprzez unifikację procedur oraz czynności kontrolnych w celu zwiększenia odporności tych systemów."
+    },
+    {
+     "id": "dc6-t5",
+     "no": 5,
+     "kind": "pozostale",
+     "text": "Bierze udział w wykonywaniu zadań w ramach Krajowych ram zarządzania kryzysowego w cyberbezpieczeństwie w celu zwiększenia odporności systemu zarządzania kryzysowego, koordynacji działań między organami publicznymi a sektorem prywatnym oraz szybszego reagowania na zagrożenia."
+    },
+    {
+     "id": "dc6-t6",
+     "no": 6,
+     "kind": "pozostale",
+     "text": "Dokonuje oceny obiektów oraz procesów pod kątem Infrastruktury krytycznej w celu prowadzenia wykazu obiektów IK będących we właściwości Ministra Cyfryzacji oraz zwiększenia odporności Państwa na kryzysy."
+    },
+    {
+     "id": "dc6-t7",
+     "no": 7,
+     "kind": "pozostale",
+     "text": "Wykonuje zadania organu właściwego ds. podmiotów krytycznych (m.in. prowadzenie kontroli, aktualizacja dokumentacji) w celu zwiększenia odporności Państwa na kryzysy."
+    }
+   ],
+   "authorizations": [
+    "upoważnienie do przeprowadzania kontroli",
+    "upoważnienie do reprezentowania RP w pracach grup tematycznych UE, w zakresie wynikającym z powierzonych zadań"
+   ],
+   "independence": "Osoba na tym stanowisku otrzymuje od przełożonego polecenia i informacje dotyczące celu pracy, jednak realizuje zadania samodzielnie, dokonując wyboru sposobu ich wykonania. W pracy mogą pojawić się okoliczności wymagające decyzji uznaniowych w zakresie uzgodnionym z przełożonym. Na podstawie analiz formułuje opinie i uzasadnia proponowane sposoby działania, co wpływa na decyzje podejmowane przez przełożonych. Samodzielne podejmowanie decyzji jest niezbędne na forum międzynarodowym (w ramach udzielonej instrukcji) oraz w czasie sytuacji kryzysowych.",
+   "softCompetencies": [
+    "organizacja pracy i orientacja na osiąganie celów",
+    "współpraca",
+    "myślenie analityczne",
+    "wykorzystywanie wiedzy i doskonalenie zawodowe"
+   ]
+  },
+  {
+   "id": "pos-dc-wzksoic-8",
+   "code": "DC WZKSOiC 8",
+   "title": "Starszy specjalista",
+   "orgUnitId": "dc-wzksoic",
+   "office": "Ministerstwo Cyfryzacji",
+   "department": "Departament Cyberbezpieczeństwa",
+   "division": "Wydział Zarządzania Kryzysowego, Spraw Obronnych i Cyberbezpieczeństwa",
+   "documentName": "OSP DC WZKSOiC 8 starszy specjalista.docx",
+   "fromOrganizer": false,
+   "purpose": "Prowadzenie spraw dotyczących zarządzania kryzysowego w cyberprzestrzeni pozostających w zakresie ministra właściwego ds. informatyzacji.",
+   "supervisedBy": {
+    "direct": "naczelnik wydziału",
+    "indirect": "dyrektor"
+   },
+   "subordinates": {
+    "range": "brak",
+    "quote": "☒ brak podległych pracowników"
+   },
+   "tasks": [
+    {
+     "id": "dc8-t1",
+     "no": 1,
+     "kind": "dominujace",
+     "text": "Bierze udział w opracowaniu i aktualizacji dokumentacji w zakresie zarządzania kryzysowego (np. Krajowego planu reagowania na incydenty i sytuacje kryzysowe w cyberbezpieczeństwie na dużą skalę) w celu zapewnienia obsługi zadań Ministra w zakresie zarządzania kryzysowego w cyberprzestrzeni."
+    },
+    {
+     "id": "dc8-t2",
+     "no": 2,
+     "kind": "dominujace",
+     "text": "Bierze udział w realizacji zadań z obszaru zarządzania kryzysowego wynikających z członkostwa Polski w Organizacji Paktu Północnoatlantyckiego (NATO), Unii Europejskiej (UE) i Organizacji Narodów Zjednoczonych (ONZ) w celu zapewnienia stałej gotowości do reagowania na zagrożenia płynące z cyberprzestrzeni."
+    },
+    {
+     "id": "dc8-t3",
+     "no": 3,
+     "kind": "dominujace",
+     "text": "Współpracuje z zespołami CSIRT i organami właściwymi do spraw cyberbezpieczeństwa w celu wzmocnienia krajowego systemu cyberbezpieczeństwa."
+    },
+    {
+     "id": "dc8-t4",
+     "no": 4,
+     "kind": "pozostale",
+     "text": "Bierze udział w wykonywaniu działań zmierzających do integracji krajowego systemu cyberbezpieczeństwa z krajowym systemem zarządzania kryzysowego poprzez unifikację procedur oraz czynności kontrolnych w celu zwiększenia odporności tych systemów."
+    },
+    {
+     "id": "dc8-t5",
+     "no": 5,
+     "kind": "pozostale",
+     "text": "Bierze udział w wykonywaniu zadań w ramach Krajowych ram zarządzania kryzysowego w cyberbezpieczeństwie w celu zwiększenia odporności systemu zarządzania kryzysowego, koordynacji działań między organami publicznymi a sektorem prywatnym oraz szybszego reagowania na zagrożenia."
+    },
+    {
+     "id": "dc8-t6",
+     "no": 6,
+     "kind": "pozostale",
+     "text": "Dokonuje oceny obiektów oraz procesów pod kątem Infrastruktury krytycznej w celu prowadzenia wykazu obiektów IK będących we właściwości Ministra Cyfryzacji oraz zwiększenia odporności Państwa na kryzysy."
+    },
+    {
+     "id": "dc8-t7",
+     "no": 7,
+     "kind": "pozostale",
+     "text": "Wykonuje zadania organu właściwego ds. podmiotów krytycznych (m.in. prowadzenie kontroli, aktualizacja dokumentacji) w celu zwiększenia odporności Państwa na kryzysy."
+    }
+   ],
+   "authorizations": [
+    "upoważnienie do przeprowadzania kontroli",
+    "upoważnienie do reprezentowania RP w pracach grup tematycznych UE, w zakresie wynikającym z powierzonych zadań"
+   ],
+   "independence": "Osoba na tym stanowisku otrzymuje od przełożonego polecenia i informacje dotyczące celu pracy, jednak realizuje zadania samodzielnie, dokonując wyboru sposobu ich wykonania. W pracy mogą pojawić się okoliczności wymagające decyzji uznaniowych w zakresie uzgodnionym z przełożonym. Na podstawie analiz formułuje opinie i uzasadnia proponowane sposoby działania, co wpływa na decyzje podejmowane przez przełożonych. Samodzielne podejmowanie decyzji jest niezbędne na forum międzynarodowym (w ramach udzielonej instrukcji) oraz w czasie sytuacji kryzysowych.",
+   "softCompetencies": [
+    "organizacja pracy i orientacja na osiąganie celów",
+    "współpraca",
+    "myślenie analityczne",
+    "wykorzystywanie wiedzy i doskonalenie zawodowe"
+   ]
+  },
+  {
+   "id": "pos-dc-wzksoic-4",
+   "code": "DC WZKSOiC 4",
+   "title": "Specjalista",
+   "orgUnitId": "dc-wzksoic",
+   "office": "Ministerstwo Cyfryzacji",
+   "department": "Departament Cyberbezpieczeństwa",
+   "division": "Wydział Zarządzania Kryzysowego, Spraw Obronnych i Cyberbezpieczeństwa",
+   "documentName": "OSP DC WZKSOiC 4 specjalista.docx",
+   "fromOrganizer": false,
+   "purpose": "Obsługa zgłoszeń i dokumentacji krajowego systemu cyberbezpieczeństwa w zakresie właściwości wydziału.",
+   "supervisedBy": {
+    "direct": "naczelnik wydziału",
+    "indirect": "dyrektor"
+   },
+   "subordinates": {
+    "range": "brak",
+    "quote": "☒ brak podległych pracowników"
+   },
+   "tasks": [
+    {
+     "id": "dc4-t1",
+     "no": 1,
+     "kind": "dominujace",
+     "text": "Prowadzi rejestr zgłoszeń i informacji o incydentach przekazywanych przez zespoły CSIRT w celu zapewnienia aktualnego obrazu sytuacji w cyberprzestrzeni."
+    },
+    {
+     "id": "dc4-t2",
+     "no": 2,
+     "kind": "dominujace",
+     "text": "Przygotowuje projekty pism, notatek i informacji dla kierownictwa w sprawach z zakresu wydziału w celu sprawnej komunikacji wewnętrznej i zewnętrznej."
+    },
+    {
+     "id": "dc4-t3",
+     "no": 3,
+     "kind": "dominujace",
+     "text": "Bierze udział w przygotowaniu ćwiczeń z zakresu zarządzania kryzysowego w celu sprawdzenia procedur reagowania."
+    },
+    {
+     "id": "dc4-t4",
+     "no": 4,
+     "kind": "pozostale",
+     "text": "Aktualizuje wykazy kontaktów i procedury obiegu informacji w sytuacjach kryzysowych."
+    },
+    {
+     "id": "dc4-t5",
+     "no": 5,
+     "kind": "pozostale",
+     "text": "Udziela odpowiedzi na zapytania podmiotów publicznych dotyczące obowiązków wynikających z ustawy o krajowym systemie cyberbezpieczeństwa."
+    }
+   ],
+   "authorizations": [],
+   "independence": "Realizuje zadania według wskazówek przełożonego, samodzielnie dobierając sposób ich wykonania w ramach obowiązujących procedur. W sytuacjach nietypowych konsultuje się z przełożonym.",
+   "softCompetencies": [
+    "rzetelność",
+    "komunikacja",
+    "współpraca"
+   ]
+  },
+  {
+   "id": "pos-dc-wzksoic-3",
+   "code": "DC WZKSOiC 3",
+   "title": "Główny specjalista",
+   "orgUnitId": "dc-wzksoic",
+   "office": "Ministerstwo Cyfryzacji",
+   "department": "Departament Cyberbezpieczeństwa",
+   "division": "Wydział Zarządzania Kryzysowego, Spraw Obronnych i Cyberbezpieczeństwa",
+   "documentName": "OSP DC WZKSOiC 3 główny specjalista.docx",
+   "fromOrganizer": false,
+   "purpose": "Koordynacja ćwiczeń i szkoleń z zarządzania kryzysowego w cyberprzestrzeni.",
+   "supervisedBy": {
+    "direct": "naczelnik wydziału",
+    "indirect": "dyrektor"
+   },
+   "subordinates": {
+    "range": "brak",
+    "quote": "☒ brak podległych pracowników"
+   },
+   "tasks": [
+    {
+     "id": "dc3-t1",
+     "no": 1,
+     "kind": "dominujace",
+     "text": "Planuje i koordynuje udział Ministerstwa w krajowych i międzynarodowych ćwiczeniach z zarządzania kryzysowego w cyberprzestrzeni w celu sprawdzenia gotowości do reagowania."
+    },
+    {
+     "id": "dc3-t2",
+     "no": 2,
+     "kind": "dominujace",
+     "text": "Opracowuje scenariusze ćwiczeń oraz raporty z wnioskami i rekomendacjami zmian w procedurach."
+    },
+    {
+     "id": "dc3-t3",
+     "no": 3,
+     "kind": "dominujace",
+     "text": "Reprezentuje wydział na posiedzeniach grup roboczych i prowadzi uzgodnienia z partnerami krajowymi i zagranicznymi."
+    },
+    {
+     "id": "dc3-t4",
+     "no": 4,
+     "kind": "pozostale",
+     "text": "Prowadzi szkolenia i prezentacje dla pracowników administracji z zakresu reagowania na incydenty."
+    },
+    {
+     "id": "dc3-t5",
+     "no": 5,
+     "kind": "pozostale",
+     "text": "Przygotowuje propozycje nowych rozwiązań organizacyjnych usprawniających współdziałanie w sytuacjach kryzysowych."
+    }
+   ],
+   "authorizations": [
+    "upoważnienie do reprezentowania urzędu na spotkaniach grup roboczych"
+   ],
+   "independence": "Samodzielnie planuje i prowadzi ćwiczenia, podejmując decyzje organizacyjne w ich trakcie. W sytuacjach bezprecedensowych proponuje przełożonemu rozwiązania.",
+   "softCompetencies": [
+    "organizacja pracy i orientacja na osiąganie celów",
+    "wystąpienia publiczne",
+    "negocjowanie"
+   ]
+  },
+  {
+   "id": "pos-dc-wzksoic-9",
+   "code": "DC WZKSOiC 9",
+   "title": "Młodszy specjalista",
+   "orgUnitId": "dc-wzksoic",
+   "office": "Ministerstwo Cyfryzacji",
+   "department": "Departament Cyberbezpieczeństwa",
+   "division": "Wydział Zarządzania Kryzysowego, Spraw Obronnych i Cyberbezpieczeństwa",
+   "documentName": "OSP DC WZKSOiC 9 młodszy specjalista.docx",
+   "fromOrganizer": false,
+   "purpose": "Wsparcie wydziału w prowadzeniu dokumentacji zarządzania kryzysowego.",
+   "supervisedBy": {
+    "direct": "naczelnik wydziału",
+    "indirect": "dyrektor"
+   },
+   "subordinates": {
+    "range": "brak",
+    "quote": "☒ brak podległych pracowników"
+   },
+   "tasks": [
+    {
+     "id": "dc9-t1",
+     "no": 1,
+     "kind": "dominujace",
+     "text": "Prowadzi ewidencję dokumentacji z zakresu zarządzania kryzysowego w celu zapewnienia jej kompletności i aktualności."
+    },
+    {
+     "id": "dc9-t2",
+     "no": 2,
+     "kind": "dominujace",
+     "text": "Przygotowuje materiały na posiedzenia zespołów i grup roboczych w celu sprawnej organizacji ich prac."
+    },
+    {
+     "id": "dc9-t3",
+     "no": 3,
+     "kind": "pozostale",
+     "text": "Uczestniczy w przygotowaniu ćwiczeń i szkoleń z zakresu zarządzania kryzysowego."
+    },
+    {
+     "id": "dc9-t4",
+     "no": 4,
+     "kind": "pozostale",
+     "text": "Aktualizuje wykazy kontaktów do podmiotów krajowego systemu cyberbezpieczeństwa."
+    }
+   ],
+   "authorizations": [],
+   "independence": "Wykonuje zadania według szczegółowych wskazówek przełożonego i obowiązujących procedur.",
+   "softCompetencies": [
+    "rzetelność",
+    "współpraca"
+   ]
+  },
+  {
+   "id": "pos-dsi-wwi-5",
+   "code": "DSI WWI 5",
+   "title": "Radca",
+   "orgUnitId": "dsi-wwi",
+   "office": "Ministerstwo Cyfryzacji",
+   "department": "Departament Rozwoju i Bezpieczeństwa Sztucznej Inteligencji",
+   "division": "Wydział Wspierania Innowacyjności",
+   "documentName": "OSP DSI WWI 5 radca.docx",
+   "fromOrganizer": true,
+   "purpose": "Zapewnienie wsparcia merytorycznego w zakresie rozwoju innowacyjnych rozwiązań opartych na sztucznej inteligencji poprzez rozwijanie mechanizmów wspierających zgodność z przepisami prawa oraz identyfikowanie barier dla rozwoju innowacyjności.",
+   "supervisedBy": {
+    "direct": "naczelnik wydziału",
+    "indirect": "zastępca dyrektora"
+   },
+   "subordinates": {
+    "range": "brak",
+    "quote": "☒ brak podległych pracowników"
+   },
+   "tasks": [
+    {
+     "id": "dsi5-t1",
+     "no": 1,
+     "kind": "dominujace",
+     "text": "Analizuje i dokonuje oceny prawa krajowego, prawa Unii Europejskiej, orzecznictwa krajowego i międzynarodowego, wytycznych organów unijnych oraz praktyki stosowania prawa w obszarze sztucznej inteligencji, a także przygotowuje propozycje zmian systemowych."
+    },
+    {
+     "id": "dsi5-t2",
+     "no": 2,
+     "kind": "dominujace",
+     "text": "Prowadzi sprawy dotyczące opinii indywidualnych oraz wyjaśnień dotyczących stosowania przepisów krajowych i unijnych z zakresu sztucznej inteligencji, w celu zapewnienia prawidłowej i jednolitej interpretacji oraz stosowania przepisów w tym obszarze."
+    },
+    {
+     "id": "dsi5-t3",
+     "no": 3,
+     "kind": "dominujace",
+     "text": "Przygotowuje projekty informacji zawierające pogląd Komisji w sprawach sztucznej inteligencji, w celu zapewnienia jednolitego stanowiska Komisji oraz wsparcia prawidłowego stosowania przepisów w obszarze sztucznej inteligencji."
+    },
+    {
+     "id": "dsi5-t4",
+     "no": 4,
+     "kind": "pozostale",
+     "text": "Analizuje bariery prawne i organizacyjne dla rozwoju innowacji w obszarze sztucznej inteligencji w celu opracowywania propozycji działań usprawniających."
+    },
+    {
+     "id": "dsi5-t5",
+     "no": 5,
+     "kind": "pozostale",
+     "text": "Przygotowuje projekty odpowiedzi na pisma i inne wystąpienia kierowane do Komisji Rozwoju i Bezpieczeństwa Sztucznej Inteligencji w ramach właściwości wydziału, w celu zapewnienia sprawnej, rzetelnej i zgodnej z obowiązującymi przepisami realizacji zadań Komisji oraz właściwej komunikacji z podmiotami zewnętrznymi."
+    }
+   ],
+   "authorizations": [],
+   "independence": "Pracownik samodzielnie proponuje przełożonym rozwiązania dla sytuacji wymagających dostarczenia wyspecjalizowanej wiedzy, w tym przypadków bezprecedensowych. Osoba na tym stanowisku tworzy nowe koncepcje realizacji zadań. W codziennej pracy spotyka się z koniecznością podejmowania decyzji uznaniowych, co wymaga umiejętności analitycznych. Niezbędna jest umiejętność przedstawiania argumentów oraz przekonywania innych do przyjęcia określonych stanowisk.",
+   "softCompetencies": [
+    "organizacja pracy i orientacja na osiąganie celów",
+    "wykorzystywanie wiedzy i doskonalenie zawodowe",
+    "współpraca"
+   ]
+  },
+  {
+   "id": "pos-dwm-wkam-1",
+   "code": "DWM WKAM 1",
+   "title": "Naczelnik wydziału",
+   "orgUnitId": "dwm-wkam",
+   "office": "Ministerstwo Cyfryzacji",
+   "department": "Departament Współpracy Międzynarodowej",
+   "division": "Wydział Koordynacji Aktywności Międzynarodowych",
+   "documentName": "OSP DWM WKAM 1 naczelnik wydziału.docx",
+   "fromOrganizer": true,
+   "purpose": "Zapewnienie organizacji aktywności członków kierownictwa MC na arenie międzynarodowej, w tym przygotowania i realizacji zagranicznych wizyt członków kierownictwa MC oraz wizyt gości zagranicznych w Polsce; koordynacja obsługi spraw budżetowo-finansowych Departamentu.",
+   "supervisedBy": {
+    "direct": "zastępca dyrektora",
+    "indirect": "dyrektor"
+   },
+   "subordinates": {
+    "range": "5-9",
+    "quote": "☒ bezpośrednio kieruje lub koordynuje pracę od 5 do 9 pracowników"
+   },
+   "tasks": [
+    {
+     "id": "dwm1-t1",
+     "no": 1,
+     "kind": "dominujace",
+     "text": "Koordynuje pracę zespołu poprzez planowanie, organizowanie oraz nadzorowanie realizacji zadań zgodnie z wyznaczonymi celami. Zapewnia skuteczne zarządzanie zespołem poprzez monitorowanie postępów, delegowanie obowiązków oraz dostosowywanie działań do zmieniających się warunków. Podejmuje działania motywacyjne i rozwojowe."
+    },
+    {
+     "id": "dwm1-t2",
+     "no": 2,
+     "kind": "dominujace",
+     "text": "Nadzoruje oraz bierze udział w przygotowaniu i organizacji zagranicznych wizyt członków kierownictwa MC oraz wizyt gości zagranicznych w Polsce, a także spotkań o charakterze międzynarodowym z podmiotami krajowymi."
+    },
+    {
+     "id": "dwm1-t3",
+     "no": 3,
+     "kind": "dominujace",
+     "text": "Koordynuje obsługę spraw finansowo-budżetowych departamentu, w tym udzielanie i rozliczanie dotacji, łącznie z wydawaniem stosownych decyzji administracyjnych oraz przygotowywaniem projektu budżetu."
+    },
+    {
+     "id": "dwm1-t4",
+     "no": 4,
+     "kind": "pozostale",
+     "text": "Koordynuje przygotowania materiałów tezowo-informacyjnych (stanowiska, opinie) z zakresu dwustronnej lub wielostronnej współpracy z państwami i organizacjami międzynarodowymi w obszarze cyfryzacji."
+    },
+    {
+     "id": "dwm1-t5",
+     "no": 5,
+     "kind": "pozostale",
+     "text": "Organizuje wydarzenia o charakterze międzynarodowym w obszarze cyfryzacji (m.in. konferencje, kongresy, seminaria, warsztaty, konsultacje), a także przygotowuje rekomendacje w zakresie uczestnictwa członków Kierownictwa MC."
+    },
+    {
+     "id": "dwm1-t6",
+     "no": 6,
+     "kind": "pozostale",
+     "text": "Bierze udział w pracach dotyczących realizacji umowy na zakup biletów oraz umowy na tłumaczenia (postępowania o udzielenie zamówień publicznych, monitorowanie realizacji umów)."
+    },
+    {
+     "id": "dwm1-t7",
+     "no": 7,
+     "kind": "pozostale",
+     "text": "Koordynuje przygotowanie wkładów do odpowiedzi na zapytania publiczne, medialne, interpelacje poselskie, kontrole (w tym kontrole KAS i NIK) oraz audytu."
+    },
+    {
+     "id": "dwm1-t8",
+     "no": 8,
+     "kind": "pozostale",
+     "text": "Uczestniczy w przygotowywaniu wkładu do planu zamówień publicznych Ministerstwa i koordynowania zamówień publicznych w ramach Departamentu."
+    }
+   ],
+   "authorizations": [],
+   "independence": "Osoba na tym stanowisku ma uprawnienia do podejmowania autonomicznych decyzji w przydzielonym zakresie bez konieczności konsultacji z przełożonymi. Pełni funkcję bezpośredniego przełożonego, zarządzając zespołem, kieruje pracą innych i ocenia ich efekty. Stanowisko wymaga zdolności przekonywania innych, a także ułatwiania rozwiązywania problemów i sporów.",
+   "softCompetencies": [
+    "zarządzanie ludźmi",
+    "podejmowanie decyzji i odpowiedzialność",
+    "wykorzystywanie wiedzy i doskonalenie zawodowe",
+    "organizacja pracy i orientacja na osiąganie celów",
+    "współpraca"
+   ]
+  },
+  {
+   "id": "pos-bdg-wop-3",
+   "code": "BDG WOP 3",
+   "title": "Główny specjalista",
+   "orgUnitId": "bdg-wop",
+   "office": "Ministerstwo Cyfryzacji",
+   "department": "Biuro Dyrektora Generalnego",
+   "division": "Wydział Organizacji Pracy",
+   "documentName": "OSP BDG WOP 3 główny specjalista.docx",
+   "fromOrganizer": false,
+   "purpose": "Koordynacja procesów organizacji pracy i obiegu dokumentów w urzędzie.",
+   "supervisedBy": {
+    "direct": "naczelnik wydziału",
+    "indirect": "dyrektor generalny"
+   },
+   "subordinates": {
+    "range": "brak",
+    "quote": "☒ brak podległych pracowników"
+   },
+   "tasks": [
+    {
+     "id": "bdg3-t1",
+     "no": 1,
+     "kind": "dominujace",
+     "text": "Opracowuje projekty regulaminów, zarządzeń i procedur wewnętrznych dotyczących organizacji pracy urzędu."
+    },
+    {
+     "id": "bdg3-t2",
+     "no": 2,
+     "kind": "dominujace",
+     "text": "Koordynuje wdrożenie elektronicznego zarządzania dokumentacją w komórkach organizacyjnych."
+    },
+    {
+     "id": "bdg3-t3",
+     "no": 3,
+     "kind": "pozostale",
+     "text": "Prowadzi szkolenia i konsultacje dla pracowników w zakresie obiegu dokumentów."
+    },
+    {
+     "id": "bdg3-t4",
+     "no": 4,
+     "kind": "pozostale",
+     "text": "Analizuje zgłoszenia pracowników i proponuje usprawnienia procesów."
+    },
+    {
+     "id": "bdg3-t5",
+     "no": 5,
+     "kind": "pozostale",
+     "text": "Udziela odpowiedzi na zapytania komórek organizacyjnych (klient wewnętrzny)."
+    }
+   ],
+   "authorizations": [],
+   "independence": "Samodzielnie przygotowuje projekty dokumentów i rekomendacje zmian; decyzje wdrożeniowe uzgadnia z przełożonym.",
+   "softCompetencies": [
+    "orientacja na klienta/interesanta",
+    "komunikacja",
+    "rzetelność"
+   ]
+  }
+ ],
+ "recruitments": [
+  {
+   "id": "rec-dc-12-2026",
+   "reference": "DC/12/2026",
+   "title": "Starszy specjalista ds. cyberbezpieczeństwa",
+   "orgUnitName": "Departament Cyberbezpieczeństwa — WZKSOiC",
+   "positionId": "pos-dc-wzksoic-6",
+   "status": "otwarta",
+   "publishedAt": "2026-10-27",
+   "closesAt": "2026-11-30",
+   "competencyIds": [
+    "c03",
+    "c01",
+    "c04",
+    "c06",
+    "c02",
+    "c07",
+    "c11",
+    "c14"
+   ]
+  }
+ ],
+ "scenarios": [
+  {
+   "id": "demo",
+   "label": "Scenariusz A — pełna ścieżka",
+   "description": "Anna Nowak, etap ocen: 7 z 8 decyzji. Po decyzji 7 pkt średnia wynosi 6,25 — „powyżej oczekiwań”.",
+   "landing": "/oceny/case-anna/ocena"
+  },
+  {
+   "id": "weto",
+   "label": "Scenariusz B — reguła weta",
+   "description": "Sytuacje kryzysowe 1 pkt, decyzje 5 pkt: średnia 5,50, a mimo to ocena negatywna (§ 11 ust. 1 pkt 4).",
+   "landing": "/oceny/case-anna/podsumowanie"
+  },
+  {
+   "id": "granica",
+   "label": "Granica 6,00",
+   "description": "Podejmowanie decyzji 5 pkt: średnia dokładnie 6,00 to „na poziomie oczekiwań”, nie „powyżej”.",
+   "landing": "/oceny/case-anna/podsumowanie"
+  }
+ ]
+}

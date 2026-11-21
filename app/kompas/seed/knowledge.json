@@ -1,0 +1,545 @@
+{
+ "sources": [
+  {
+   "id": "rozp-2016",
+   "title": "Rozporządzenie Prezesa Rady Ministrów z dnia 4 kwietnia 2016 r. w sprawie warunków i sposobu przeprowadzania ocen okresowych urzędników służby cywilnej i pracowników służby cywilnej",
+   "shortTitle": "Rozporządzenie o ocenach okresowych (2016)",
+   "kind": "przepis",
+   "reference": "Dz.U. 2016 poz. 470",
+   "description": "Kryteria, arkusze A/B/C, terminy, rozmowy i skala ocen okresowych.",
+   "fragmentCount": 17
+  },
+  {
+   "id": "rozp-2015",
+   "title": "Rozporządzenie Prezesa Rady Ministrów z dnia 23 lipca 2015 r. w sprawie szczegółowych warunków i sposobu dokonywania pierwszej oceny w służbie cywilnej",
+   "shortTitle": "Rozporządzenie o pierwszej ocenie (2015)",
+   "kind": "przepis",
+   "reference": "Dz.U. 2015 poz. 1144",
+   "description": "Elementy pierwszej oceny, rozmowa wstępna, sprawozdanie, skala 3/5/7 i warunki oceny.",
+   "fragmentCount": 11
+  },
+  {
+   "id": "poradnik-okresowa",
+   "title": "Ocena okresowa w służbie cywilnej — poradnik (KPRM)",
+   "shortTitle": "Poradnik: ocena okresowa",
+   "kind": "poradnik",
+   "reference": "Materiał organizatora",
+   "description": "Wyjaśnienia terminów, nieobecności, okresu oceny, rozmów, uzasadnień i IPRZ.",
+   "fragmentCount": 10
+  },
+  {
+   "id": "poradnik-pierwsza",
+   "title": "Pierwsza ocena w służbie cywilnej — poradnik (KPRM)",
+   "shortTitle": "Poradnik: pierwsza ocena",
+   "kind": "poradnik",
+   "reference": "Materiał organizatora",
+   "description": "Terminy pierwszej oceny, sprawozdanie, rozmowy i wniosek kierującego komórką.",
+   "fragmentCount": 2
+  },
+  {
+   "id": "arkusze",
+   "title": "Wzory arkuszy oceny okresowej B i C oraz arkusza pierwszej oceny",
+   "shortTitle": "Wzory arkuszy",
+   "kind": "wzor",
+   "reference": "Załączniki do rozporządzeń",
+   "description": "Pola arkuszy, przypisy i pouczenia.",
+   "fragmentCount": 2
+  },
+  {
+   "id": "model",
+   "title": "Model kompetencji — wskaźniki i opisy zachowań (materiał organizatora)",
+   "shortTitle": "Model kompetencji",
+   "kind": "model",
+   "reference": "model-competencies.json",
+   "description": "14 kompetencji, 49 wskaźników, 245 opisów zachowań na pięciu poziomach.",
+   "fragmentCount": 3
+  },
+  {
+   "id": "reguly",
+   "title": "Reguły narzędzia Kompas Kompetencji (wersja kompas-2026.1)",
+   "shortTitle": "Reguły narzędzia",
+   "kind": "regula-narzedzia",
+   "reference": "Do uzgodnienia z mentorem",
+   "description": "Sposób liczenia sugestii — nie jest przepisem i nie wiąże oceniającego.",
+   "fragmentCount": 2
+  }
+ ],
+ "fragments": [
+  {
+   "id": "r16-p2",
+   "sourceId": "rozp-2016",
+   "locator": "§ 2 ust. 1–2",
+   "heading": "Kto ocenia i jakie kryteria",
+   "text": "Bezpośredni przełożony ocenianego, zwany dalej „oceniającym”, dokonuje oceny okresowej, stosując kryteria oceny odpowiednie dla stanowiska pracy zajmowanego przez ocenianego. Kryteria oceny dzielą się na kryteria obowiązkowe i kryteria dodatkowe, które oceniający może wybrać, jeżeli jest to uzasadnione ze względu na charakter obowiązków wynikających z opisu stanowiska pracy zajmowanego przez ocenianego.",
+   "paths": [
+    "periodic"
+   ]
+  },
+  {
+   "id": "r16-p3",
+   "sourceId": "rozp-2016",
+   "locator": "§ 3 ust. 3–4",
+   "heading": "Wybór arkusza B albo C",
+   "text": "Arkusz B służy do sporządzenia oceny zatrudnionego na stanowisku, na którym praca polega na bezpośrednim kierowaniu pracownikami, innym niż stanowisko kierownika urzędu. Arkusz C służy do sporządzenia oceny zatrudnionego na innym stanowisku pracy niż stanowiska wymienione w ust. 2 i 3.",
+   "paths": [
+    "periodic"
+   ]
+  },
+  {
+   "id": "r16-p4-b",
+   "sourceId": "rozp-2016",
+   "locator": "§ 4 ust. 2",
+   "heading": "Kryteria obowiązkowe — arkusz B",
+   "text": "Ocenianego zatrudnionego na stanowisku, o którym mowa w § 3 ust. 3, ocenia się, stosując następujące kryteria obowiązkowe: 1) zarządzanie ludźmi; 2) podejmowanie decyzji i odpowiedzialność; 3) organizacja pracy i orientacja na osiąganie celów; 4) współpraca; 5) komunikacja.",
+   "paths": [
+    "periodic"
+   ]
+  },
+  {
+   "id": "r16-p4-c",
+   "sourceId": "rozp-2016",
+   "locator": "§ 4 ust. 3",
+   "heading": "Kryteria obowiązkowe — arkusz C",
+   "text": "Ocenianego zatrudnionego na stanowisku, o którym mowa w § 3 ust. 4, ocenia się, stosując następujące kryteria obowiązkowe: 1) wykorzystywanie wiedzy i doskonalenie zawodowe; 2) rzetelność; 3) organizacja pracy i orientacja na osiąganie celów; 4) współpraca; 5) komunikacja.",
+   "paths": [
+    "periodic"
+   ]
+  },
+  {
+   "id": "r16-p5-1",
+   "sourceId": "rozp-2016",
+   "locator": "§ 5 ust. 1",
+   "heading": "Rozmowa na początku okresu oceny",
+   "text": "Oceniający przeprowadza z ocenianym rozmowę, podczas której omawia się: 1) główne obowiązki wynikające z opisu stanowiska pracy zajmowanego przez ocenianego; 2) kryteria obowiązkowe i kryteria dodatkowe, jeżeli są wybierane przez oceniającego; 3) oczekiwania oceniającego co do sposobu spełniania kryteriów oceny przez ocenianego; 4) cele do osiągnięcia w okresie, w którym oceniany podlega ocenie, jeżeli ich określenie jest uzasadnione ze względu na charakter obowiązków wynikających z opisu stanowiska pracy zajmowanego przez ocenianego, a także sposób realizacji wyznaczonych celów.",
+   "paths": [
+    "periodic"
+   ]
+  },
+  {
+   "id": "r16-p5-2",
+   "sourceId": "rozp-2016",
+   "locator": "§ 5 ust. 2–3",
+   "heading": "Kryteria dodatkowe — najwyżej trzy",
+   "text": "Oceniający może wybrać z wykazu kryteriów oceny nie więcej niż 3 kryteria dodatkowe, najistotniejsze ze względu na charakter obowiązków wynikających z opisu stanowiska pracy zajmowanego przez ocenianego. Po przeprowadzeniu rozmowy oceniający wpisuje do części I arkusza kryteria dodatkowe, jeżeli zostały wybrane, oraz termin sporządzenia oceny na piśmie.",
+   "paths": [
+    "periodic"
+   ]
+  },
+  {
+   "id": "r16-p6",
+   "sourceId": "rozp-2016",
+   "locator": "§ 6",
+   "heading": "Podpis części I arkusza",
+   "text": "Oceniający zapoznaje ocenianego z kryteriami oceny i terminem sporządzenia oceny na piśmie. Oceniany potwierdza podpisem przeprowadzenie z nim rozmowy oraz zapoznanie się z kryteriami oceny i terminem sporządzenia oceny na piśmie. Po dokonaniu tej czynności oryginał arkusza niezwłocznie włącza się do akt osobowych ocenianego, a kopię części I arkusza oceniający doręcza ocenianemu.",
+   "paths": [
+    "periodic"
+   ]
+  },
+  {
+   "id": "r16-p7",
+   "sourceId": "rozp-2016",
+   "locator": "§ 7",
+   "heading": "Termin rozmowy i zapoznania z kryteriami",
+   "text": "Czynności, o których mowa w § 5 i § 6, dokonuje się w terminie: 1) 30 dni od dnia sporządzenia na piśmie poprzedniej oceny lub od dnia zatrudnienia ocenianego na czas nieokreślony; 2) 7 dni od dnia sporządzenia na piśmie negatywnej oceny.",
+   "paths": [
+    "periodic"
+   ]
+  },
+  {
+   "id": "r16-p8",
+   "sourceId": "rozp-2016",
+   "locator": "§ 8",
+   "heading": "Zmiana terminu oceny — zawiadomienie",
+   "text": "W razie zmiany terminu oceny w przypadkach, o których mowa w art. 81 ust. 8 ustawy o służbie cywilnej, oceniający niezwłocznie zawiadamia pisemnie ocenianego o nowym terminie sporządzenia oceny na piśmie. Kopię pisma dołącza się do arkusza.",
+   "paths": [
+    "periodic"
+   ]
+  },
+  {
+   "id": "r16-p9",
+   "sourceId": "rozp-2016",
+   "locator": "§ 9 ust. 1 i 3",
+   "heading": "Zmiana stanowiska lub oceniającego",
+   "text": "W przypadku gdy w okresie 6 miesięcy od dnia ustalenia kryteriów oceny sporządzanej po raz pierwszy albo od dnia sporządzenia ostatniej oceny następuje zmiana stanowiska pracy zajmowanego przez ocenianego, wiążąca się z istotną zmianą zakresu obowiązków, w terminie 30 dni od zmiany stanowiska pracy ponownie dokonuje się czynności, o których mowa w § 5 i § 6; termin sporządzenia oceny nie ulega zmianie. W przypadku zmiany na stanowisku oceniającego w trakcie okresu, w którym oceniany podlega ocenie, ocena jest sporządzana na podstawie wybranych wcześniej kryteriów.",
+   "paths": [
+    "periodic"
+   ]
+  },
+  {
+   "id": "r16-p10",
+   "sourceId": "rozp-2016",
+   "locator": "§ 10",
+   "heading": "Rozmowa oceniająca",
+   "text": "Przed sporządzeniem oceny na piśmie oceniający przeprowadza z ocenianym rozmowę oceniającą, podczas której omawia z nim: 1) główne obowiązki wykonywane przez ocenianego w okresie, w którym podlegał ocenie, oraz sposób ich realizacji, z uwzględnieniem spełniania przez ocenianego ustalonych kryteriów oceny; 2) sposób realizowania przez ocenianego celów do osiągnięcia w okresie, w którym oceniany podlegał ocenie, jeżeli cele te zostały wyznaczone; 3) kierunki dalszego rozwoju zawodowego i potrzeby ocenianego w zakresie podnoszenia kwalifikacji i doskonalenia umiejętności.",
+   "paths": [
+    "periodic"
+   ]
+  },
+  {
+   "id": "r16-p11-1",
+   "sourceId": "rozp-2016",
+   "locator": "§ 11 ust. 1 pkt 1",
+   "heading": "Skala ocen cząstkowych",
+   "text": "Sporządzenie oceny na piśmie polega na przyznaniu ocen cząstkowych odpowiednio do poziomu spełniania przez ocenianego każdego z kryteriów obowiązkowych i kryteriów dodatkowych, według skali ocen: a) znacznie poniżej oczekiwań – 1 punkt, b) poniżej oczekiwań – 3 punkty, c) na poziomie oczekiwań – 5 punktów, d) powyżej oczekiwań – 7 punktów, e) znacznie powyżej oczekiwań – 9 punktów.",
+   "paths": [
+    "periodic"
+   ]
+  },
+  {
+   "id": "r16-p11-2",
+   "sourceId": "rozp-2016",
+   "locator": "§ 11 ust. 1 pkt 2",
+   "heading": "Ogólny poziom — średnia arytmetyczna",
+   "text": "Ustalenie ogólnego poziomu spełniania kryteriów oceny – przez wyliczenie średniej arytmetycznej z ocen cząstkowych – według skali ocen: a) znacznie poniżej oczekiwań – od 1 punktu do 2 punktów, b) poniżej oczekiwań – powyżej 2 punktów do 4 punktów, c) na poziomie oczekiwań – powyżej 4 punktów do 6 punktów, d) powyżej oczekiwań – powyżej 6 punktów do 8 punktów, e) znacznie powyżej oczekiwań – powyżej 8 punktów do 9 punktów.",
+   "paths": [
+    "periodic"
+   ]
+  },
+  {
+   "id": "r16-p11-3",
+   "sourceId": "rozp-2016",
+   "locator": "§ 11 ust. 1 pkt 3–4",
+   "heading": "Ocena pozytywna i negatywna",
+   "text": "Przyznanie oceny pozytywnej – w przypadku ustalenia ogólnego poziomu spełniania kryteriów oceny na poziomie znacznie powyżej oczekiwań, powyżej oczekiwań albo na poziomie oczekiwań, pod warunkiem nieuzyskania przez ocenianego żadnej z ocen cząstkowych na poziomie znacznie poniżej oczekiwań. Przyznanie oceny negatywnej – w przypadku ustalenia ogólnego poziomu na poziomie poniżej oczekiwań albo znacznie poniżej oczekiwań, a także w przypadku uzyskania przez ocenianego co najmniej jednej oceny cząstkowej na poziomie znacznie poniżej oczekiwań.",
+   "paths": [
+    "periodic"
+   ]
+  },
+  {
+   "id": "r16-p11-5",
+   "sourceId": "rozp-2016",
+   "locator": "§ 11 ust. 1 pkt 5, ust. 2",
+   "heading": "Wnioski do IPRZ i wnioski z rozmowy",
+   "text": "Sporządzenie oceny na piśmie polega także na wpisaniu do arkusza wniosków dotyczących indywidualnego programu rozwoju zawodowego ocenianego. Sporządzając ocenę na piśmie, oceniający bierze pod uwagę wnioski z rozmowy oceniającej.",
+   "paths": [
+    "periodic"
+   ]
+  },
+  {
+   "id": "r16-p11-uz",
+   "sourceId": "rozp-2016",
+   "locator": "§ 11 ust. 3–5",
+   "heading": "Uzasadnienie i wniosek o stopień służbowy",
+   "text": "Oceniający sporządza uzasadnienie przyznanej oceny w przypadku przyznania oceny negatywnej. Oceniający może sporządzić uzasadnienie przyznanej oceny w przypadku przyznania oceny pozytywnej. W przypadku przyznania oceny pozytywnej ocenianemu będącemu urzędnikiem służby cywilnej oceniający może sporządzić umotywowany wniosek o przyznanie ocenianemu kolejnego stopnia służbowego, wypełniając część III arkusza.",
+   "paths": [
+    "periodic"
+   ]
+  },
+  {
+   "id": "r16-p12",
+   "sourceId": "rozp-2016",
+   "locator": "§ 12",
+   "heading": "Zapoznanie z oceną i kopia arkusza",
+   "text": "Oceniający niezwłocznie zapoznaje ocenianego z oceną sporządzoną na piśmie. Po dokonaniu tej czynności oryginał arkusza włącza się do akt osobowych ocenianego, a kopię arkusza oceniający doręcza ocenianemu.",
+   "paths": [
+    "periodic"
+   ]
+  },
+  {
+   "id": "ark-sprzeciw",
+   "sourceId": "arkusze",
+   "locator": "Arkusz B/C, część II — pouczenie",
+   "heading": "Sprzeciw od oceny okresowej",
+   "text": "Zgodnie z art. 83 ust. 1 ustawy z dnia 21 listopada 2008 r. o służbie cywilnej od oceny okresowej służy, w terminie 7 dni od dnia zapoznania się z oceną, sprzeciw do dyrektora generalnego urzędu.",
+   "paths": [
+    "periodic"
+   ]
+  },
+  {
+   "id": "ark-okres",
+   "sourceId": "poradnik-okresowa",
+   "locator": "Rozdz. 4, s. 8 — okres podlegający ocenie",
+   "heading": "Okres podlegający ocenie: daty OD i DO",
+   "text": "Okres podlegający ocenie rozpoczyna się od dnia zapoznania pracownika z kryteriami oceny, na podstawie których będzie on oceniany, a kończy z dniem sporządzenia oceny na piśmie. W części II arkusza wpisuje się te daty jako „OD” i „DO”.",
+   "paths": [
+    "periodic"
+   ]
+  },
+  {
+   "id": "ark-cz3",
+   "sourceId": "arkusze",
+   "locator": "Arkusz B/C, część III",
+   "heading": "Kiedy wypełnia się część III",
+   "text": "Wniosek jest wypełniany i dołączany do arkusza oceny okresowej ocenianego tylko w sytuacji skorzystania przez oceniającego z możliwości przewidzianej w art. 89 ust. 1 ustawy z dnia 21 listopada 2008 r. o służbie cywilnej.",
+   "paths": [
+    "periodic"
+   ]
+  },
+  {
+   "id": "po-termin",
+   "sourceId": "poradnik-okresowa",
+   "locator": "Rozdz. 4, s. 8",
+   "heading": "Termin oceny co 24 miesiące",
+   "text": "Ocenę okresową w służbie cywilnej sporządza się co 24 miesiące, licząc od dnia zakończenia poprzedniej oceny okresowej lub od dnia zatrudnienia ocenianego na czas nieokreślony. Okres podlegający ocenie rozpoczyna się od dnia zapoznania pracownika z kryteriami oceny, a kończy z dniem sporządzenia oceny na piśmie — realny okres może wynieść np. 23 miesiące.",
+   "paths": [
+    "periodic"
+   ]
+  },
+  {
+   "id": "po-kc",
+   "sourceId": "poradnik-okresowa",
+   "locator": "Rozdz. 4, s. 8–9",
+   "heading": "Liczenie terminów (art. 111–112 KC)",
+   "text": "Terminy przeprowadzenia oceny okresowej oblicza się zgodnie z zasadami prawa cywilnego. Termin oznaczony w miesiącach kończy się z upływem dnia, który datą odpowiada początkowemu dniowi terminu, a gdyby takiego dnia w ostatnim miesiącu nie było – w ostatnim dniu tego miesiąca. Przykład: gdy ostatnią ocenę sporządzono 4 grudnia 2013 r., termin kolejnej przypadał na 4 grudnia 2015 r.",
+   "paths": [
+    "periodic",
+    "first"
+   ]
+  },
+  {
+   "id": "po-nieobecnosc",
+   "sourceId": "poradnik-okresowa",
+   "locator": "Rozdz. 4, s. 10 (art. 81 ust. 7 ustawy)",
+   "heading": "Nieobecność dłuższa niż miesiąc wydłuża termin",
+   "text": "Każda usprawiedliwiona nieobecność trwająca dłużej niż miesiąc, przypadająca między sporządzeniem jednej oceny okresowej a przewidywanym terminem sporządzenia kolejnej oceny, powoduje przedłużenie 24-miesięcznego terminu dokonania tej oceny o czas tej nieobecności. Przykład: nieobecność od 9 września do 19 października 2014 r. wydłużyła termin o 41 dni.",
+   "paths": [
+    "periodic"
+   ]
+  },
+  {
+   "id": "po-negatywna",
+   "sourceId": "poradnik-okresowa",
+   "locator": "Rozdz. 4, przypis 5 (art. 81 ust. 9 ustawy)",
+   "heading": "Po ocenie negatywnej",
+   "text": "W sytuacji sporządzania oceny w trybie art. 81 ust. 9 ustawy termin na przeprowadzenie rozmowy z pracownikiem wynosi 7 dni, a sporządzenie oceny następuje po upływie 6 miesięcy od dnia zapoznania się z oceną.",
+   "paths": [
+    "periodic"
+   ]
+  },
+  {
+   "id": "po-obserwacje",
+   "sourceId": "poradnik-okresowa",
+   "locator": "Rozdz. 6.2.3, s. 24",
+   "heading": "Gromadzenie informacji w okresie oceny",
+   "text": "W trakcie okresu podlegającego ocenie należy skoncentrować się na pozyskaniu wystarczającej ilości informacji, która pozwoli podjąć obiektywne decyzje bazujące na faktach, a nie na opiniach. Informacje gromadzone w procesie obserwacji warto sporządzać na bieżąco w formie pisemnej — zapobiegnie to trudnościom w przywołaniu faktów z początku okresu i ich „zniekształceniu” przez późniejsze wydarzenia.",
+   "paths": [
+    "periodic",
+    "first"
+   ]
+  },
+  {
+   "id": "po-dialog",
+   "sourceId": "poradnik-okresowa",
+   "locator": "Rozdz. 6.2.4, s. 25",
+   "heading": "Rozmowa oceniająca jako dialog",
+   "text": "Celem rozmowy poprzedzającej przyznanie oceny jest nie tylko ocenienie pracownika i przekazanie mu informacji zwrotnej na temat wykonywanej pracy, ale też jego zmotywowanie i zaplanowanie rozwoju zawodowego. Dlatego ważne jest, aby rozmowa oceniająca nie była monologiem oceniającego, lecz dialogiem oceniającego z ocenianym.",
+   "paths": [
+    "periodic",
+    "first"
+   ]
+  },
+  {
+   "id": "po-uzasadnienie",
+   "sourceId": "poradnik-okresowa",
+   "locator": "Rozdz. 6.2.5.3, s. 28",
+   "heading": "Uzasadnienie jako informacja zwrotna",
+   "text": "Sporządzając uzasadnienie poszczególnych ocen, należy pamiętać, aby miało ono formę konstruktywnej informacji zwrotnej, która umożliwi ocenianemu dokonanie pożądanej modyfikacji sposobu wypełniania powierzonych mu obowiązków.",
+   "paths": [
+    "periodic"
+   ]
+  },
+  {
+   "id": "po-iprz",
+   "sourceId": "poradnik-okresowa",
+   "locator": "Rozdz. 6.2.5.4, s. 29",
+   "heading": "Wnioski do IPRZ",
+   "text": "Wnioski powinny zawierać obszary wiedzy i umiejętności wymagające doskonalenia oraz optymalne formy i metody ich realizacji. Każde kryterium, w odniesieniu do którego została wystawiona ocena poniżej „poziomu oczekiwań”, stanowi obszar rozwojowy pracownika. Szczególnej uwagi wymagają również kompetencje kluczowe na danym stanowisku pracy oraz obszary ulegające częstym zmianom (np. prawo, informatyka).",
+   "paths": [
+    "periodic"
+   ]
+  },
+  {
+   "id": "po-stopien",
+   "sourceId": "poradnik-okresowa",
+   "locator": "Rozdz. 6.2.6, s. 29–30",
+   "heading": "Wniosek o kolejny stopień służbowy",
+   "text": "Przed sporządzeniem wniosku podaje się dane o poprzedniej ocenie okresowej urzędnika (wynik, poziom, data) oraz imię i nazwisko, rok mianowania, posiadany stopień służbowy i datę jego przyznania. W przypadku oceny pracownika służby cywilnej oraz w razie nieskładania wniosku nie drukuje się części III arkusza.",
+   "paths": [
+    "periodic"
+   ]
+  },
+  {
+   "id": "r15-p2",
+   "sourceId": "rozp-2015",
+   "locator": "§ 2",
+   "heading": "Co bierze się pod uwagę w pierwszej ocenie",
+   "text": "Pierwszej oceny dokonuje się, biorąc pod uwagę: 1) postawę ocenianego, jego zaangażowanie i postępy w pracy, relacje ze współpracownikami oraz terminowość wykonywania zadań, oceniane za pomocą elementów: rzetelność, wykorzystywanie wiedzy i doskonalenie zawodowe, organizacja pracy i orientacja na osiąganie celów, komunikacja, współpraca; 2) wynik egzaminu ze służby przygotowawczej, jeżeli oceniany był obowiązany do przystąpienia do tego egzaminu; 3) sprawozdanie sporządzone przez ocenianego.",
+   "paths": [
+    "first"
+   ]
+  },
+  {
+   "id": "r15-p3",
+   "sourceId": "rozp-2015",
+   "locator": "§ 3",
+   "heading": "Rozmowa wstępna w ciągu 21 dni",
+   "text": "W terminie 21 dni od dnia nawiązania z ocenianym stosunku pracy bezpośredni przełożony przeprowadza z ocenianym rozmowę wstępną, podczas której: 1) zapoznaje ocenianego ze sposobem dokonywania pierwszej oceny; 2) omawia główne obowiązki wynikające z opisu stanowiska pracy oraz oczekiwania co do sposobu ich wykonywania; 3) omawia oczekiwania co do jego postawy, zaangażowania i postępów w pracy, relacji ze współpracownikami oraz terminowości wykonywania zadań; 4) wyznacza termin na złożenie sprawozdania.",
+   "paths": [
+    "first"
+   ]
+  },
+  {
+   "id": "r15-p4",
+   "sourceId": "rozp-2015",
+   "locator": "§ 4 ust. 1 i 3",
+   "heading": "Termin sprawozdania",
+   "text": "Termin na złożenie sprawozdania, wskazujący datę początkową i końcową wyznaczonego okresu, ustala się w taki sposób, aby przypadał on po upływie 8 miesięcy od dnia nawiązania z ocenianym stosunku pracy i aby dokonanie pierwszej oceny mogło nastąpić w terminie określonym w art. 38 ust. 1 ustawy. Oceniany potwierdza podpisem przeprowadzenie z nim rozmowy wstępnej i zapoznanie się z terminem wyznaczonym na złożenie sprawozdania.",
+   "paths": [
+    "first"
+   ]
+  },
+  {
+   "id": "r15-p5",
+   "sourceId": "rozp-2015",
+   "locator": "§ 5 ust. 1 i 4",
+   "heading": "Nowy termin sprawozdania",
+   "text": "W uzasadnionych przypadkach bezpośredni przełożony wyznacza nowy termin na złożenie sprawozdania w związku z usprawiedliwioną nieobecnością w pracy ocenianego albo wykonywaniem przez niego obowiązków służbowych poza miejscem pracy. O wyznaczeniu nowego terminu bezpośredni przełożony niezwłocznie zawiadamia pisemnie ocenianego, a kopię pisma dołącza do arkusza.",
+   "paths": [
+    "first"
+   ]
+  },
+  {
+   "id": "r15-p6",
+   "sourceId": "rozp-2015",
+   "locator": "§ 6",
+   "heading": "Zawartość sprawozdania",
+   "text": "Sprawozdanie obejmuje przepracowany przez ocenianego okres nie krótszy niż 7 miesięcy. W sprawozdaniu oceniany opisuje: 1) zadania z opisu stanowiska pracy i ewentualnie inne istotne zadania; 2) problemy, z którymi spotkał się przy wykonywaniu zadań, i sposób ich rozwiązania; 3) zdobyte nowe umiejętności i wiedzę; 4) wnioski dotyczące usprawnienia sposobu wykonywania zadań.",
+   "paths": [
+    "first"
+   ]
+  },
+  {
+   "id": "r15-p7",
+   "sourceId": "rozp-2015",
+   "locator": "§ 7–8",
+   "heading": "Rozmowa oceniająca i ocena łączna",
+   "text": "Dokonanie pierwszej oceny polega na: przeprowadzeniu rozmowy oceniającej, podczas której bezpośredni przełożony może omówić także kierunki dalszego rozwoju zawodowego i potrzeby ocenianego; przyznaniu ocen cząstkowych; ustaleniu oceny łącznej, będącej średnią arytmetyczną z ocen cząstkowych; przyznaniu pozytywnej lub negatywnej pierwszej oceny. Rozmowę przeprowadza się niezwłocznie po złożeniu sprawozdania; może w niej uczestniczyć kierujący komórką organizacyjną.",
+   "paths": [
+    "first"
+   ]
+  },
+  {
+   "id": "r15-p9",
+   "sourceId": "rozp-2015",
+   "locator": "§ 9 ust. 1",
+   "heading": "Skala pierwszej oceny",
+   "text": "Oceny cząstkowe przyznaje się według skali punktowej: 3 punkty – poniżej oczekiwań; 5 punktów – na poziomie oczekiwań; 7 punktów – powyżej oczekiwań.",
+   "paths": [
+    "first"
+   ]
+  },
+  {
+   "id": "r15-p10",
+   "sourceId": "rozp-2015",
+   "locator": "§ 10 ust. 1–2",
+   "heading": "Warunki pozytywnej pierwszej oceny",
+   "text": "Warunkiem przyznania pozytywnej pierwszej oceny jest: 1) zaliczenie egzaminu ze służby przygotowawczej; 2) złożenie sprawozdania w wyznaczonym terminie; 3) uzyskanie nie więcej niż jednej oceny cząstkowej w wysokości 3 punktów; 4) uzyskanie oceny łącznej nie niższej niż 5 punktów. Negatywną pierwszą ocenę przyznaje się w przypadku niespełnienia tych warunków.",
+   "paths": [
+    "first"
+   ]
+  },
+  {
+   "id": "r15-p10-3",
+   "sourceId": "rozp-2015",
+   "locator": "§ 10 ust. 3",
+   "heading": "Kogo nie dotyczy warunek egzaminu",
+   "text": "Warunku zaliczenia egzaminu nie stosuje się do ocenianego będącego: 1) absolwentem Krajowej Szkoły Administracji Publicznej, który nie złożył wniosku o mianowanie w służbie cywilnej; 2) pracownikiem służby cywilnej zatrudnionym w celu zastępstwa nieobecnego członka korpusu służby cywilnej; 3) pracownikiem służby cywilnej zatrudnionym na wyższym stanowisku w służbie cywilnej.",
+   "paths": [
+    "first"
+   ]
+  },
+  {
+   "id": "r15-p10-uz",
+   "sourceId": "rozp-2015",
+   "locator": "§ 10 ust. 4–6",
+   "heading": "Uzasadnienie i wnioski rozwojowe",
+   "text": "W przypadku przyznania negatywnej pierwszej oceny bezpośredni przełożony sporządza uzasadnienie przyznanej oceny. Może sporządzić uzasadnienie pozytywnej pierwszej oceny. W przypadku przyznania pozytywnej pierwszej oceny bezpośredni przełożony w porozumieniu z kierującym komórką organizacyjną może sporządzić w arkuszu wnioski dotyczące rozwoju zawodowego ocenianego.",
+   "paths": [
+    "first"
+   ]
+  },
+  {
+   "id": "r15-p11",
+   "sourceId": "rozp-2015",
+   "locator": "§ 11",
+   "heading": "Zapoznanie z pierwszą oceną",
+   "text": "Bezpośredni przełożony niezwłocznie umożliwia ocenianemu zapoznanie się z pierwszą oceną. Oryginał arkusza wraz ze sprawozdaniem i pismami dotyczącymi zmienianych terminów włącza się do akt osobowych ocenianego, a kopię arkusza przekazuje się ocenianemu.",
+   "paths": [
+    "first"
+   ]
+  },
+  {
+   "id": "pp-termin",
+   "sourceId": "poradnik-pierwsza",
+   "locator": "Rozdz. 4, s. 8",
+   "heading": "Okno na dokonanie pierwszej oceny",
+   "text": "Pierwszej oceny dokonuje się nie wcześniej niż po upływie 8 miesięcy od dnia nawiązania stosunku pracy i nie później niż miesiąc przed upływem okresu, na który została zawarta umowa o pracę ocenianego. Terminy, zarówno 8-miesięczny, jak i 11-miesięczny, oblicza się zgodnie z art. 112 Kodeksu cywilnego. Okres na dokonanie pierwszej oceny wynosi łącznie prawie 3 miesiące.",
+   "paths": [
+    "first"
+   ]
+  },
+  {
+   "id": "pp-wniosek",
+   "sourceId": "poradnik-pierwsza",
+   "locator": "Rozdz. 1, s. 3",
+   "heading": "Wniosek kierującego komórką po pierwszej ocenie",
+   "text": "Kierujący komórką organizacyjną będzie wnioskował do dyrektora generalnego urzędu: w przypadku przyznania oceny pozytywnej — o zawarcie z ocenionym pracownikiem umowy o pracę na czas nieokreślony, albo w przypadku przyznania oceny negatywnej — o niezawieranie z ocenionym pracownikiem umowy o pracę na czas nieokreślony albo o rozwiązanie umowy o pracę na czas określony.",
+   "paths": [
+    "first"
+   ]
+  },
+  {
+   "id": "model-dobor",
+   "sourceId": "model",
+   "locator": "Wskazówki, pkt 1",
+   "heading": "Dobór wskaźników do stanowiska",
+   "text": "Dobierz wskaźniki do zadań i zakresu odpowiedzialności na stanowisku. Poziom „na poziomie oczekiwań” opisuje standard wykonania w tym zakresie.",
+   "paths": [
+    "periodic",
+    "first"
+   ]
+  },
+  {
+   "id": "model-przyklady",
+   "sourceId": "model",
+   "locator": "Wskazówki, pkt 2",
+   "heading": "Ocena na podstawie przykładów",
+   "text": "Oprzyj ocenę na konkretnych przykładach z ocenianego okresu. Zapisz sytuację, działanie i jego rezultat. Uwzględnij powtarzalność zachowania, złożoność sytuacji i dostępne uprawnienia.",
+   "paths": [
+    "periodic",
+    "first"
+   ]
+  },
+  {
+   "id": "model-brak",
+   "sourceId": "model",
+   "locator": "Wskazówki, pkt 3",
+   "heading": "Brak okazji do obserwacji",
+   "text": "Jeśli brak było okazji do zaobserwowania zachowania, odnotuj brak podstaw do oceny danego wskaźnika.",
+   "paths": [
+    "periodic",
+    "first"
+   ]
+  },
+  {
+   "id": "regula-sugestia",
+   "sourceId": "reguly",
+   "locator": "Reguła R1",
+   "heading": "Jak powstaje sugestia oceny cząstkowej",
+   "text": "Każdy wybrany opis zachowania ma wartość punktową: poziom 1 = 1 pkt, 2 = 3 pkt, 3 = 5 pkt, 4 = 7 pkt, 5 = 9 pkt. Sugestia to średnia punktów wskaźników z wybranym zachowaniem, przypisana do skali progami z § 11 ust. 1 pkt 2. Wskaźniki z „brakiem podstaw do oceny” pomija się. Gdy żaden wskaźnik nie ma podstaw, narzędzie nie sugeruje oceny i niczego nie obniża. Ocenę cząstkową zawsze wybiera oceniający; odstępstwo od sugestii wymaga krótkiego uzasadnienia.",
+   "paths": [
+    "periodic"
+   ]
+  },
+  {
+   "id": "regula-pierwsza",
+   "sourceId": "reguly",
+   "locator": "Reguła R2",
+   "heading": "Sugestia w pierwszej ocenie (skala 3/5/7)",
+   "text": "Model kompetencji nie określa przeliczenia pięciu poziomów zachowań na skalę 3/5/7. Narzędzie przyjmuje roboczo: poziomy 1–2 = 3 pkt, 3 = 5 pkt, 4–5 = 7 pkt; średnią do 4 = 3 pkt, powyżej 4 do 6 = 5 pkt, powyżej 6 = 7 pkt. Mapowanie jest do uzgodnienia i można je zmienić w konfiguracji.",
+   "paths": [
+    "first"
+   ]
+  }
+ ]
+}

@@ -20,6 +20,7 @@ CREATE INDEX IF NOT EXISTS ix_messages_session ON messages(session_id, id);
 class SessionStore:
     def __init__(self, path=settings.sessions_db):
         self.path = str(path)
+        path.parent.mkdir(parents=True, exist_ok=True)
         with self._conn() as c:
             c.executescript(DDL)
 

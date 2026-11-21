@@ -1,14 +1,76 @@
-# Kompas Kompetencji – backend asystenta AI (RAG)
+# Kompas Kompetencji – backend aplikacji i asystenta AI (RAG)
 
-FastAPI + ChromaDB + BM25 + reranker + Claude (przez litellm). Odpowiada na pytania o pierwszą ocenę
-i ocenę okresową w służbie cywilnej **wyłącznie na podstawie bazy wiedzy, z cytowaniem źródeł**,
-pamięta kontekst rozmowy, a gdy nie ma podstaw – mówi to wprost.
+Pełny backend aplikacji [Kompas Kompetencji](https://github.com/jakubGora/kompas-kompetencji) (Angular):
+sprawy ocen (pierwsza ocena i ocena okresowa krok po kroku), kryteria i wskaźniki behawioralne, obserwacje,
+oceny z sugestią narzędzia (decyduje przełożony), arkusze i zawiadomienia, terminy i przypomnienia dla HR,
+rekrutacje — oraz asystent AI na RAG + Claude, który **odpowiada wyłącznie na podstawie źródeł, z cytatami**,
+a gdy podstaw brak — mówi to wprost. Asystent nigdy nie wystawia ocen.
+
+## Architektura
+
+```
+Angular (Vercel) ──/api/*──▶ FastAPI (Vercel, api/index.py)
+                              ├─ /api/*      API aplikacji (app/kompas/routes) — kontrakt 1:1 z mockiem frontu
+                              ├─ /api/v1/*   pierwotne API czatu RAG
+                              └─ stan demo: przestrzeń robocza (JSON) na przeglądarkę → Postgres albo SQLite
+```
+
+- **Przestrzeń robocza**: każda przeglądarka wysyła `X-Kompas-Workspace` (losowe id z localStorage) i dostaje
+  własną kopię danych demo — jurorzy nie nadpisują sobie spraw. Bez nagłówka: cookie `kompas_ws`, potem `default`.
+- **Magazyn**: `DATABASE_URL` / `POSTGRES_URL` (np. Neon z integracji Vercel) → tabela `kompas_workspaces` (JSONB);
+  bez niej SQLite (`/tmp/kompas` na Vercelu — działa, ale nie jest współdzielony między instancjami funkcji).
+- **Asystent** (`app/kompas/ai/assistant.py`): strażnicy (pytania o ocenę konkretnej osoby, cechy osobowości,
+  poza zakresem) → Claude Haiku przepisuje pytanie na samodzielne + 2 parafrazy słownictwem przepisów →
+  BM25 × zapytania, RRF, boost FAQ, dociąganie cytowanych § → Claude Sonnet (JSON: odpowiedź, punkty, cytaty
+  `[n]`, odmowa) → walidacja i przenumerowanie cytatów. Do modelu trafia spseudonimizowany kontekst sprawy
+  (krok, kryteria, oceny, obserwacje — bez nazwisk); konta HR nie wysyłają treści spraw.
+- **Bez klucza / przy błędzie modelu** asystent działa dalej: pytanie z bazy zespołu wybrane BM25, a gdy jej
+  brak — dosłowne fragmenty źródeł z cytatami, jasno oznaczone jako tryb offline. Ostatni błąd modelu widać
+  w `GET /api/assistant/status`.
+- **AI w krokach** (`app/kompas/ai/enrich.py`): analiza obserwacji, plan rozmowy, szkic uzasadnienia i planu
+  rozwoju — zawsze startują od wersji regułowej i do niej wracają przy błędzie; szkice są oznaczone
+  „do weryfikacji”.
+
+## Uruchomienie lokalne (z frontem)
+
+```bash
+python -m venv .venv && .venv/bin/pip install -r requirements.txt
+cp .env.example .env   # ANTHROPIC_API_KEY=... (bez klucza asystent działa w trybie offline)
+KOMPAS_DENSE_ENABLED=false KOMPAS_USE_RERANKER=false .venv/bin/uvicorn app.main:app --reload --port 8000
+# w kompas-web: npm start  → http://127.0.0.1:4300 (proxy /api → :8000)
+```
+
+## Wdrożenie na Vercel
+
+1. Projekt Vercel z tego repo (root = katalog repo). Vercel wykrywa FastAPI (`api/index.py`), Python 3.12
+   i zależności z `pyproject.toml` / `uv.lock` (lekki zestaw: BM25 + SDK Anthropic, bez modeli ML).
+2. Zmienne środowiskowe: `ANTHROPIC_API_KEY` (wymagany dla Claude), opcjonalnie `DATABASE_URL`
+   (Storage → Neon Postgres; zalecane, gdy funkcja skaluje się na kilka instancji).
+3. Front (`kompas-web/vercel.json`) przekierowuje `/api/:path*` na domenę backendu
+   (`https://kompas-kompetencji-api.vercel.app` — przy innej nazwie projektu zmień ten adres).
+4. Sprawdzenie wdrożenia tym samym scenariuszem co testy (143 żądania):
+   `KOMPAS_E2E_URL=https://<backend>.vercel.app .venv/bin/python -m pytest tests/test_deployed.py -q`
+
+## Testy
+
+`tests/test_parity.py` odtwarza pełny flow z Figmy (ocena okresowa, pierwsza ocena, HR, rekrutacje, błędy
+walidacji) i porównuje odpowiedzi z backendem demonstracyjnym frontu (`npm run parity:trace` w kompas-web
+generuje `tests/parity/expected.json`). `tests/test_kompas_ai.py` sprawdza asystenta i szkice AI z
+podstawionym modelem (cytowania, odmowa, walidacja, tryb awaryjny).
+
+```bash
+.venv/bin/python -m pytest -q
+```
+
+## Pierwotny moduł RAG (`/api/v1`, pełny zestaw z embeddingami)
+
+`requirements-ml.txt` (Chroma, sentence-transformers, litellm) — używany przez `Dockerfile` i ewaluację.
 
 ## Szybki start
 
 ```bash
 python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
+pip install -r requirements-ml.txt
 cp .env.example .env            # wpisz ANTHROPIC_API_KEY
 python -m scripts.ingest        # buduje data/chunks.jsonl + kolekcję Chroma (pobiera bge-m3 ~2 GB za 1. razem)
 uvicorn app.main:app --reload --port 8000
@@ -34,9 +96,11 @@ Tryby awaryjne (demo bez sieci): `KOMPAS_DENSE_ENABLED=false` (tylko BM25, bez m
 | `raw/Model_kompetencji.xlsx` | model kompetencji | 1 chunk zasad + 14 przeglądów kompetencji + 49 wskaźników (każdy z 5 poziomami) |
 | `raw/poradnik_*.pdf` | poradniki KPRM | podział po nagłówkach → okna ~450 tokenów, overlap ~70; ramki z przykładami = `example` |
 | `faq/*.jsonl` | FAQ (Q+A+parafrazy+cytowania §) | 1 chunk = 1 Q&A; trafiony FAQ **dociąga cytowane § do kontekstu** |
+| `legal_json/rozp_2015_pierwsza_ocena.json` | rozporządzenie 2015 (pierwsza ocena) | jak rozporządzenie 2016 |
+| `app/kompas/seed/knowledge.json` | reguły narzędzia i baza pytań aplikacji | 1 chunk = 1 fragment (`kompas__*`) / 1 pytanie (`faq_kompas__*`); reguły narzędzia oznaczone jako „nie przepis” |
 
-**TODO przed demo:** dodać `legal_json/rozp_2015_pierwsza_ocena.json` (ta sama struktura) oraz wkleić
-dosłowne brzmienie art. 81/83/89 ustawy z ISAP do `ustawa_sc_wyciag.json` (obecnie odtworzone z poradnika).
+**TODO:** wkleić dosłowne brzmienie art. 81/83/89 ustawy z ISAP do `ustawa_sc_wyciag.json`
+(obecnie odtworzone z poradnika).
 
 ## Pipeline odpowiedzi
 

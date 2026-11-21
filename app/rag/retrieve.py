@@ -25,7 +25,10 @@ class Hit:
 def get_reranker():
     if not settings.use_reranker:
         return None
-    from sentence_transformers import CrossEncoder
+    try:
+        from sentence_transformers import CrossEncoder
+    except ImportError:          # slim install (requirements.txt only) -> RRF ranking
+        return None
     return CrossEncoder(settings.reranker_model, max_length=1024)
 
 
@@ -72,8 +75,14 @@ def expand_faq_citations(index: Index, hits: list[Hit]) -> list[Hit]:
     for h in hits:
         if h.chunk.doc_type != "faq":
             continue
+        linked = list(h.chunk.extra.get("linked_ids", []))
+        process = h.chunk.process
         for cit in h.chunk.extra.get("citations", []):
-            for cid in index.by_citation.get(cit.lower(), []):
+            # "§ 5 ust. 2" exists in both regulations — keep the one matching the FAQ's assessment path.
+            linked += [cid for cid in index.by_citation.get(cit.lower(), [])
+                       if process == "both" or index.by_id[cid].process in (process, "both")]
+        for cid in linked:
+            if cid in index.by_id:
                 if cid not in present:
                     present.add(cid)
                     extra.append(Hit(chunk=index.by_id[cid], rrf=h.rrf * 0.98, sources=["faq_link"]))
@@ -144,6 +153,67 @@ def retrieve(index: Index, query: str, process: str | None = None, top_k: int | 
         if c.parent_text and c.doc_type == "akt_prawny":
             h.context_text += f"\n[Kontekst – cały {c.parent_id.split('__', 1)[1].replace('_', ' ')}]: {c.parent_text}"
     return hits
+
+
+def _context(hits: list[Hit]) -> list[Hit]:
+    for h in hits:
+        c = h.chunk
+        h.context_text = c.text
+        if c.parent_text and c.doc_type == "akt_prawny":
+            h.context_text += f"\n[Kontekst – cały {c.parent_id.split('__', 1)[1].replace('_', ' ')}]: {c.parent_text}"
+    return hits
+
+
+def _dedupe(hits: list[Hit], containment: float = 0.8) -> list[Hit]:
+    """Drop near-duplicates (overlapping guide windows, app paraphrases of the same passage)."""
+    from app.rag.index import tokenize_pl
+    out: list[Hit] = []
+    seen: list[set[str]] = []
+    for h in hits:
+        toks = set(tokenize_pl(h.chunk.text))
+        if toks and any(len(toks & s) / len(toks) >= containment for s in seen):
+            continue
+        out.append(h)
+        seen.append(toks)
+    return out
+
+
+def retrieve_multi(index: Index, queries: list[str], process: str | None = None, top_k: int | None = None) -> list[Hit]:
+    """Several reformulations of one question -> one fused ranking (RRF over every list).
+    Compensates for the lexical-only index in the serverless deployment."""
+    top_k = top_k or settings.final_top_k
+    k = settings.rrf_k
+    acc: dict[str, Hit] = {}
+    for qi, query in enumerate(q for q in queries if q and q.strip()):
+        lists = [("bm25", index.lexical(query, settings.bm25_top_k, process))]
+        if index.dense_enabled:
+            lists.append(("dense", index.dense(query, settings.dense_top_k, process)))
+        for name, ranked in lists:
+            weight = 1.0 if qi == 0 else 0.8      # the user's own wording counts most
+            for rank, (cid, _) in enumerate(ranked, start=1):
+                h = acc.setdefault(cid, Hit(chunk=index.by_id[cid], rrf=0.0))
+                h.rrf += weight / (k + rank)
+                if name not in h.sources:
+                    h.sources.append(name)
+    hits = sorted(acc.values(), key=lambda h: -h.rrf)
+    for h in hits:
+        if h.chunk.doc_type == "faq":
+            h.rrf *= settings.faq_boost
+            break
+    hits.sort(key=lambda h: -h.rrf)
+    hits = _diversify(hits)[: max(settings.dense_top_k, settings.bm25_top_k)]
+    hits = _dedupe(expand_faq_citations(index, hits))
+
+    reranker = get_reranker()
+    if reranker and hits:
+        import math
+        scores = reranker.predict([(queries[0], h.chunk.text) for h in hits], activation_fn=None)
+        for h, s in zip(hits, scores):
+            h.rerank = 1 / (1 + math.exp(-float(s)))
+        hits.sort(key=lambda h: (-(h.rerank or 0), -h.chunk.authority))
+        hits = _pin_faq_links(hits, settings.faq_linked_pin)
+    hits = _reserve_legal(hits, top_k, settings.min_legal_in_top)
+    return _context(hits[:top_k])
 
 
 def should_abstain(hits: list[Hit]) -> bool:

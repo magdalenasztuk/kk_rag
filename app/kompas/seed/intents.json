@@ -1,0 +1,869 @@
+{
+ "formal": [
+  {
+   "id": "kryteria-dodatkowe",
+   "mode": "formalny",
+   "paths": [
+    "periodic"
+   ],
+   "keywords": [
+    "dodatkow",
+    "kryteri",
+    "ile",
+    "maks",
+    "wybrac",
+    "trzy",
+    "limit"
+   ],
+   "phrases": [
+    "kryteria dodatkowe",
+    "ile kryteriow"
+   ],
+   "answer": "Możesz wybrać najwyżej 3 kryteria dodatkowe — te najistotniejsze ze względu na charakter obowiązków z opisu stanowiska. Wybór jest dobrowolny.",
+   "bullets": [
+    "Kryteria dodatkowe wpisujesz do części I arkusza razem z terminem sporządzenia oceny.",
+    "Kryterium obowiązkowe nie może być jednocześnie dodatkowym."
+   ],
+   "fragmentIds": [
+    "r16-p5-2",
+    "r16-p2"
+   ],
+   "followUps": [
+    "Które kryteria są obowiązkowe w arkuszu C?",
+    "Kiedy muszę przeprowadzić rozmowę wstępną?"
+   ]
+  },
+  {
+   "id": "kryteria-obowiazkowe",
+   "mode": "formalny",
+   "paths": [
+    "periodic"
+   ],
+   "keywords": [
+    "obowiazkow",
+    "kryteri",
+    "arkusz",
+    "jakie"
+   ],
+   "phrases": [
+    "kryteria obowiazkowe"
+   ],
+   "answer": "Kryteria obowiązkowe zależą od arkusza. Arkusz C: wykorzystywanie wiedzy i doskonalenie zawodowe, rzetelność, organizacja pracy i orientacja na osiąganie celów, współpraca, komunikacja. Arkusz B: zarządzanie ludźmi, podejmowanie decyzji i odpowiedzialność, organizacja pracy i orientacja na osiąganie celów, współpraca, komunikacja.",
+   "fragmentIds": [
+    "r16-p4-c",
+    "r16-p4-b"
+   ],
+   "followUps": [
+    "Który arkusz wybrać — B czy C?",
+    "Ile kryteriów dodatkowych mogę wybrać?"
+   ]
+  },
+  {
+   "id": "arkusz",
+   "mode": "formalny",
+   "paths": [
+    "periodic"
+   ],
+   "keywords": [
+    "arkusz",
+    "b czy c",
+    "ktory",
+    "wybrac",
+    "kieruj",
+    "podlegl",
+    "wzor"
+   ],
+   "phrases": [
+    "ktory arkusz",
+    "arkusz b",
+    "arkusz c"
+   ],
+   "answer": "Arkusz B stosuje się, gdy praca na stanowisku polega na bezpośrednim kierowaniu pracownikami (innym niż kierownik urzędu). Arkusz C — dla pozostałych stanowisk. Rozstrzyga opis stanowiska pracy, w szczególności pole „liczba podległych pracowników”.",
+   "fragmentIds": [
+    "r16-p3"
+   ],
+   "followUps": [
+    "Jakie kryteria są obowiązkowe w arkuszu B?"
+   ]
+  },
+  {
+   "id": "rozmowa-wstepna-termin",
+   "mode": "formalny",
+   "paths": [
+    "periodic"
+   ],
+   "keywords": [
+    "rozmow",
+    "wstepn",
+    "kryteri",
+    "termin",
+    "kiedy",
+    "zapozna",
+    "czesc i",
+    "30 dni"
+   ],
+   "phrases": [
+    "rozmowa wstepna",
+    "zapoznanie z kryteriami"
+   ],
+   "answer": "Rozmowę z § 5 i zapoznanie z kryteriami przeprowadzasz w ciągu 30 dni od sporządzenia na piśmie poprzedniej oceny (albo od zatrudnienia na czas nieokreślony). Po ocenie negatywnej termin wynosi 7 dni.",
+   "bullets": [
+    "Omawiasz: główne obowiązki z OSP, kryteria, swoje oczekiwania i — jeśli to uzasadnione — cele.",
+    "Oceniany potwierdza podpisem rozmowę i zapoznanie z kryteriami oraz terminem oceny (część I)."
+   ],
+   "fragmentIds": [
+    "r16-p7",
+    "r16-p5-1",
+    "r16-p6"
+   ],
+   "followUps": [
+    "Czy muszę wyznaczać cele?",
+    "Co oznaczają daty OD i DO?"
+   ]
+  },
+  {
+   "id": "cele",
+   "mode": "formalny",
+   "paths": [
+    "periodic"
+   ],
+   "keywords": [
+    "cel",
+    "cele",
+    "wyznacz",
+    "musze",
+    "obowiazk"
+   ],
+   "phrases": [
+    "wyznaczyc cele",
+    "czy musze wyznaczyc"
+   ],
+   "answer": "Nie zawsze. Cele omawia się, jeżeli ich określenie jest uzasadnione ze względu na charakter obowiązków z opisu stanowiska. Jeśli cele zostały wyznaczone, w rozmowie oceniającej omawiasz sposób ich realizacji.",
+   "fragmentIds": [
+    "r16-p5-1",
+    "r16-p10"
+   ]
+  },
+  {
+   "id": "termin-oceny",
+   "mode": "formalny",
+   "paths": [
+    "periodic"
+   ],
+   "keywords": [
+    "termin",
+    "kiedy",
+    "24",
+    "miesiac",
+    "sporzadz",
+    "kolejn",
+    "nastepn"
+   ],
+   "phrases": [
+    "termin oceny",
+    "co ile",
+    "kiedy ocena"
+   ],
+   "answer": "Ocenę okresową sporządza się co 24 miesiące, licząc od dnia sporządzenia poprzedniej oceny (albo od zatrudnienia na czas nieokreślony). Termin liczysz według art. 112 KC: kończy się w dniu, który datą odpowiada dniowi początkowemu.",
+   "bullets": [
+    "Usprawiedliwiona nieobecność dłuższa niż miesiąc przedłuża termin o czas tej nieobecności."
+   ],
+   "fragmentIds": [
+    "po-termin",
+    "po-kc",
+    "po-nieobecnosc"
+   ],
+   "followUps": [
+    "Jak nieobecność wpływa na termin?",
+    "Co po ocenie negatywnej?"
+   ]
+  },
+  {
+   "id": "nieobecnosc",
+   "mode": "formalny",
+   "paths": [
+    "periodic"
+   ],
+   "keywords": [
+    "nieobecn",
+    "chorob",
+    "l4",
+    "urlop",
+    "zwolnieni",
+    "przedluz",
+    "wydluz"
+   ],
+   "phrases": [
+    "dluzsza nieobecnosc",
+    "przedluzenie terminu"
+   ],
+   "answer": "Każda usprawiedliwiona nieobecność dłuższa niż miesiąc, przypadająca między poprzednią oceną a terminem kolejnej, przedłuża 24-miesięczny termin o czas tej nieobecności (art. 81 ust. 7 ustawy, wg poradnika). O nowym terminie zawiadamiasz ocenianego pisemnie, a kopię pisma dołączasz do arkusza.",
+   "bullets": [
+    "Przykład z poradnika: nieobecność od 9.09 do 19.10.2014 r. wydłużyła termin o 41 dni."
+   ],
+   "fragmentIds": [
+    "po-nieobecnosc",
+    "r16-p8"
+   ]
+  },
+  {
+   "id": "negatywna-warunki",
+   "mode": "formalny",
+   "paths": [
+    "periodic"
+   ],
+   "keywords": [
+    "negatywn",
+    "kiedy",
+    "pozytywn",
+    "warunk",
+    "jeden punkt",
+    "1 pkt",
+    "weto"
+   ],
+   "phrases": [
+    "ocena negatywna",
+    "kiedy negatywna"
+   ],
+   "answer": "Ocena jest negatywna, gdy ogólny poziom wynosi „poniżej” albo „znacznie poniżej oczekiwań”, a także gdy co najmniej jedna ocena cząstkowa wynosi 1 pkt — niezależnie od średniej. Pozytywna wymaga poziomu co najmniej „na poziomie oczekiwań” i braku oceny 1 pkt.",
+   "fragmentIds": [
+    "r16-p11-3",
+    "r16-p11-2"
+   ],
+   "followUps": [
+    "Czy uzasadnienie jest obowiązkowe?",
+    "Co po ocenie negatywnej?"
+   ]
+  },
+  {
+   "id": "granica-6",
+   "mode": "formalny",
+   "paths": [
+    "periodic"
+   ],
+   "keywords": [
+    "6,00",
+    "6.00",
+    "granic",
+    "powyzej",
+    "srednia",
+    "dokladnie",
+    "przedzial",
+    "prog"
+   ],
+   "phrases": [
+    "6,00",
+    "dokladnie 6"
+   ],
+   "answer": "Średnia dokładnie 6,00 oznacza poziom „na poziomie oczekiwań”. Przedział „powyżej oczekiwań” zaczyna się powyżej 6 punktów (do 8). Analogicznie 4,00 to jeszcze „poniżej oczekiwań”.",
+   "fragmentIds": [
+    "r16-p11-2"
+   ]
+  },
+  {
+   "id": "skala-okresowa",
+   "mode": "formalny",
+   "paths": [
+    "periodic"
+   ],
+   "keywords": [
+    "skal",
+    "punkt",
+    "oceny czastkowe",
+    "ile punktow"
+   ],
+   "phrases": [
+    "skala ocen"
+   ],
+   "answer": "Oceny cząstkowe przyznajesz w skali: 1 pkt — znacznie poniżej, 3 — poniżej, 5 — na poziomie, 7 — powyżej, 9 — znacznie powyżej oczekiwań. Ogólny poziom wyznacza średnia arytmetyczna ocen cząstkowych.",
+   "fragmentIds": [
+    "r16-p11-1",
+    "r16-p11-2"
+   ]
+  },
+  {
+   "id": "uzasadnienie",
+   "mode": "formalny",
+   "paths": [
+    "periodic"
+   ],
+   "keywords": [
+    "uzasadni",
+    "obowiazkow",
+    "musze",
+    "pisac"
+   ],
+   "phrases": [
+    "czy uzasadnienie"
+   ],
+   "answer": "Uzasadnienie jest obowiązkowe przy ocenie negatywnej. Przy pozytywnej możesz je sporządzić. Warto, by miało formę konstruktywnej informacji zwrotnej.",
+   "fragmentIds": [
+    "r16-p11-uz",
+    "po-uzasadnienie"
+   ]
+  },
+  {
+   "id": "iprz",
+   "mode": "formalny",
+   "paths": [
+    "periodic"
+   ],
+   "keywords": [
+    "iprz",
+    "rozwoj",
+    "program",
+    "wnioski",
+    "szkoleni"
+   ],
+   "phrases": [
+    "indywidualnego programu",
+    "wnioski do iprz"
+   ],
+   "answer": "Wnioski do indywidualnego programu rozwoju zawodowego są obowiązkową częścią oceny. Powinny wskazywać obszary wiedzy i umiejętności do doskonalenia oraz formy i metody ich realizacji. Każde kryterium ocenione poniżej poziomu oczekiwań jest obszarem rozwojowym.",
+   "fragmentIds": [
+    "r16-p11-5",
+    "po-iprz"
+   ]
+  },
+  {
+   "id": "sprzeciw",
+   "mode": "formalny",
+   "paths": [
+    "periodic"
+   ],
+   "keywords": [
+    "sprzeciw",
+    "odwola",
+    "nie zgadza",
+    "dyrektor generaln",
+    "zaskarz"
+   ],
+   "phrases": [
+    "sprzeciw od oceny"
+   ],
+   "answer": "Od oceny okresowej przysługuje sprzeciw do dyrektora generalnego urzędu w terminie 7 dni od dnia zapoznania się z oceną (art. 83 ust. 1 ustawy — pouczenie w arkuszu).",
+   "fragmentIds": [
+    "ark-sprzeciw"
+   ]
+  },
+  {
+   "id": "po-negatywnej",
+   "mode": "formalny",
+   "paths": [
+    "periodic"
+   ],
+   "keywords": [
+    "po negatywn",
+    "ponown",
+    "6 miesiec",
+    "szesc",
+    "kolejna po"
+   ],
+   "phrases": [
+    "po ocenie negatywnej"
+   ],
+   "answer": "Po ocenie negatywnej rozmowę z § 5 i zapoznanie z kryteriami przeprowadzasz w ciągu 7 dni, a kolejną ocenę sporządzasz po upływie 6 miesięcy od dnia zapoznania się z oceną negatywną.",
+   "fragmentIds": [
+    "po-negatywna",
+    "r16-p7"
+   ]
+  },
+  {
+   "id": "od-do",
+   "mode": "formalny",
+   "paths": [
+    "periodic"
+   ],
+   "keywords": [
+    "od",
+    "do",
+    "okres",
+    "podlegal",
+    "data"
+   ],
+   "phrases": [
+    "daty od i do",
+    "okres podlegajacy ocenie"
+   ],
+   "answer": "Okres podlegający ocenie trwa od dnia zapoznania ocenianego z kryteriami (podpis części I) do dnia sporządzenia oceny na piśmie. Dlatego rzadko wynosi pełne 24 miesiące.",
+   "fragmentIds": [
+    "ark-okres",
+    "po-termin"
+   ]
+  },
+  {
+   "id": "czesc-iii",
+   "mode": "formalny",
+   "paths": [
+    "periodic"
+   ],
+   "keywords": [
+    "czesc iii",
+    "stopien",
+    "stopnia",
+    "awans",
+    "urzednik",
+    "mianowan"
+   ],
+   "phrases": [
+    "kolejny stopien",
+    "czesc iii"
+   ],
+   "answer": "Część III (wniosek o kolejny stopień służbowy) wypełniasz tylko przy ocenie pozytywnej urzędnika służby cywilnej i tylko wtedy, gdy korzystasz z możliwości z art. 89 ust. 1 ustawy. Przy ocenie pracownika służby cywilnej części III się nie drukuje.",
+   "fragmentIds": [
+    "r16-p11-uz",
+    "ark-cz3",
+    "po-stopien"
+   ]
+  },
+  {
+   "id": "rozmowa-oceniajaca",
+   "mode": "formalny",
+   "paths": [
+    "periodic"
+   ],
+   "keywords": [
+    "rozmow",
+    "oceniajac",
+    "omowic",
+    "tematy",
+    "co omawia"
+   ],
+   "phrases": [
+    "rozmowa oceniajaca"
+   ],
+   "answer": "Przed sporządzeniem oceny omawiasz: główne obowiązki w okresie oceny i sposób ich realizacji z uwzględnieniem kryteriów, realizację celów (jeśli były wyznaczone) oraz kierunki rozwoju i potrzeby w zakresie kwalifikacji. Sporządzając ocenę, bierzesz pod uwagę wnioski z rozmowy.",
+   "fragmentIds": [
+    "r16-p10",
+    "r16-p11-5",
+    "po-dialog"
+   ]
+  },
+  {
+   "id": "zmiana",
+   "mode": "formalny",
+   "paths": [
+    "periodic"
+   ],
+   "keywords": [
+    "zmian",
+    "stanowisk",
+    "oceniajac",
+    "przelozon",
+    "nowy"
+   ],
+   "phrases": [
+    "zmiana stanowiska",
+    "zmiana przelozonego"
+   ],
+   "answer": "Jeżeli w ciągu 6 miesięcy od ustalenia kryteriów zmienia się stanowisko z istotną zmianą obowiązków, w ciągu 30 dni ponownie przeprowadzasz rozmowę i ustalasz kryteria — termin oceny się nie zmienia. Przy zmianie oceniającego ocenę sporządza się na podstawie wybranych wcześniej kryteriów.",
+   "fragmentIds": [
+    "r16-p9"
+   ]
+  },
+  {
+   "id": "kopia",
+   "mode": "formalny",
+   "paths": [
+    "periodic"
+   ],
+   "keywords": [
+    "kopi",
+    "akta",
+    "oryginal",
+    "dorecz"
+   ],
+   "phrases": [
+    "kopia arkusza"
+   ],
+   "answer": "Po zapoznaniu ocenianego z oceną oryginał arkusza trafia do akt osobowych, a kopię doręczasz ocenianemu. Po podpisaniu części I również kopia części I trafia do ocenianego.",
+   "fragmentIds": [
+    "r16-p12",
+    "r16-p6"
+   ]
+  },
+  {
+   "id": "pierwsza-rozmowa-wstepna",
+   "mode": "formalny",
+   "paths": [
+    "first"
+   ],
+   "keywords": [
+    "rozmow",
+    "wstepn",
+    "21",
+    "termin",
+    "kiedy",
+    "zatrudni"
+   ],
+   "phrases": [
+    "rozmowa wstepna",
+    "21 dni"
+   ],
+   "answer": "Rozmowę wstępną przeprowadzasz w ciągu 21 dni od nawiązania stosunku pracy. Omawiasz sposób dokonywania pierwszej oceny, obowiązki z OSP i oczekiwania, oczekiwania co do postawy, zaangażowania, postępów, relacji i terminowości oraz wyznaczasz termin sprawozdania.",
+   "fragmentIds": [
+    "r15-p3",
+    "r15-p4"
+   ]
+  },
+  {
+   "id": "pierwsza-warunki",
+   "mode": "formalny",
+   "paths": [
+    "first"
+   ],
+   "keywords": [
+    "warunk",
+    "pozytywn",
+    "negatywn",
+    "kiedy",
+    "egzamin",
+    "sprawozdani"
+   ],
+   "phrases": [
+    "warunki pozytywnej"
+   ],
+   "answer": "Pozytywna pierwsza ocena wymaga łącznie: zaliczenia egzaminu ze służby przygotowawczej (chyba że nie dotyczy), złożenia sprawozdania w terminie, nie więcej niż jednej oceny cząstkowej 3 pkt oraz oceny łącznej co najmniej 5 pkt. Niespełnienie któregokolwiek warunku oznacza ocenę negatywną.",
+   "fragmentIds": [
+    "r15-p10",
+    "r15-p10-3"
+   ]
+  },
+  {
+   "id": "pierwsza-skala",
+   "mode": "formalny",
+   "paths": [
+    "first"
+   ],
+   "keywords": [
+    "skal",
+    "punkt",
+    "oceny",
+    "ile"
+   ],
+   "phrases": [
+    "skala ocen",
+    "skala pierwszej"
+   ],
+   "answer": "W pierwszej ocenie oceny cząstkowe przyznajesz w skali 3/5/7: 3 pkt — poniżej, 5 — na poziomie, 7 — powyżej oczekiwań. Ocena łączna to średnia arytmetyczna ocen cząstkowych. Skala 1–9 dotyczy oceny okresowej, nie pierwszej.",
+   "fragmentIds": [
+    "r15-p9",
+    "r15-p7"
+   ]
+  },
+  {
+   "id": "pierwsza-egzamin",
+   "mode": "formalny",
+   "paths": [
+    "first"
+   ],
+   "keywords": [
+    "egzamin",
+    "zwolni",
+    "ksap",
+    "zastepstw",
+    "nie dotyczy",
+    "sluzb"
+   ],
+   "phrases": [
+    "sluzba przygotowawcza"
+   ],
+   "answer": "Warunek zaliczenia egzaminu nie dotyczy: absolwenta KSAP, który nie złożył wniosku o mianowanie, pracownika zatrudnionego na zastępstwo oraz pracownika zatrudnionego na wyższym stanowisku w służbie cywilnej.",
+   "fragmentIds": [
+    "r15-p10-3",
+    "r15-p2"
+   ]
+  },
+  {
+   "id": "pierwsza-sprawozdanie",
+   "mode": "formalny",
+   "paths": [
+    "first"
+   ],
+   "keywords": [
+    "sprawozdani",
+    "zawier",
+    "co",
+    "okres",
+    "7 miesiec",
+    "termin"
+   ],
+   "phrases": [
+    "co zawiera sprawozdanie"
+   ],
+   "answer": "Sprawozdanie obejmuje co najmniej 7 miesięcy pracy. Oceniany opisuje w nim zadania z OSP, problemy i sposób ich rozwiązania, nowe umiejętności i wiedzę oraz wnioski dotyczące usprawnień. Termin sprawozdania ustalasz tak, by przypadał po 8 miesiącach od zatrudnienia.",
+   "fragmentIds": [
+    "r15-p6",
+    "r15-p4"
+   ]
+  },
+  {
+   "id": "pierwsza-termin",
+   "mode": "formalny",
+   "paths": [
+    "first"
+   ],
+   "keywords": [
+    "kiedy",
+    "termin",
+    "8 miesiec",
+    "okno",
+    "miesiac przed",
+    "umow"
+   ],
+   "phrases": [
+    "kiedy pierwsza ocena",
+    "termin pierwszej oceny"
+   ],
+   "answer": "Pierwszej oceny dokonujesz nie wcześniej niż po 8 miesiącach od nawiązania stosunku pracy i nie później niż miesiąc przed końcem umowy — okno trwa prawie 3 miesiące. Terminy liczysz według art. 112 KC.",
+   "fragmentIds": [
+    "pp-termin",
+    "r15-p4"
+   ]
+  },
+  {
+   "id": "pierwsza-po",
+   "mode": "formalny",
+   "paths": [
+    "first"
+   ],
+   "keywords": [
+    "po",
+    "wniosek",
+    "dyrektor",
+    "umow",
+    "nieokreslon",
+    "kierujac"
+   ],
+   "phrases": [
+    "co po pierwszej",
+    "umowa na czas nieokreslony"
+   ],
+   "answer": "Po pierwszej ocenie kierujący komórką składa wniosek do dyrektora generalnego: przy ocenie pozytywnej — o zawarcie umowy na czas nieokreślony; przy negatywnej — o niezawieranie takiej umowy albo o rozwiązanie umowy na czas określony.",
+   "fragmentIds": [
+    "pp-wniosek",
+    "r15-p11"
+   ]
+  },
+  {
+   "id": "pierwsza-rozmowa-oceniajaca",
+   "mode": "formalny",
+   "paths": [
+    "first"
+   ],
+   "keywords": [
+    "rozmow",
+    "oceniajac",
+    "kto",
+    "uczestnicz",
+    "kierujac"
+   ],
+   "phrases": [
+    "rozmowa oceniajaca"
+   ],
+   "answer": "Rozmowę oceniającą przeprowadzasz niezwłocznie po złożeniu sprawozdania (albo po upływie terminu). Może w niej uczestniczyć kierujący komórką organizacyjną. Możesz omówić też kierunki rozwoju zawodowego.",
+   "fragmentIds": [
+    "r15-p7"
+   ]
+  },
+  {
+   "id": "pierwsza-uzasadnienie",
+   "mode": "formalny",
+   "paths": [
+    "first"
+   ],
+   "keywords": [
+    "uzasadni",
+    "wnioski",
+    "rozwoj",
+    "obowiazkow"
+   ],
+   "answer": "Przy negatywnej pierwszej ocenie uzasadnienie jest obowiązkowe, przy pozytywnej — fakultatywne. Wnioski dotyczące rozwoju możesz sporządzić tylko przy ocenie pozytywnej, w porozumieniu z kierującym komórką.",
+   "fragmentIds": [
+    "r15-p10-uz"
+   ]
+  },
+  {
+   "id": "sugestia",
+   "mode": "formalny",
+   "paths": [],
+   "keywords": [
+    "sugesti",
+    "liczy",
+    "oblicz",
+    "srednia wskaznik",
+    "skad",
+    "algorytm",
+    "jak powstaje"
+   ],
+   "phrases": [
+    "jak liczona jest sugestia",
+    "skad sugestia"
+   ],
+   "answer": "Sugestia to reguła narzędzia, nie przepis. Każdy wybrany opis zachowania ma wartość 1/3/5/7/9 pkt; narzędzie liczy średnią z wskaźników z wybranym zachowaniem i przypisuje ją do skali progami z § 11. Wskaźniki „brak podstaw” są pomijane. Ocenę cząstkową zawsze wybierasz Ty.",
+   "bullets": [
+    "Gdy żaden wskaźnik nie ma podstaw, narzędzie nie sugeruje oceny i niczego nie obniża."
+   ],
+   "fragmentIds": [
+    "regula-sugestia",
+    "regula-pierwsza",
+    "r16-p11-2"
+   ],
+   "toolRule": true
+  },
+  {
+   "id": "brak-podstaw",
+   "mode": "formalny",
+   "paths": [],
+   "keywords": [
+    "brak podstaw",
+    "nie mialem okazji",
+    "nie zaobserwowal",
+    "brak obserwacji",
+    "nie bylo okazji"
+   ],
+   "phrases": [
+    "brak podstaw do oceny"
+   ],
+   "answer": "Jeżeli nie było okazji zaobserwować zachowania, zaznacz „brak podstaw do oceny” dla danego wskaźnika. Taki wskaźnik nie obniża sugestii — jest po prostu pomijany.",
+   "fragmentIds": [
+    "model-brak",
+    "regula-sugestia"
+   ],
+   "toolRule": true
+  },
+  {
+   "id": "obserwacje",
+   "mode": "formalny",
+   "paths": [],
+   "keywords": [
+    "obserwac",
+    "notatk",
+    "zapisyw",
+    "przyklad",
+    "fakt",
+    "jak opisac"
+   ],
+   "phrases": [
+    "jak opisac obserwacje",
+    "jak zapisywac"
+   ],
+   "answer": "Opieraj ocenę na konkretnych przykładach z okresu oceny: zapisz sytuację, działanie i rezultat. Notuj na bieżąco — poradnik zaleca formę pisemną, żeby fakty z początku okresu nie zniekształciły się w pamięci.",
+   "fragmentIds": [
+    "model-przyklady",
+    "po-obserwacje"
+   ]
+  }
+ ],
+ "conversation": [
+  {
+   "id": "rozmowa-start",
+   "mode": "rozmowa",
+   "paths": [],
+   "keywords": [
+    "zaczac",
+    "rozpoczac",
+    "otworzyc",
+    "poczatek",
+    "jak zaczac"
+   ],
+   "answer": "Zacznij od celu i planu rozmowy: podsumowujecie okres oceny na podstawie przykładów i planujecie rozwój. Zaproś pracownika do własnej oceny, zanim przedstawisz swoją — rozmowa ma być dialogiem, nie monologiem.",
+   "bullets": [
+    "„Chciałbym, żebyśmy przejrzeli najważniejsze zadania z ostatnich miesięcy i ustalili, co dalej.”",
+    "„Które sytuacje z tego okresu uważasz za najważniejsze?”"
+   ],
+   "fragmentIds": [
+    "po-dialog",
+    "r16-p10"
+   ]
+  },
+  {
+   "id": "rozmowa-trudna",
+   "mode": "rozmowa",
+   "paths": [],
+   "keywords": [
+    "trudn",
+    "negatywn",
+    "krytyk",
+    "przekazac",
+    "slab",
+    "niepelny",
+    "blad",
+    "komunikat"
+   ],
+   "phrases": [
+    "trudna informacja",
+    "niepelny komunikat"
+   ],
+   "answer": "Opisz sytuację, zachowanie i jego skutek — bez ocen cech osoby. Zapytaj o perspektywę pracownika i wspólnie ustalcie, co zrobić inaczej następnym razem.",
+   "bullets": [
+    "Sytuacja: „Podczas incydentu 12.02.2026…”",
+    "Zachowanie: „…komunikat do RCB nie zawierał skali i podjętych działań…”",
+    "Skutek: „…RCB dopytywało, pełny obraz był po ok. 40 minutach.”",
+    "Pytanie: „Czego potrzebujesz, żeby następny komunikat był kompletny od razu?”"
+   ],
+   "fragmentIds": [
+    "model-przyklady",
+    "po-uzasadnienie"
+   ]
+  },
+  {
+   "id": "rozmowa-rozwoj",
+   "mode": "rozmowa",
+   "paths": [],
+   "keywords": [
+    "rozwoj",
+    "iprz",
+    "szkoleni",
+    "mentoring",
+    "coaching",
+    "plan rozwoju",
+    "kariera"
+   ],
+   "answer": "Zapytaj o kierunki rozwoju i potrzeby, zanim zaproponujesz formy. Połącz je z obszarami ocenionymi niżej i z kompetencjami kluczowymi dla stanowiska.",
+   "bullets": [
+    "„Które zadania chcesz realizować samodzielnie w kolejnym okresie?”",
+    "„Jakie wsparcie pomoże Ci najbardziej: szkolenie, mentoring, udział w ćwiczeniach?”",
+    "„Po czym poznamy za pół roku, że to działa?”"
+   ],
+   "fragmentIds": [
+    "r16-p10",
+    "po-iprz"
+   ]
+  },
+  {
+   "id": "rozmowa-niezgoda",
+   "mode": "rozmowa",
+   "paths": [],
+   "keywords": [
+    "nie zgadza",
+    "sprzeciw",
+    "emocj",
+    "kloci",
+    "konflikt",
+    "zdenerwowan"
+   ],
+   "answer": "Wysłuchaj argumentów i odnieś się do konkretnych przykładów. Jeśli pracownik się nie zgadza, poinformuj spokojnie o prawie do sprzeciwu w ciągu 7 dni od zapoznania się z oceną.",
+   "fragmentIds": [
+    "ark-sprzeciw",
+    "po-dialog"
+   ]
+  },
+  {
+   "id": "rozmowa-koniec",
+   "mode": "rozmowa",
+   "paths": [],
+   "keywords": [
+    "zakonczyc",
+    "podsumowa",
+    "koniec",
+    "nastepne kroki"
+   ],
+   "answer": "Podsumuj najważniejsze ustalenia i kolejne kroki: kiedy sporządzisz ocenę na piśmie, kiedy nastąpi zapoznanie, jakie wnioski trafią do IPRZ.",
+   "fragmentIds": [
+    "r16-p11-5",
+    "r16-p12"
+   ]
+  }
+ ]
+}
