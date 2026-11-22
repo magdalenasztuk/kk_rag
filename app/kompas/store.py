@@ -56,18 +56,23 @@ class PostgresStore:
         import psycopg
         self._psycopg = psycopg
         self._url = url
-        with psycopg.connect(url, autocommit=True) as conn:
+        with self._connect() as conn:
             conn.execute(
                 "CREATE TABLE IF NOT EXISTS kompas_workspaces (id TEXT PRIMARY KEY, state JSONB NOT NULL, "
                 "updated_at TIMESTAMPTZ NOT NULL DEFAULT now())")
 
+    def _connect(self):
+        # Neon na Vercelu idzie przez PgBouncer (transaction mode). Przygotowane
+        # zapytania psycopg nie przeżywają oddania połączenia do puli.
+        return self._psycopg.connect(self._url, autocommit=True, prepare_threshold=None)
+
     def load(self, workspace_id: str) -> str | None:
-        with self._psycopg.connect(self._url, autocommit=True) as conn:
+        with self._connect() as conn:
             row = conn.execute("SELECT state::text FROM kompas_workspaces WHERE id = %s", (workspace_id,)).fetchone()
         return row[0] if row else None
 
     def save(self, workspace_id: str, state_json: str) -> None:
-        with self._psycopg.connect(self._url, autocommit=True) as conn:
+        with self._connect() as conn:
             conn.execute(
                 "INSERT INTO kompas_workspaces (id, state, updated_at) VALUES (%s, %s::jsonb, now()) "
                 "ON CONFLICT (id) DO UPDATE SET state = excluded.state, updated_at = now()",
@@ -77,8 +82,5 @@ class PostgresStore:
 @lru_cache(maxsize=1)
 def get_store() -> WorkspaceStore:
     if settings.database_url:
-        try:
-            return PostgresStore(settings.database_url)
-        except Exception as e:  # baza niedostępna -> demo działa dalej na SQLite
-            print(f"[store] Postgres niedostępny, używam SQLite: {e!r}")
+        return PostgresStore(settings.database_url)
     return SqliteStore(settings.workspaces_db)

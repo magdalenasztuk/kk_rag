@@ -7,6 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.api.routes import router
 from app.core.config import settings
 from app.kompas.api import router as kompas_router
+from app.kompas.store import get_store
 from app.rag.index import get_index
 from app.rag.memory import SessionStore
 from app.rag.retrieve import get_reranker
@@ -30,7 +31,8 @@ app.add_middleware(CORSMiddleware, allow_origins=settings.cors_origins, allow_cr
 def health():
     idx = app.state.index
     return {"status": "ok", "chunks": len(idx.chunks), "dense": idx.dense_enabled and idx.col is not None,
-            "llm": settings.resolved_answer_model() if settings.llm_available() else "offline"}
+            "llm": settings.resolved_answer_model() if settings.llm_available() else "offline",
+            "store": get_store().kind}
 
 
 app.include_router(router, prefix="/api/v1")
