@@ -4,6 +4,7 @@ __pycache__/
 .env
 .hf/
 .vercel/
+.tmp/
 data/chroma/
 data/*.sqlite
 data/traces.jsonl

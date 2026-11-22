@@ -251,7 +251,7 @@ def justification(c: dict, generated_at: str) -> dict:
               "odniesienie do wyniku. Nie zmieniaj ocen. Oznacz [do uzupełnienia] miejsca, gdzie brakuje faktów.")
     data = _call(DRAFT_SYSTEM, user, 1200)
     text = collapse_whitespace(str((data or {}).get("text") or ""))
-    return {**base, "text": text, "basedOn": [*base["basedOn"], "Szkic: Claude (do weryfikacji)"]} if len(text) > 80 else base
+    return {**base, "text": text, "basedOn": [*base["basedOn"], "Szkic asystenta (do weryfikacji)"]} if len(text) > 80 else base
 
 
 def development_plan(c: dict, generated_at: str) -> dict:
@@ -264,4 +264,4 @@ def development_plan(c: dict, generated_at: str) -> dict:
               "zadań z opisu stanowiska i potrzeb zgłoszonych przez pracownika.")
     data = _call(DRAFT_SYSTEM, user, 900)
     text = str((data or {}).get("text") or "").strip()
-    return {**base, "text": text, "basedOn": [*base["basedOn"], "Szkic: Claude (do weryfikacji)"]} if len(text) > 60 else base
+    return {**base, "text": text, "basedOn": [*base["basedOn"], "Szkic asystenta (do weryfikacji)"]} if len(text) > 60 else base
