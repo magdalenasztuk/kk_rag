@@ -3,7 +3,6 @@ from __future__ import annotations
 from app.domain.dates import plural_pl
 from app.kompas import reference as ref
 from app.kompas.auth import public_user
-from app.kompas.errors import bad_request
 from app.kompas.router import RouteContext, Router
 from app.kompas.workspace import Workspace
 
@@ -38,19 +37,10 @@ def _demo_info(ws: Workspace) -> dict:
     return {
         "scenarioId": ws.state["scenarioId"],
         "today": ws.today,
-        "scenarios": ref.scenarios(),
+        "scenarios": [],
         "accounts": [{"id": u["id"], "fullName": u["fullName"], "jobTitle": u["jobTitle"], "roles": u["roles"],
                       "hint": _account_hint(ws, u)} for u in ref.users()],
     }
-
-
-def _switch_scenario(ctx: RouteContext) -> dict:
-    scenario_id = ctx.json().get("scenarioId")
-    scenario = next((s for s in ref.scenarios() if s["id"] == scenario_id), None)
-    if not scenario:
-        raise bad_request("Nieznany scenariusz demonstracyjny.")
-    ctx.ws.reset(scenario["id"], "u-piotr")
-    return {"landing": scenario["landing"]}
 
 
 def _reset(ctx: RouteContext) -> dict:
@@ -62,5 +52,4 @@ def register(router: Router) -> None:
     (router
      .get("/session", lambda ctx: session_info(ctx.ws, ctx.user))
      .get("/demo", lambda ctx: _demo_info(ctx.ws))
-     .post("/demo/scenario", _switch_scenario)
      .post("/demo/reset", _reset))

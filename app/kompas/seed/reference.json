@@ -24,54 +24,6 @@
    "email": "marta.wisniewska@kompas.demo",
    "login": "marta",
    "password": "marta"
-  },
-  {
-   "id": "u-ewa-mazur",
-   "fullName": "Ewa Mazur",
-   "jobTitle": "Naczelnik wydziału",
-   "orgUnitId": "dsi-wwi",
-   "roles": [
-    "manager"
-   ],
-   "email": "ewa.mazur@kompas.demo",
-   "login": "ewa.mazur",
-   "password": "ewa"
-  },
-  {
-   "id": "u-karolina",
-   "fullName": "Karolina Sowa",
-   "jobTitle": "Zastępca dyrektora departamentu",
-   "orgUnitId": "dwm",
-   "roles": [
-    "manager"
-   ],
-   "email": "karolina.sowa@kompas.demo",
-   "login": "karolina",
-   "password": "karolina"
-  },
-  {
-   "id": "u-tomasz",
-   "fullName": "Tomasz Lis",
-   "jobTitle": "Naczelnik wydziału",
-   "orgUnitId": "bdg-wop",
-   "roles": [
-    "manager"
-   ],
-   "email": "tomasz.lis@kompas.demo",
-   "login": "tomasz",
-   "password": "tomasz"
-  },
-  {
-   "id": "u-adam",
-   "fullName": "Adam Sikora",
-   "jobTitle": "Dyrektor departamentu",
-   "orgUnitId": "dc",
-   "roles": [
-    "manager"
-   ],
-   "email": "adam.sikora@kompas.demo",
-   "login": "adam",
-   "password": "adam"
   }
  ],
  "employees": [
@@ -185,79 +137,6 @@
     "firstContractEnd": "2027-03-01"
    },
    "absences": []
-  },
-  {
-   "id": "e-jan",
-   "firstName": "Jan",
-   "lastName": "Kowalski",
-   "fullName": "Jan Kowalski",
-   "positionId": "pos-dsi-wwi-5",
-   "orgUnitId": "dsi-wwi",
-   "supervisorId": "u-ewa-mazur",
-   "status": "pracownik-sc",
-   "employment": {
-    "since": "2020-10-01",
-    "basis": "czas-nieokreslony"
-   },
-   "absences": [],
-   "previousAssessment": {
-    "draftedAt": "2026-10-28",
-    "acknowledgedAt": "2026-10-30",
-    "outcome": "pozytywna",
-    "level": "na-poziomie"
-   }
-  },
-  {
-   "id": "e-pawel",
-   "firstName": "Paweł",
-   "lastName": "Wróbel",
-   "fullName": "Paweł Wróbel",
-   "positionId": "pos-dwm-wkam-1",
-   "orgUnitId": "dwm-wkam",
-   "supervisorId": "u-karolina",
-   "status": "urzednik-sc",
-   "employment": {
-    "since": "2012-04-01",
-    "basis": "czas-nieokreslony"
-   },
-   "absences": [],
-   "previousAssessment": {
-    "draftedAt": "2026-10-30",
-    "acknowledgedAt": "2026-11-03",
-    "outcome": "pozytywna",
-    "level": "powyzej"
-   },
-   "civilServant": {
-    "appointedYear": 2015,
-    "grade": "trzeci",
-    "gradeGrantedAt": "2023-03-01"
-   }
-  },
-  {
-   "id": "e-katarzyna",
-   "firstName": "Katarzyna",
-   "lastName": "Wójcik",
-   "fullName": "Katarzyna Wójcik",
-   "positionId": "pos-bdg-wop-3",
-   "orgUnitId": "bdg-wop",
-   "supervisorId": "u-tomasz",
-   "status": "urzednik-sc",
-   "employment": {
-    "since": "2013-01-02",
-    "basis": "czas-nieokreslony"
-   },
-   "absences": [],
-   "previousAssessment": {
-    "draftedAt": "2024-11-20",
-    "acknowledgedAt": "2024-11-22",
-    "outcome": "pozytywna",
-    "level": "powyzej"
-   },
-   "civilServant": {
-    "appointedYear": 2016,
-    "grade": "drugi",
-    "gradeGrantedAt": "2022-07-01"
-   }
   }
  ],
  "orgUnits": [
@@ -874,24 +753,5 @@
    ]
   }
  ],
- "scenarios": [
-  {
-   "id": "demo",
-   "label": "Scenariusz A — pełna ścieżka",
-   "description": "Anna Nowak, etap ocen: 7 z 8 decyzji. Po decyzji 7 pkt średnia wynosi 6,25 — „powyżej oczekiwań”.",
-   "landing": "/oceny/case-anna/ocena"
-  },
-  {
-   "id": "weto",
-   "label": "Scenariusz B — reguła weta",
-   "description": "Sytuacje kryzysowe 1 pkt, decyzje 5 pkt: średnia 5,50, a mimo to ocena negatywna (§ 11 ust. 1 pkt 4).",
-   "landing": "/oceny/case-anna/podsumowanie"
-  },
-  {
-   "id": "granica",
-   "label": "Granica 6,00",
-   "description": "Podejmowanie decyzji 5 pkt: średnia dokładnie 6,00 to „na poziomie oczekiwań”, nie „powyżej”.",
-   "landing": "/oceny/case-anna/podsumowanie"
-  }
- ]
+ "scenarios": []
 }

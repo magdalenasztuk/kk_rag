@@ -128,6 +128,21 @@ def test_observation_enrichment_validates_indicator_ids(llm):
     assert result.get("suggestedTaskId") != "nope"
 
 
+def test_conversation_questions_use_different_facts():
+    from app.kompas.engines.drafts import build_conversation_plan
+
+    plan = build_conversation_plan(_case("case-anna"), NOW)
+    questions = [question for item in plan["items"] for question in item["questions"]]
+    assert len(questions) >= 8
+    assert len(set(questions)) == len(questions)
+    openings = [question[:42] for question in questions]
+    assert len(set(openings)) > len(openings) // 2
+    nato = [question for question in questions if "NATO" in question]
+    assert len(nato) == 2 and nato[0] != nato[1]
+    assert all("Jak oceniasz sytuację" not in question for question in questions)
+    assert any("komunikat był niepełny" in question for question in questions)
+
+
 def test_drafts_fall_back_without_key(monkeypatch):
     monkeypatch.setattr(settings, "llm_provider", "anthropic")
     monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)

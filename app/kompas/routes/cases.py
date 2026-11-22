@@ -87,7 +87,7 @@ def _actor(ctx: RouteContext) -> dict:
 def _start_case(ctx: RouteContext) -> dict:
     body = ctx.json()
     user = ctx.user
-    employee = ref.employee(str(body.get("employeeId") or ""))
+    employee = ctx.ws.employee(str(body.get("employeeId") or ""))
     if "hr" not in user["roles"] and employee["supervisorId"] != user["id"]:
         raise forbidden("Ocenę uruchamiają kadry albo bezpośredni przełożony.")
     path = "first" if body.get("path") == "first" else "periodic"

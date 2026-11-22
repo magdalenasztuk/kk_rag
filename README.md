@@ -17,8 +17,7 @@ Angular (Vercel) ──/api/*──▶ FastAPI (Vercel, api/index.py)
 
 - **Logowanie**: `POST /api/auth/login` (login + hasło kont demo) → Bearer token HMAC. Bez tokenu całe `/api/*`
   (poza `auth/login`, `auth/accounts`, `auth/logout`, health) zwraca 401 — chroni klucz Anthropic przed
-  anonimowym użyciem. Konta: `piotr/piotr`, `marta/marta`, `ewa.mazur/ewa`, `karolina/karolina`,
-  `tomasz/tomasz`, `adam/adam`.
+  anonimowym użyciem. Konta: `piotr/piotr` (oceniający), `marta/marta` (kadry).
 - **Przestrzeń robocza**: każda przeglądarka wysyła `X-Kompas-Workspace` (losowe id z localStorage) i dostaje
   własną kopię danych demo — jurorzy nie nadpisują sobie spraw. Bez nagłówka: cookie `kompas_ws`, potem `default`.
 - **Magazyn**: `DATABASE_URL` / `POSTGRES_URL` (np. Neon z integracji Vercel) → tabela `kompas_workspaces` (JSONB);

@@ -1,5 +1,5 @@
 {
- "version": 8,
+ "version": 9,
  "scenarioId": "demo",
  "today": "2026-11-21",
  "sessionUserId": "u-piotr",
@@ -816,7 +816,7 @@
    ],
    "history": [
     {
-     "id": "h-gpmkyho149",
+     "id": "h-nvm9anyhzz",
      "at": "2024-10-15T08:30:00.000Z",
      "actor": {
       "id": "u-marta",
@@ -827,7 +827,7 @@
      "summary": "Uruchomiono ocenę okresową."
     },
     {
-     "id": "h-7196t3o14a",
+     "id": "h-94phmayi00",
      "at": "2024-10-28T09:05:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -839,7 +839,7 @@
      "stepId": "stanowisko"
     },
     {
-     "id": "h-0tnym3o14a",
+     "id": "h-qic51ryi00",
      "at": "2024-10-28T09:12:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -851,7 +851,7 @@
      "stepId": "stanowisko"
     },
     {
-     "id": "h-elbmqqo14a",
+     "id": "h-kpe28uyi00",
      "at": "2024-10-28T09:40:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -863,7 +863,7 @@
      "stepId": "kryteria"
     },
     {
-     "id": "h-xdvlbwo14a",
+     "id": "h-pbv6f7yi00",
      "at": "2024-11-05T12:20:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -875,7 +875,7 @@
      "stepId": "rozmowa-wstepna"
     },
     {
-     "id": "h-msqwxwo14a",
+     "id": "h-3jcl76yi00",
      "at": "2025-03-14T16:20:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -887,7 +887,7 @@
      "stepId": "obserwacje"
     },
     {
-     "id": "h-4v2rsto14a",
+     "id": "h-r9sce3yi00",
      "at": "2025-06-18T16:20:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -899,7 +899,7 @@
      "stepId": "obserwacje"
     },
     {
-     "id": "h-62obz8o14a",
+     "id": "h-tjq2vuyi00",
      "at": "2025-09-16T16:20:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -911,7 +911,7 @@
      "stepId": "obserwacje"
     },
     {
-     "id": "h-bixqreo14a",
+     "id": "h-hvpnm9yi00",
      "at": "2026-02-12T16:20:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -923,7 +923,7 @@
      "stepId": "obserwacje"
     },
     {
-     "id": "h-3b7t98o14a",
+     "id": "h-tqrwhbyi00",
      "at": "2026-05-22T16:20:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -935,7 +935,7 @@
      "stepId": "obserwacje"
     },
     {
-     "id": "h-3g7h8co14a",
+     "id": "h-x3nb4cyi00",
      "at": "2026-09-08T16:20:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -947,7 +947,7 @@
      "stepId": "obserwacje"
     },
     {
-     "id": "h-s26krpo14a",
+     "id": "h-seyxw7yi00",
      "at": "2025-05-26T10:00:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -958,7 +958,7 @@
      "summary": "Przedłużono termin oceny o 42 dni (art. 81 ust. 7); oceniana zawiadomiona pisemnie."
     },
     {
-     "id": "h-pj8uyyo14a",
+     "id": "h-zocfc3yi00",
      "at": "2026-10-20T08:00:00.000Z",
      "actor": {
       "id": "u-marta",
@@ -969,7 +969,7 @@
      "summary": "Kadry przypomniały o terminie oceny 21.11.2026."
     },
     {
-     "id": "h-iraj35o14a",
+     "id": "h-agj2a5yi00",
      "at": "2026-11-17T15:40:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -981,7 +981,7 @@
      "stepId": "rozmowa-oceniajaca"
     },
     {
-     "id": "h-sfz6kmo14a",
+     "id": "h-penakgyi00",
      "at": "2026-11-18T11:30:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -993,7 +993,7 @@
      "stepId": "rozmowa-oceniajaca"
     },
     {
-     "id": "h-5jfrt0o14a",
+     "id": "h-x2d17byi00",
      "at": "2026-11-20T14:05:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -1005,7 +1005,7 @@
      "stepId": "ocena"
     },
     {
-     "id": "h-ykzf8xo14a",
+     "id": "h-ixcj45yi00",
      "at": "2026-11-20T14:12:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -1017,7 +1017,7 @@
      "stepId": "ocena"
     },
     {
-     "id": "h-tzzj1xo14a",
+     "id": "h-389g8nyi00",
      "at": "2026-11-20T14:20:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -1029,7 +1029,7 @@
      "stepId": "ocena"
     },
     {
-     "id": "h-4i3yymo14a",
+     "id": "h-k026r9yi00",
      "at": "2026-11-20T14:26:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -1041,7 +1041,7 @@
      "stepId": "ocena"
     },
     {
-     "id": "h-t30daho14a",
+     "id": "h-6iti6nyi00",
      "at": "2026-11-20T14:31:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -1053,7 +1053,7 @@
      "stepId": "ocena"
     },
     {
-     "id": "h-27sneyo14a",
+     "id": "h-skl271yi00",
      "at": "2026-11-20T14:38:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -1065,7 +1065,7 @@
      "stepId": "ocena"
     },
     {
-     "id": "h-0qimwxo14a",
+     "id": "h-y77gfryi00",
      "at": "2026-11-20T14:46:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -1232,7 +1232,7 @@
    "documents": [],
    "history": [
     {
-     "id": "h-8h0yibo14a",
+     "id": "h-0xi8uzyi00",
      "at": "2026-11-16T09:05:00.000Z",
      "actor": {
       "id": "u-marta",
@@ -1551,7 +1551,7 @@
    "documents": [],
    "history": [
     {
-     "id": "h-0en7uqo14a",
+     "id": "h-3gf89ayi00",
      "at": "2024-12-18T10:00:00.000Z",
      "actor": {
       "id": "u-marta",
@@ -1562,7 +1562,7 @@
      "summary": "Uruchomiono ocenę okresową."
     },
     {
-     "id": "h-qr1qeyo14b",
+     "id": "h-at4eutyi01",
      "at": "2025-01-10T13:00:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -1574,7 +1574,7 @@
      "stepId": "rozmowa-wstepna"
     },
     {
-     "id": "h-f41wfbo14b",
+     "id": "h-aqkg2qyi01",
      "at": "2025-06-03T16:20:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -1586,7 +1586,7 @@
      "stepId": "obserwacje"
     },
     {
-     "id": "h-bnsc4co14b",
+     "id": "h-u2zk78yi01",
      "at": "2025-11-20T16:20:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -1598,7 +1598,7 @@
      "stepId": "obserwacje"
     },
     {
-     "id": "h-ix9gdbo14b",
+     "id": "h-4fdqh7yi01",
      "at": "2026-06-12T16:20:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -1689,9 +1689,9 @@
     "jobTitle": "Naczelnik wydziału"
    },
    "headOfUnit": {
-    "id": "u-adam",
-    "fullName": "Adam Sikora",
-    "jobTitle": "Dyrektor departamentu"
+    "id": "u-piotr",
+    "fullName": "Piotr Zieliński",
+    "jobTitle": "Naczelnik wydziału"
    },
    "orgUnitName": "Wydział Zarządzania Kryzysowego, Spraw Obronnych i Cyberbezpieczeństwa",
    "createdAt": "2026-03-03T08:30:00.000Z",
@@ -1859,7 +1859,7 @@
    "documents": [],
    "history": [
     {
-     "id": "h-8lpvpgo14b",
+     "id": "h-ooacpqyi01",
      "at": "2026-03-03T08:30:00.000Z",
      "actor": {
       "id": "u-marta",
@@ -1870,7 +1870,7 @@
      "summary": "Uruchomiono pierwszą ocenę."
     },
     {
-     "id": "h-idrcyho14b",
+     "id": "h-w6vvn4yi01",
      "at": "2026-03-16T11:00:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -1882,7 +1882,7 @@
      "stepId": "rozmowa-wstepna"
     },
     {
-     "id": "h-dp21aeo14b",
+     "id": "h-l34zttyi01",
      "at": "2026-06-30T09:00:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -1894,7 +1894,7 @@
      "stepId": "sluzba-przygotowawcza"
     },
     {
-     "id": "h-3lz0s3o14b",
+     "id": "h-5suejjyi01",
      "at": "2026-05-12T16:20:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -1906,7 +1906,7 @@
      "stepId": "obserwacje"
     },
     {
-     "id": "h-653fuho14b",
+     "id": "h-9r30zgyi01",
      "at": "2026-07-08T16:20:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -1918,7 +1918,7 @@
      "stepId": "obserwacje"
     },
     {
-     "id": "h-t867zmo14b",
+     "id": "h-m37oz3yi01",
      "at": "2026-09-24T16:20:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -1930,7 +1930,7 @@
      "stepId": "obserwacje"
     },
     {
-     "id": "h-3c344ho14b",
+     "id": "h-aqyyk8yi01",
      "at": "2026-11-18T10:00:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -1940,998 +1940,6 @@
      "kind": "krok",
      "summary": "Sprawozdanie złożone 17.11.2026 — w terminie.",
      "stepId": "sprawozdanie"
-    }
-   ]
-  },
-  {
-   "id": "case-jan",
-   "path": "periodic",
-   "status": "w-toku",
-   "employee": {
-    "id": "e-jan",
-    "firstName": "Jan",
-    "lastName": "Kowalski",
-    "fullName": "Jan Kowalski",
-    "positionId": "pos-dsi-wwi-5",
-    "orgUnitId": "dsi-wwi",
-    "supervisorId": "u-ewa-mazur",
-    "status": "pracownik-sc",
-    "employment": {
-     "since": "2020-10-01",
-     "basis": "czas-nieokreslony"
-    },
-    "absences": [],
-    "previousAssessment": {
-     "draftedAt": "2026-10-28",
-     "acknowledgedAt": "2026-10-30",
-     "outcome": "pozytywna",
-     "level": "na-poziomie"
-    }
-   },
-   "position": {
-    "id": "pos-dsi-wwi-5",
-    "code": "DSI WWI 5",
-    "title": "Radca",
-    "orgUnitId": "dsi-wwi",
-    "office": "Ministerstwo Cyfryzacji",
-    "department": "Departament Rozwoju i Bezpieczeństwa Sztucznej Inteligencji",
-    "division": "Wydział Wspierania Innowacyjności",
-    "documentName": "OSP DSI WWI 5 radca.docx",
-    "fromOrganizer": true,
-    "purpose": "Zapewnienie wsparcia merytorycznego w zakresie rozwoju innowacyjnych rozwiązań opartych na sztucznej inteligencji poprzez rozwijanie mechanizmów wspierających zgodność z przepisami prawa oraz identyfikowanie barier dla rozwoju innowacyjności.",
-    "supervisedBy": {
-     "direct": "naczelnik wydziału",
-     "indirect": "zastępca dyrektora"
-    },
-    "subordinates": {
-     "range": "brak",
-     "quote": "☒ brak podległych pracowników"
-    },
-    "tasks": [
-     {
-      "id": "dsi5-t1",
-      "no": 1,
-      "kind": "dominujace",
-      "text": "Analizuje i dokonuje oceny prawa krajowego, prawa Unii Europejskiej, orzecznictwa krajowego i międzynarodowego, wytycznych organów unijnych oraz praktyki stosowania prawa w obszarze sztucznej inteligencji, a także przygotowuje propozycje zmian systemowych."
-     },
-     {
-      "id": "dsi5-t2",
-      "no": 2,
-      "kind": "dominujace",
-      "text": "Prowadzi sprawy dotyczące opinii indywidualnych oraz wyjaśnień dotyczących stosowania przepisów krajowych i unijnych z zakresu sztucznej inteligencji, w celu zapewnienia prawidłowej i jednolitej interpretacji oraz stosowania przepisów w tym obszarze."
-     },
-     {
-      "id": "dsi5-t3",
-      "no": 3,
-      "kind": "dominujace",
-      "text": "Przygotowuje projekty informacji zawierające pogląd Komisji w sprawach sztucznej inteligencji, w celu zapewnienia jednolitego stanowiska Komisji oraz wsparcia prawidłowego stosowania przepisów w obszarze sztucznej inteligencji."
-     },
-     {
-      "id": "dsi5-t4",
-      "no": 4,
-      "kind": "pozostale",
-      "text": "Analizuje bariery prawne i organizacyjne dla rozwoju innowacji w obszarze sztucznej inteligencji w celu opracowywania propozycji działań usprawniających."
-     },
-     {
-      "id": "dsi5-t5",
-      "no": 5,
-      "kind": "pozostale",
-      "text": "Przygotowuje projekty odpowiedzi na pisma i inne wystąpienia kierowane do Komisji Rozwoju i Bezpieczeństwa Sztucznej Inteligencji w ramach właściwości wydziału, w celu zapewnienia sprawnej, rzetelnej i zgodnej z obowiązującymi przepisami realizacji zadań Komisji oraz właściwej komunikacji z podmiotami zewnętrznymi."
-     }
-    ],
-    "authorizations": [],
-    "independence": "Pracownik samodzielnie proponuje przełożonym rozwiązania dla sytuacji wymagających dostarczenia wyspecjalizowanej wiedzy, w tym przypadków bezprecedensowych. Osoba na tym stanowisku tworzy nowe koncepcje realizacji zadań. W codziennej pracy spotyka się z koniecznością podejmowania decyzji uznaniowych, co wymaga umiejętności analitycznych. Niezbędna jest umiejętność przedstawiania argumentów oraz przekonywania innych do przyjęcia określonych stanowisk.",
-    "softCompetencies": [
-     "organizacja pracy i orientacja na osiąganie celów",
-     "wykorzystywanie wiedzy i doskonalenie zawodowe",
-     "współpraca"
-    ]
-   },
-   "evaluator": {
-    "id": "u-ewa-mazur",
-    "fullName": "Ewa Mazur",
-    "jobTitle": "Naczelnik wydziału"
-   },
-   "orgUnitName": "Wydział Wspierania Innowacyjności",
-   "createdAt": "2026-11-02T09:00:00.000Z",
-   "updatedAt": "2026-11-12T12:10:00.000Z",
-   "steps": {
-    "stanowisko": {
-     "completedAt": "2026-11-12T11:50:00.000Z",
-     "completedById": "u-ewa-mazur"
-    },
-    "kryteria": {
-     "completedAt": "2026-11-12T12:10:00.000Z",
-     "completedById": "u-ewa-mazur"
-    }
-   },
-   "deadlines": {
-    "dueDate": "2028-10-28",
-    "baseDueDate": "2028-10-28",
-    "basis": "24 miesiące od sporządzenia poprzedniej oceny (28.10.2026)",
-    "extensions": [],
-    "preliminaryDueDate": "2026-11-27"
-   },
-   "positionReview": {
-    "analysis": {
-     "analyzedAt": "2026-11-12T11:45:00.000Z",
-     "model": "kompas-mock-ai 0.3 (reguły + słowa kluczowe, offline)",
-     "recommendedVariant": "C",
-     "variantRationale": "OSP wskazuje brak podległych pracowników i stanowisko nie jest stanowiskiem kierownika urzędu — właściwy jest arkusz C.",
-     "variantEvidence": [
-      {
-       "text": "☒ brak podległych pracowników",
-       "location": "Liczba podległych pracowników"
-      },
-      {
-       "text": "Stanowisko bezpośrednio nadzorujące: naczelnik wydziału",
-       "location": "Miejsce stanowiska w strukturze"
-      }
-     ],
-     "legalBasis": "§ 3 ust. 4 i § 4 ust. 3 rozporządzenia z 2016 r.",
-     "suggestions": [
-      {
-       "criterionId": "c07",
-       "confidence": "wysoka",
-       "rationale": "Stanowisko wymaga analizy informacji i formułowania wniosków.",
-       "evidence": [
-        {
-         "text": "Analizuje i dokonuje oceny prawa krajowego, prawa Unii Europejskiej, orzecznictwa krajowego i międzynarodowego, wytycznych organów unijnych oraz praktyki stosowania prawa w obszarze sztucznej inteligencji, a także…",
-         "location": "Zadanie 1 (dominujące)",
-         "taskId": "dsi5-t1"
-        },
-        {
-         "text": "Prowadzi sprawy dotyczące opinii indywidualnych oraz wyjaśnień dotyczących stosowania przepisów krajowych i unijnych z zakresu sztucznej inteligencji, w celu zapewnienia prawidłowej i jednolitej interpretacji oraz…",
-         "location": "Zadanie 2 (dominujące)",
-         "taskId": "dsi5-t2"
-        },
-        {
-         "text": "Analizuje bariery prawne i organizacyjne dla rozwoju innowacji w obszarze sztucznej inteligencji w celu opracowywania propozycji działań usprawniających.",
-         "location": "Zadanie 4 (pozostałe)",
-         "taskId": "dsi5-t4"
-        }
-       ]
-      },
-      {
-       "criterionId": "c05",
-       "confidence": "wysoka",
-       "rationale": "Od osoby na stanowisku oczekuje się proponowania nowych rozwiązań.",
-       "evidence": [
-        {
-         "text": "Analizuje i dokonuje oceny prawa krajowego, prawa Unii Europejskiej, orzecznictwa krajowego i międzynarodowego, wytycznych organów unijnych oraz praktyki stosowania prawa w obszarze sztucznej inteligencji, a także…",
-         "location": "Zadanie 1 (dominujące)",
-         "taskId": "dsi5-t1"
-        },
-        {
-         "text": "Analizuje bariery prawne i organizacyjne dla rozwoju innowacji w obszarze sztucznej inteligencji w celu opracowywania propozycji działań usprawniających.",
-         "location": "Zadanie 4 (pozostałe)",
-         "taskId": "dsi5-t4"
-        },
-        {
-         "text": "Osoba na tym stanowisku tworzy nowe koncepcje realizacji zadań.",
-         "location": "Niezbędna samodzielność i inicjatywa"
-        }
-       ]
-      },
-      {
-       "criterionId": "c09",
-       "confidence": "niska",
-       "rationale": "Stanowisko wiąże się z wystąpieniami i prowadzeniem szkoleń.",
-       "evidence": [
-        {
-         "text": "Przygotowuje projekty odpowiedzi na pisma i inne wystąpienia kierowane do Komisji Rozwoju i Bezpieczeństwa Sztucznej Inteligencji w ramach właściwości wydziału, w celu zapewnienia sprawnej, rzetelnej i zgodnej z…",
-         "location": "Zadanie 5 (pozostałe)",
-         "taskId": "dsi5-t5"
-        }
-       ]
-      },
-      {
-       "criterionId": "c10",
-       "confidence": "niska",
-       "rationale": "Zadania obejmują obsługę zapytań odbiorców zewnętrznych lub wewnętrznych.",
-       "evidence": [
-        {
-         "text": "Przygotowuje projekty odpowiedzi na pisma i inne wystąpienia kierowane do Komisji Rozwoju i Bezpieczeństwa Sztucznej Inteligencji w ramach właściwości wydziału, w celu zapewnienia sprawnej, rzetelnej i zgodnej z…",
-         "location": "Zadanie 5 (pozostałe)",
-         "taskId": "dsi5-t5"
-        }
-       ]
-      },
-      {
-       "criterionId": "c14",
-       "confidence": "niska",
-       "rationale": "OSP wskazuje na samodzielne podejmowanie decyzji.",
-       "evidence": [
-        {
-         "text": "W codziennej pracy spotyka się z koniecznością podejmowania decyzji uznaniowych, co wymaga umiejętności analitycznych.",
-         "location": "Niezbędna samodzielność i inicjatywa"
-        }
-       ]
-      }
-     ],
-     "warnings": []
-    },
-    "confirmedVariant": "C",
-    "confirmedAt": "2026-11-12T11:50:00.000Z"
-   },
-   "criteria": {
-    "additional": [
-     "c07",
-     "c05"
-    ],
-    "rejectedSuggestions": [],
-    "approvedAt": "2026-11-12T12:10:00.000Z"
-   },
-   "preliminary": {
-    "topics": {},
-    "expectations": [],
-    "goals": [],
-    "notes": ""
-   },
-   "preparatoryService": {
-    "note": ""
-   },
-   "report": {
-    "summary": {
-     "tasks": "",
-     "problems": "",
-     "skills": "",
-     "improvements": ""
-    }
-   },
-   "observations": [],
-   "review": {
-    "topics": {},
-    "notes": "",
-    "employeePerspective": "",
-    "developmentNeeds": ""
-   },
-   "ratings": [],
-   "conclusion": {
-    "justification": "",
-    "developmentPlan": "",
-    "promotionJustification": ""
-   },
-   "documents": [],
-   "history": [
-    {
-     "id": "h-t00sw7o14b",
-     "at": "2026-11-02T09:00:00.000Z",
-     "actor": {
-      "id": "u-marta",
-      "fullName": "Marta Wiśniewska",
-      "jobTitle": "Główny specjalista ds. kadr"
-     },
-     "kind": "utworzenie",
-     "summary": "Uruchomiono ocenę okresową."
-    },
-    {
-     "id": "h-edkchmo14c",
-     "at": "2026-11-12T11:50:00.000Z",
-     "actor": {
-      "id": "u-ewa-mazur",
-      "fullName": "Ewa Mazur",
-      "jobTitle": "Naczelnik wydziału"
-     },
-     "kind": "krok",
-     "summary": "Potwierdzono arkusz C.",
-     "stepId": "stanowisko"
-    },
-    {
-     "id": "h-yixiwfo14c",
-     "at": "2026-11-12T12:10:00.000Z",
-     "actor": {
-      "id": "u-ewa-mazur",
-      "fullName": "Ewa Mazur",
-      "jobTitle": "Naczelnik wydziału"
-     },
-     "kind": "krok",
-     "summary": "Zatwierdzono kryteria dodatkowe: myślenie analityczne, kreatywność.",
-     "stepId": "kryteria"
-    }
-   ]
-  },
-  {
-   "id": "case-pawel",
-   "path": "periodic",
-   "status": "w-toku",
-   "employee": {
-    "id": "e-pawel",
-    "firstName": "Paweł",
-    "lastName": "Wróbel",
-    "fullName": "Paweł Wróbel",
-    "positionId": "pos-dwm-wkam-1",
-    "orgUnitId": "dwm-wkam",
-    "supervisorId": "u-karolina",
-    "status": "urzednik-sc",
-    "employment": {
-     "since": "2012-04-01",
-     "basis": "czas-nieokreslony"
-    },
-    "absences": [],
-    "previousAssessment": {
-     "draftedAt": "2026-10-30",
-     "acknowledgedAt": "2026-11-03",
-     "outcome": "pozytywna",
-     "level": "powyzej"
-    },
-    "civilServant": {
-     "appointedYear": 2015,
-     "grade": "trzeci",
-     "gradeGrantedAt": "2023-03-01"
-    }
-   },
-   "position": {
-    "id": "pos-dwm-wkam-1",
-    "code": "DWM WKAM 1",
-    "title": "Naczelnik wydziału",
-    "orgUnitId": "dwm-wkam",
-    "office": "Ministerstwo Cyfryzacji",
-    "department": "Departament Współpracy Międzynarodowej",
-    "division": "Wydział Koordynacji Aktywności Międzynarodowych",
-    "documentName": "OSP DWM WKAM 1 naczelnik wydziału.docx",
-    "fromOrganizer": true,
-    "purpose": "Zapewnienie organizacji aktywności członków kierownictwa MC na arenie międzynarodowej, w tym przygotowania i realizacji zagranicznych wizyt członków kierownictwa MC oraz wizyt gości zagranicznych w Polsce; koordynacja obsługi spraw budżetowo-finansowych Departamentu.",
-    "supervisedBy": {
-     "direct": "zastępca dyrektora",
-     "indirect": "dyrektor"
-    },
-    "subordinates": {
-     "range": "5-9",
-     "quote": "☒ bezpośrednio kieruje lub koordynuje pracę od 5 do 9 pracowników"
-    },
-    "tasks": [
-     {
-      "id": "dwm1-t1",
-      "no": 1,
-      "kind": "dominujace",
-      "text": "Koordynuje pracę zespołu poprzez planowanie, organizowanie oraz nadzorowanie realizacji zadań zgodnie z wyznaczonymi celami. Zapewnia skuteczne zarządzanie zespołem poprzez monitorowanie postępów, delegowanie obowiązków oraz dostosowywanie działań do zmieniających się warunków. Podejmuje działania motywacyjne i rozwojowe."
-     },
-     {
-      "id": "dwm1-t2",
-      "no": 2,
-      "kind": "dominujace",
-      "text": "Nadzoruje oraz bierze udział w przygotowaniu i organizacji zagranicznych wizyt członków kierownictwa MC oraz wizyt gości zagranicznych w Polsce, a także spotkań o charakterze międzynarodowym z podmiotami krajowymi."
-     },
-     {
-      "id": "dwm1-t3",
-      "no": 3,
-      "kind": "dominujace",
-      "text": "Koordynuje obsługę spraw finansowo-budżetowych departamentu, w tym udzielanie i rozliczanie dotacji, łącznie z wydawaniem stosownych decyzji administracyjnych oraz przygotowywaniem projektu budżetu."
-     },
-     {
-      "id": "dwm1-t4",
-      "no": 4,
-      "kind": "pozostale",
-      "text": "Koordynuje przygotowania materiałów tezowo-informacyjnych (stanowiska, opinie) z zakresu dwustronnej lub wielostronnej współpracy z państwami i organizacjami międzynarodowymi w obszarze cyfryzacji."
-     },
-     {
-      "id": "dwm1-t5",
-      "no": 5,
-      "kind": "pozostale",
-      "text": "Organizuje wydarzenia o charakterze międzynarodowym w obszarze cyfryzacji (m.in. konferencje, kongresy, seminaria, warsztaty, konsultacje), a także przygotowuje rekomendacje w zakresie uczestnictwa członków Kierownictwa MC."
-     },
-     {
-      "id": "dwm1-t6",
-      "no": 6,
-      "kind": "pozostale",
-      "text": "Bierze udział w pracach dotyczących realizacji umowy na zakup biletów oraz umowy na tłumaczenia (postępowania o udzielenie zamówień publicznych, monitorowanie realizacji umów)."
-     },
-     {
-      "id": "dwm1-t7",
-      "no": 7,
-      "kind": "pozostale",
-      "text": "Koordynuje przygotowanie wkładów do odpowiedzi na zapytania publiczne, medialne, interpelacje poselskie, kontrole (w tym kontrole KAS i NIK) oraz audytu."
-     },
-     {
-      "id": "dwm1-t8",
-      "no": 8,
-      "kind": "pozostale",
-      "text": "Uczestniczy w przygotowywaniu wkładu do planu zamówień publicznych Ministerstwa i koordynowania zamówień publicznych w ramach Departamentu."
-     }
-    ],
-    "authorizations": [],
-    "independence": "Osoba na tym stanowisku ma uprawnienia do podejmowania autonomicznych decyzji w przydzielonym zakresie bez konieczności konsultacji z przełożonymi. Pełni funkcję bezpośredniego przełożonego, zarządzając zespołem, kieruje pracą innych i ocenia ich efekty. Stanowisko wymaga zdolności przekonywania innych, a także ułatwiania rozwiązywania problemów i sporów.",
-    "softCompetencies": [
-     "zarządzanie ludźmi",
-     "podejmowanie decyzji i odpowiedzialność",
-     "wykorzystywanie wiedzy i doskonalenie zawodowe",
-     "organizacja pracy i orientacja na osiąganie celów",
-     "współpraca"
-    ]
-   },
-   "evaluator": {
-    "id": "u-karolina",
-    "fullName": "Karolina Sowa",
-    "jobTitle": "Zastępca dyrektora departamentu"
-   },
-   "orgUnitName": "Wydział Koordynacji Aktywności Międzynarodowych",
-   "createdAt": "2026-11-04T09:00:00.000Z",
-   "updatedAt": "2026-11-10T10:20:00.000Z",
-   "steps": {
-    "stanowisko": {
-     "completedAt": "2026-11-10T10:20:00.000Z",
-     "completedById": "u-karolina"
-    }
-   },
-   "deadlines": {
-    "dueDate": "2028-10-30",
-    "baseDueDate": "2028-10-30",
-    "basis": "24 miesiące od sporządzenia poprzedniej oceny (30.10.2026)",
-    "extensions": [],
-    "preliminaryDueDate": "2026-11-29"
-   },
-   "positionReview": {
-    "analysis": {
-     "analyzedAt": "2026-11-10T10:15:00.000Z",
-     "model": "kompas-mock-ai 0.3 (reguły + słowa kluczowe, offline)",
-     "recommendedVariant": "B",
-     "variantRationale": "OSP wskazuje, że praca na stanowisku polega na bezpośrednim kierowaniu pracownikami — właściwy jest arkusz B.",
-     "variantEvidence": [
-      {
-       "text": "☒ bezpośrednio kieruje lub koordynuje pracę od 5 do 9 pracowników",
-       "location": "Liczba podległych pracowników"
-      },
-      {
-       "text": "Stanowisko bezpośrednio nadzorujące: zastępca dyrektora",
-       "location": "Miejsce stanowiska w strukturze"
-      }
-     ],
-     "legalBasis": "§ 3 ust. 3 i § 4 ust. 2 rozporządzenia z 2016 r.",
-     "suggestions": [
-      {
-       "criterionId": "c09",
-       "confidence": "srednia",
-       "rationale": "Stanowisko wiąże się z wystąpieniami i prowadzeniem szkoleń.",
-       "evidence": [
-        {
-         "text": "Organizuje wydarzenia o charakterze międzynarodowym w obszarze cyfryzacji (m.in. konferencje, kongresy, seminaria, warsztaty, konsultacje), a także przygotowuje rekomendacje w zakresie uczestnictwa członków Kierownictwa…",
-         "location": "Zadanie 5 (pozostałe)",
-         "taskId": "dwm1-t5"
-        }
-       ]
-      },
-      {
-       "criterionId": "c03",
-       "confidence": "srednia",
-       "rationale": "Stanowisko wymaga wiedzy eksperckiej.",
-       "evidence": [
-        {
-         "text": "wykorzystywanie wiedzy i doskonalenie zawodowe",
-         "location": "Wymagane kompetencje miękkie"
-        }
-       ]
-      },
-      {
-       "criterionId": "c10",
-       "confidence": "niska",
-       "rationale": "Zadania obejmują obsługę zapytań odbiorców zewnętrznych lub wewnętrznych.",
-       "evidence": [
-        {
-         "text": "Koordynuje przygotowanie wkładów do odpowiedzi na zapytania publiczne, medialne, interpelacje poselskie, kontrole (w tym kontrole KAS i NIK) oraz audytu.",
-         "location": "Zadanie 7 (pozostałe)",
-         "taskId": "dwm1-t7"
-        }
-       ]
-      },
-      {
-       "criterionId": "c01",
-       "confidence": "niska",
-       "rationale": "Zadania wymagają rzetelności i zgodności z procedurami.",
-       "evidence": [
-        {
-         "text": "Koordynuje przygotowanie wkładów do odpowiedzi na zapytania publiczne, medialne, interpelacje poselskie, kontrole (w tym kontrole KAS i NIK) oraz audytu.",
-         "location": "Zadanie 7 (pozostałe)",
-         "taskId": "dwm1-t7"
-        }
-       ]
-      },
-      {
-       "criterionId": "c08",
-       "confidence": "niska",
-       "rationale": "Zadania obejmują reprezentowanie urzędu i uzgadnianie stanowisk z partnerami.",
-       "evidence": [
-        {
-         "text": "Stanowisko wymaga zdolności przekonywania innych, a także ułatwiania rozwiązywania problemów i sporów.",
-         "location": "Niezbędna samodzielność i inicjatywa"
-        }
-       ]
-      }
-     ],
-     "warnings": []
-    },
-    "confirmedVariant": "B",
-    "confirmedAt": "2026-11-10T10:20:00.000Z"
-   },
-   "criteria": {
-    "additional": [],
-    "rejectedSuggestions": []
-   },
-   "preliminary": {
-    "topics": {},
-    "expectations": [],
-    "goals": [],
-    "notes": ""
-   },
-   "preparatoryService": {
-    "note": ""
-   },
-   "report": {
-    "summary": {
-     "tasks": "",
-     "problems": "",
-     "skills": "",
-     "improvements": ""
-    }
-   },
-   "observations": [],
-   "review": {
-    "topics": {},
-    "notes": "",
-    "employeePerspective": "",
-    "developmentNeeds": ""
-   },
-   "ratings": [],
-   "conclusion": {
-    "justification": "",
-    "developmentPlan": "",
-    "promotionJustification": ""
-   },
-   "documents": [],
-   "history": [
-    {
-     "id": "h-77wrudo14c",
-     "at": "2026-11-04T09:00:00.000Z",
-     "actor": {
-      "id": "u-marta",
-      "fullName": "Marta Wiśniewska",
-      "jobTitle": "Główny specjalista ds. kadr"
-     },
-     "kind": "utworzenie",
-     "summary": "Uruchomiono ocenę okresową."
-    },
-    {
-     "id": "h-rxrzz2o14d",
-     "at": "2026-11-10T10:20:00.000Z",
-     "actor": {
-      "id": "u-karolina",
-      "fullName": "Karolina Sowa",
-      "jobTitle": "Zastępca dyrektora departamentu"
-     },
-     "kind": "krok",
-     "summary": "Potwierdzono arkusz B (kieruje 5–9 pracownikami).",
-     "stepId": "stanowisko"
-    }
-   ]
-  },
-  {
-   "id": "case-katarzyna",
-   "path": "periodic",
-   "status": "w-toku",
-   "employee": {
-    "id": "e-katarzyna",
-    "firstName": "Katarzyna",
-    "lastName": "Wójcik",
-    "fullName": "Katarzyna Wójcik",
-    "positionId": "pos-bdg-wop-3",
-    "orgUnitId": "bdg-wop",
-    "supervisorId": "u-tomasz",
-    "status": "urzednik-sc",
-    "employment": {
-     "since": "2013-01-02",
-     "basis": "czas-nieokreslony"
-    },
-    "absences": [],
-    "previousAssessment": {
-     "draftedAt": "2024-11-20",
-     "acknowledgedAt": "2024-11-22",
-     "outcome": "pozytywna",
-     "level": "powyzej"
-    },
-    "civilServant": {
-     "appointedYear": 2016,
-     "grade": "drugi",
-     "gradeGrantedAt": "2022-07-01"
-    }
-   },
-   "position": {
-    "id": "pos-bdg-wop-3",
-    "code": "BDG WOP 3",
-    "title": "Główny specjalista",
-    "orgUnitId": "bdg-wop",
-    "office": "Ministerstwo Cyfryzacji",
-    "department": "Biuro Dyrektora Generalnego",
-    "division": "Wydział Organizacji Pracy",
-    "documentName": "OSP BDG WOP 3 główny specjalista.docx",
-    "fromOrganizer": false,
-    "purpose": "Koordynacja procesów organizacji pracy i obiegu dokumentów w urzędzie.",
-    "supervisedBy": {
-     "direct": "naczelnik wydziału",
-     "indirect": "dyrektor generalny"
-    },
-    "subordinates": {
-     "range": "brak",
-     "quote": "☒ brak podległych pracowników"
-    },
-    "tasks": [
-     {
-      "id": "bdg3-t1",
-      "no": 1,
-      "kind": "dominujace",
-      "text": "Opracowuje projekty regulaminów, zarządzeń i procedur wewnętrznych dotyczących organizacji pracy urzędu."
-     },
-     {
-      "id": "bdg3-t2",
-      "no": 2,
-      "kind": "dominujace",
-      "text": "Koordynuje wdrożenie elektronicznego zarządzania dokumentacją w komórkach organizacyjnych."
-     },
-     {
-      "id": "bdg3-t3",
-      "no": 3,
-      "kind": "pozostale",
-      "text": "Prowadzi szkolenia i konsultacje dla pracowników w zakresie obiegu dokumentów."
-     },
-     {
-      "id": "bdg3-t4",
-      "no": 4,
-      "kind": "pozostale",
-      "text": "Analizuje zgłoszenia pracowników i proponuje usprawnienia procesów."
-     },
-     {
-      "id": "bdg3-t5",
-      "no": 5,
-      "kind": "pozostale",
-      "text": "Udziela odpowiedzi na zapytania komórek organizacyjnych (klient wewnętrzny)."
-     }
-    ],
-    "authorizations": [],
-    "independence": "Samodzielnie przygotowuje projekty dokumentów i rekomendacje zmian; decyzje wdrożeniowe uzgadnia z przełożonym.",
-    "softCompetencies": [
-     "orientacja na klienta/interesanta",
-     "komunikacja",
-     "rzetelność"
-    ]
-   },
-   "evaluator": {
-    "id": "u-tomasz",
-    "fullName": "Tomasz Lis",
-    "jobTitle": "Naczelnik wydziału"
-   },
-   "orgUnitName": "Wydział Organizacji Pracy",
-   "createdAt": "2024-11-25T09:00:00.000Z",
-   "updatedAt": "2026-11-19T14:10:00.000Z",
-   "steps": {
-    "stanowisko": {
-     "completedAt": "2024-12-02T10:00:00.000Z",
-     "completedById": "u-tomasz"
-    },
-    "kryteria": {
-     "completedAt": "2024-12-02T10:20:00.000Z",
-     "completedById": "u-tomasz"
-    },
-    "rozmowa-wstepna": {
-     "completedAt": "2024-12-10T12:00:00.000Z",
-     "completedById": "u-tomasz"
-    },
-    "obserwacje": {
-     "completedAt": "2026-11-12T09:00:00.000Z",
-     "completedById": "u-tomasz"
-    },
-    "rozmowa-oceniajaca": {
-     "completedAt": "2026-11-17T13:00:00.000Z",
-     "completedById": "u-tomasz"
-    },
-    "ocena": {
-     "completedAt": "2026-11-19T13:40:00.000Z",
-     "completedById": "u-tomasz"
-    }
-   },
-   "deadlines": {
-    "dueDate": "2026-11-20",
-    "baseDueDate": "2026-11-20",
-    "basis": "24 miesiące od sporządzenia poprzedniej oceny (20.11.2024)",
-    "extensions": [],
-    "preliminaryDueDate": "2024-12-20"
-   },
-   "positionReview": {
-    "analysis": {
-     "analyzedAt": "2024-12-02T09:55:00.000Z",
-     "model": "kompas-mock-ai 0.3 (reguły + słowa kluczowe, offline)",
-     "recommendedVariant": "C",
-     "variantRationale": "OSP wskazuje brak podległych pracowników i stanowisko nie jest stanowiskiem kierownika urzędu — właściwy jest arkusz C.",
-     "variantEvidence": [
-      {
-       "text": "☒ brak podległych pracowników",
-       "location": "Liczba podległych pracowników"
-      },
-      {
-       "text": "Stanowisko bezpośrednio nadzorujące: naczelnik wydziału",
-       "location": "Miejsce stanowiska w strukturze"
-      }
-     ],
-     "legalBasis": "§ 3 ust. 4 i § 4 ust. 3 rozporządzenia z 2016 r.",
-     "suggestions": [
-      {
-       "criterionId": "c10",
-       "confidence": "wysoka",
-       "rationale": "Zadania obejmują obsługę zapytań odbiorców zewnętrznych lub wewnętrznych.",
-       "evidence": [
-        {
-         "text": "Udziela odpowiedzi na zapytania komórek organizacyjnych (klient wewnętrzny).",
-         "location": "Zadanie 5 (pozostałe)",
-         "taskId": "bdg3-t5"
-        },
-        {
-         "text": "orientacja na klienta/interesanta",
-         "location": "Wymagane kompetencje miękkie"
-        }
-       ]
-      },
-      {
-       "criterionId": "c07",
-       "confidence": "niska",
-       "rationale": "Stanowisko wymaga analizy informacji i formułowania wniosków.",
-       "evidence": [
-        {
-         "text": "Analizuje zgłoszenia pracowników i proponuje usprawnienia procesów.",
-         "location": "Zadanie 4 (pozostałe)",
-         "taskId": "bdg3-t4"
-        }
-       ]
-      },
-      {
-       "criterionId": "c09",
-       "confidence": "niska",
-       "rationale": "Stanowisko wiąże się z wystąpieniami i prowadzeniem szkoleń.",
-       "evidence": [
-        {
-         "text": "Prowadzi szkolenia i konsultacje dla pracowników w zakresie obiegu dokumentów.",
-         "location": "Zadanie 3 (pozostałe)",
-         "taskId": "bdg3-t3"
-        }
-       ]
-      },
-      {
-       "criterionId": "c05",
-       "confidence": "niska",
-       "rationale": "Od osoby na stanowisku oczekuje się proponowania nowych rozwiązań.",
-       "evidence": [
-        {
-         "text": "Analizuje zgłoszenia pracowników i proponuje usprawnienia procesów.",
-         "location": "Zadanie 4 (pozostałe)",
-         "taskId": "bdg3-t4"
-        }
-       ]
-      },
-      {
-       "criterionId": "c14",
-       "confidence": "niska",
-       "rationale": "OSP wskazuje na samodzielne podejmowanie decyzji.",
-       "evidence": [
-        {
-         "text": "Samodzielnie przygotowuje projekty dokumentów i rekomendacje zmian; decyzje wdrożeniowe uzgadnia z przełożonym.",
-         "location": "Niezbędna samodzielność i inicjatywa"
-        }
-       ]
-      }
-     ],
-     "warnings": [
-      "Opis stanowiska jest danymi demonstracyjnymi przygotowanymi na wzór OSP organizatora."
-     ]
-    },
-    "confirmedVariant": "C",
-    "confirmedAt": "2024-12-02T10:00:00.000Z"
-   },
-   "criteria": {
-    "additional": [
-     "c10",
-     "c05"
-    ],
-    "rejectedSuggestions": [],
-    "approvedAt": "2024-12-02T10:20:00.000Z"
-   },
-   "preliminary": {
-    "meetingDate": "2024-12-10",
-    "topics": {
-     "obowiazki": "omowiono",
-     "kryteria": "omowiono",
-     "oczekiwania": "omowiono",
-     "cele": "nie-dotyczy"
-    },
-    "expectations": [
-     {
-      "criterionId": "c03",
-      "text": "Zgodnie ze standardem „na poziomie oczekiwań” w modelu kompetencji."
-     },
-     {
-      "criterionId": "c01",
-      "text": "Zgodnie ze standardem „na poziomie oczekiwań” w modelu kompetencji."
-     },
-     {
-      "criterionId": "c04",
-      "text": "Zgodnie ze standardem „na poziomie oczekiwań” w modelu kompetencji."
-     },
-     {
-      "criterionId": "c06",
-      "text": "Zgodnie ze standardem „na poziomie oczekiwań” w modelu kompetencji."
-     },
-     {
-      "criterionId": "c02",
-      "text": "Zgodnie ze standardem „na poziomie oczekiwań” w modelu kompetencji."
-     },
-     {
-      "criterionId": "c10",
-      "text": "Zgodnie ze standardem „na poziomie oczekiwań” w modelu kompetencji."
-     },
-     {
-      "criterionId": "c05",
-      "text": "Zgodnie ze standardem „na poziomie oczekiwań” w modelu kompetencji."
-     }
-    ],
-    "goals": [],
-    "notes": "",
-    "assessmentDueDate": "2026-11-20",
-    "employeeAcknowledgedAt": "2024-12-10"
-   },
-   "preparatoryService": {
-    "note": ""
-   },
-   "report": {
-    "summary": {
-     "tasks": "",
-     "problems": "",
-     "skills": "",
-     "improvements": ""
-    }
-   },
-   "observations": [],
-   "review": {
-    "meetingDate": "2026-11-17",
-    "topics": {
-     "obowiazki": "omowiono",
-     "cele": "nie-dotyczy",
-     "rozwoj": "omowiono"
-    },
-    "notes": "Omówiono wdrożenie EZD w czterech komórkach i szkolenia dla pracowników.",
-    "employeePerspective": "Chce prowadzić projekt usprawnienia obiegu pism w całym urzędzie.",
-    "developmentNeeds": "Zarządzanie projektem, warsztaty z facylitacji."
-   },
-   "ratings": [
-    {
-     "criterionId": "c03",
-     "indicators": [],
-     "decision": {
-      "points": 7,
-      "rationale": "",
-      "decidedAt": "2026-11-19T13:30:00.000Z",
-      "decidedById": "u-tomasz",
-      "suggestedPoints": null,
-      "suggestedAverage": null
-     }
-    },
-    {
-     "criterionId": "c01",
-     "indicators": [],
-     "decision": {
-      "points": 7,
-      "rationale": "",
-      "decidedAt": "2026-11-19T13:30:00.000Z",
-      "decidedById": "u-tomasz",
-      "suggestedPoints": null,
-      "suggestedAverage": null
-     }
-    },
-    {
-     "criterionId": "c04",
-     "indicators": [],
-     "decision": {
-      "points": 7,
-      "rationale": "",
-      "decidedAt": "2026-11-19T13:30:00.000Z",
-      "decidedById": "u-tomasz",
-      "suggestedPoints": null,
-      "suggestedAverage": null
-     }
-    },
-    {
-     "criterionId": "c06",
-     "indicators": [],
-     "decision": {
-      "points": 7,
-      "rationale": "",
-      "decidedAt": "2026-11-19T13:30:00.000Z",
-      "decidedById": "u-tomasz",
-      "suggestedPoints": null,
-      "suggestedAverage": null
-     }
-    },
-    {
-     "criterionId": "c02",
-     "indicators": [],
-     "decision": {
-      "points": 5,
-      "rationale": "",
-      "decidedAt": "2026-11-19T13:30:00.000Z",
-      "decidedById": "u-tomasz",
-      "suggestedPoints": null,
-      "suggestedAverage": null
-     }
-    },
-    {
-     "criterionId": "c10",
-     "indicators": [],
-     "decision": {
-      "points": 7,
-      "rationale": "",
-      "decidedAt": "2026-11-19T13:30:00.000Z",
-      "decidedById": "u-tomasz",
-      "suggestedPoints": null,
-      "suggestedAverage": null
-     }
-    },
-    {
-     "criterionId": "c05",
-     "indicators": [],
-     "decision": {
-      "points": 7,
-      "rationale": "",
-      "decidedAt": "2026-11-19T13:30:00.000Z",
-      "decidedById": "u-tomasz",
-      "suggestedPoints": null,
-      "suggestedAverage": null
-     }
-    }
-   ],
-   "conclusion": {
-    "justification": "Oceniana skutecznie koordynowała wdrożenie elektronicznego zarządzania dokumentacją w czterech komórkach, terminowo i z dbałością o potrzeby użytkowników.",
-    "developmentPlan": "Szkolenie z zarządzania projektami; warsztaty z facylitacji spotkań; udział w zespole ds. usprawnień organizacyjnych.",
-    "promotionRequest": "tak",
-    "promotionJustification": "Druga z rzędu ocena na poziomie „powyżej oczekiwań”; samodzielne prowadzenie wdrożenia EZD i szkoleń dla pracowników urzędu.",
-    "draftedAt": "2026-11-19",
-    "sheetGeneratedAt": "2026-11-19T14:10:00.000Z"
-   },
-   "documents": [
-    {
-     "id": "doc-kw-1",
-     "kind": "czesc-i",
-     "title": "Arkusz C — część I (kryteria i termin)",
-     "status": "podpisany",
-     "createdAt": "2024-12-10T12:00:00.000Z",
-     "version": 1
-    },
-    {
-     "id": "doc-kw-2",
-     "kind": "arkusz-okresowy",
-     "title": "Arkusz oceny okresowej C — części I–III",
-     "status": "wygenerowany",
-     "createdAt": "2026-11-19T14:10:00.000Z",
-     "version": 1
-    }
-   ],
-   "history": [
-    {
-     "id": "h-a7wmq6o14d",
-     "at": "2024-11-25T09:00:00.000Z",
-     "actor": {
-      "id": "u-marta",
-      "fullName": "Marta Wiśniewska",
-      "jobTitle": "Główny specjalista ds. kadr"
-     },
-     "kind": "utworzenie",
-     "summary": "Uruchomiono ocenę okresową."
-    },
-    {
-     "id": "h-lceg7po14d",
-     "at": "2026-11-19T14:10:00.000Z",
-     "actor": {
-      "id": "u-tomasz",
-      "fullName": "Tomasz Lis",
-      "jobTitle": "Naczelnik wydziału"
-     },
-     "kind": "dokument",
-     "summary": "Wygenerowano arkusz do podpisu.",
-     "stepId": "podsumowanie"
     }
    ]
   },
@@ -3252,7 +2260,7 @@
    ],
    "history": [
     {
-     "id": "h-3k0whqo14d",
+     "id": "h-d140toyi01",
      "at": "2022-11-03T08:00:00.000Z",
      "actor": {
       "id": "u-marta",
@@ -3263,7 +2271,7 @@
      "summary": "Uruchomiono ocenę okresową."
     },
     {
-     "id": "h-073sp5o14d",
+     "id": "h-vsrdx3yi01",
      "at": "2024-10-14T12:00:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -3537,7 +2545,7 @@
    ],
    "history": [
     {
-     "id": "h-dxadn6o14d",
+     "id": "h-1jue65yi01",
      "at": "2023-01-12T08:00:00.000Z",
      "actor": {
       "id": "u-marta",
@@ -3548,7 +2556,7 @@
      "summary": "Uruchomiono ocenę okresową."
     },
     {
-     "id": "h-aepejso14d",
+     "id": "h-f6rawzyi01",
      "at": "2024-12-18T12:00:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -3864,7 +2872,7 @@
    ],
    "history": [
     {
-     "id": "h-l1ifmho14d",
+     "id": "h-imjx57yi01",
      "at": "2024-11-25T08:00:00.000Z",
      "actor": {
       "id": "u-marta",
@@ -3875,7 +2883,7 @@
      "summary": "Uruchomiono ocenę okresową."
     },
     {
-     "id": "h-6i30k0o14d",
+     "id": "h-h64nngyi01",
      "at": "2026-11-09T12:00:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -4182,7 +3190,7 @@
    ],
    "history": [
     {
-     "id": "h-59sljvo14d",
+     "id": "h-mj95pgyi01",
      "at": "2024-12-02T08:00:00.000Z",
      "actor": {
       "id": "u-marta",
@@ -4193,922 +3201,11 @@
      "summary": "Uruchomiono ocenę okresową."
     },
     {
-     "id": "h-xvijlho14d",
+     "id": "h-9njkqlyi01",
      "at": "2026-11-13T12:00:00.000Z",
      "actor": {
       "id": "u-piotr",
       "fullName": "Piotr Zieliński",
-      "jobTitle": "Naczelnik wydziału"
-     },
-     "kind": "zapoznanie",
-     "summary": "Oceniany zapoznał się z oceną.",
-     "stepId": "podsumowanie"
-    }
-   ]
-  },
-  {
-   "id": "hist-jan-2026",
-   "path": "periodic",
-   "status": "zakonczona",
-   "employee": {
-    "id": "e-jan",
-    "firstName": "Jan",
-    "lastName": "Kowalski",
-    "fullName": "Jan Kowalski",
-    "positionId": "pos-dsi-wwi-5",
-    "orgUnitId": "dsi-wwi",
-    "supervisorId": "u-ewa-mazur",
-    "status": "pracownik-sc",
-    "employment": {
-     "since": "2020-10-01",
-     "basis": "czas-nieokreslony"
-    },
-    "absences": [],
-    "previousAssessment": {
-     "draftedAt": "2026-10-28",
-     "acknowledgedAt": "2026-10-30",
-     "outcome": "pozytywna",
-     "level": "na-poziomie"
-    }
-   },
-   "position": {
-    "id": "pos-dsi-wwi-5",
-    "code": "DSI WWI 5",
-    "title": "Radca",
-    "orgUnitId": "dsi-wwi",
-    "office": "Ministerstwo Cyfryzacji",
-    "department": "Departament Rozwoju i Bezpieczeństwa Sztucznej Inteligencji",
-    "division": "Wydział Wspierania Innowacyjności",
-    "documentName": "OSP DSI WWI 5 radca.docx",
-    "fromOrganizer": true,
-    "purpose": "Zapewnienie wsparcia merytorycznego w zakresie rozwoju innowacyjnych rozwiązań opartych na sztucznej inteligencji poprzez rozwijanie mechanizmów wspierających zgodność z przepisami prawa oraz identyfikowanie barier dla rozwoju innowacyjności.",
-    "supervisedBy": {
-     "direct": "naczelnik wydziału",
-     "indirect": "zastępca dyrektora"
-    },
-    "subordinates": {
-     "range": "brak",
-     "quote": "☒ brak podległych pracowników"
-    },
-    "tasks": [
-     {
-      "id": "dsi5-t1",
-      "no": 1,
-      "kind": "dominujace",
-      "text": "Analizuje i dokonuje oceny prawa krajowego, prawa Unii Europejskiej, orzecznictwa krajowego i międzynarodowego, wytycznych organów unijnych oraz praktyki stosowania prawa w obszarze sztucznej inteligencji, a także przygotowuje propozycje zmian systemowych."
-     },
-     {
-      "id": "dsi5-t2",
-      "no": 2,
-      "kind": "dominujace",
-      "text": "Prowadzi sprawy dotyczące opinii indywidualnych oraz wyjaśnień dotyczących stosowania przepisów krajowych i unijnych z zakresu sztucznej inteligencji, w celu zapewnienia prawidłowej i jednolitej interpretacji oraz stosowania przepisów w tym obszarze."
-     },
-     {
-      "id": "dsi5-t3",
-      "no": 3,
-      "kind": "dominujace",
-      "text": "Przygotowuje projekty informacji zawierające pogląd Komisji w sprawach sztucznej inteligencji, w celu zapewnienia jednolitego stanowiska Komisji oraz wsparcia prawidłowego stosowania przepisów w obszarze sztucznej inteligencji."
-     },
-     {
-      "id": "dsi5-t4",
-      "no": 4,
-      "kind": "pozostale",
-      "text": "Analizuje bariery prawne i organizacyjne dla rozwoju innowacji w obszarze sztucznej inteligencji w celu opracowywania propozycji działań usprawniających."
-     },
-     {
-      "id": "dsi5-t5",
-      "no": 5,
-      "kind": "pozostale",
-      "text": "Przygotowuje projekty odpowiedzi na pisma i inne wystąpienia kierowane do Komisji Rozwoju i Bezpieczeństwa Sztucznej Inteligencji w ramach właściwości wydziału, w celu zapewnienia sprawnej, rzetelnej i zgodnej z obowiązującymi przepisami realizacji zadań Komisji oraz właściwej komunikacji z podmiotami zewnętrznymi."
-     }
-    ],
-    "authorizations": [],
-    "independence": "Pracownik samodzielnie proponuje przełożonym rozwiązania dla sytuacji wymagających dostarczenia wyspecjalizowanej wiedzy, w tym przypadków bezprecedensowych. Osoba na tym stanowisku tworzy nowe koncepcje realizacji zadań. W codziennej pracy spotyka się z koniecznością podejmowania decyzji uznaniowych, co wymaga umiejętności analitycznych. Niezbędna jest umiejętność przedstawiania argumentów oraz przekonywania innych do przyjęcia określonych stanowisk.",
-    "softCompetencies": [
-     "organizacja pracy i orientacja na osiąganie celów",
-     "wykorzystywanie wiedzy i doskonalenie zawodowe",
-     "współpraca"
-    ]
-   },
-   "evaluator": {
-    "id": "u-ewa-mazur",
-    "fullName": "Ewa Mazur",
-    "jobTitle": "Naczelnik wydziału"
-   },
-   "orgUnitName": "Wydział Wspierania Innowacyjności",
-   "createdAt": "2024-11-20T08:00:00.000Z",
-   "updatedAt": "2026-10-30T12:00:00.000Z",
-   "steps": {
-    "stanowisko": {
-     "completedAt": "2026-10-30T12:00:00.000Z",
-     "completedById": "u-ewa-mazur"
-    },
-    "kryteria": {
-     "completedAt": "2026-10-30T12:00:00.000Z",
-     "completedById": "u-ewa-mazur"
-    },
-    "rozmowa-wstepna": {
-     "completedAt": "2026-10-30T12:00:00.000Z",
-     "completedById": "u-ewa-mazur"
-    },
-    "obserwacje": {
-     "completedAt": "2026-10-30T12:00:00.000Z",
-     "completedById": "u-ewa-mazur"
-    },
-    "rozmowa-oceniajaca": {
-     "completedAt": "2026-10-30T12:00:00.000Z",
-     "completedById": "u-ewa-mazur"
-    },
-    "ocena": {
-     "completedAt": "2026-10-30T12:00:00.000Z",
-     "completedById": "u-ewa-mazur"
-    },
-    "podsumowanie": {
-     "completedAt": "2026-10-30T12:00:00.000Z",
-     "completedById": "u-ewa-mazur"
-    }
-   },
-   "deadlines": {
-    "dueDate": "2026-10-28",
-    "baseDueDate": "2028-10-28",
-    "basis": "24 miesiące od sporządzenia poprzedniej oceny (28.10.2026)",
-    "extensions": [],
-    "preliminaryDueDate": "2026-11-27"
-   },
-   "positionReview": {
-    "confirmedVariant": "C",
-    "confirmedAt": "2024-11-20T08:00:00.000Z"
-   },
-   "criteria": {
-    "additional": [
-     "c07",
-     "c05"
-    ],
-    "rejectedSuggestions": [],
-    "approvedAt": "2024-11-20T08:10:00.000Z"
-   },
-   "preliminary": {
-    "topics": {},
-    "expectations": [],
-    "goals": [],
-    "notes": "",
-    "meetingDate": "2024-11-20",
-    "employeeAcknowledgedAt": "2024-11-20"
-   },
-   "preparatoryService": {
-    "note": ""
-   },
-   "report": {
-    "summary": {
-     "tasks": "",
-     "problems": "",
-     "skills": "",
-     "improvements": ""
-    }
-   },
-   "observations": [],
-   "review": {
-    "topics": {},
-    "notes": "",
-    "employeePerspective": "",
-    "developmentNeeds": ""
-   },
-   "ratings": [
-    {
-     "criterionId": "c03",
-     "indicators": [],
-     "decision": {
-      "points": 5,
-      "rationale": "",
-      "decidedAt": "2026-10-28T10:00:00.000Z",
-      "decidedById": "u-ewa-mazur",
-      "suggestedPoints": null,
-      "suggestedAverage": null
-     }
-    },
-    {
-     "criterionId": "c01",
-     "indicators": [],
-     "decision": {
-      "points": 5,
-      "rationale": "",
-      "decidedAt": "2026-10-28T10:00:00.000Z",
-      "decidedById": "u-ewa-mazur",
-      "suggestedPoints": null,
-      "suggestedAverage": null
-     }
-    },
-    {
-     "criterionId": "c04",
-     "indicators": [],
-     "decision": {
-      "points": 5,
-      "rationale": "",
-      "decidedAt": "2026-10-28T10:00:00.000Z",
-      "decidedById": "u-ewa-mazur",
-      "suggestedPoints": null,
-      "suggestedAverage": null
-     }
-    },
-    {
-     "criterionId": "c06",
-     "indicators": [],
-     "decision": {
-      "points": 5,
-      "rationale": "",
-      "decidedAt": "2026-10-28T10:00:00.000Z",
-      "decidedById": "u-ewa-mazur",
-      "suggestedPoints": null,
-      "suggestedAverage": null
-     }
-    },
-    {
-     "criterionId": "c02",
-     "indicators": [],
-     "decision": {
-      "points": 5,
-      "rationale": "",
-      "decidedAt": "2026-10-28T10:00:00.000Z",
-      "decidedById": "u-ewa-mazur",
-      "suggestedPoints": null,
-      "suggestedAverage": null
-     }
-    },
-    {
-     "criterionId": "c07",
-     "indicators": [],
-     "decision": {
-      "points": 5,
-      "rationale": "",
-      "decidedAt": "2026-10-28T10:00:00.000Z",
-      "decidedById": "u-ewa-mazur",
-      "suggestedPoints": null,
-      "suggestedAverage": null
-     }
-    },
-    {
-     "criterionId": "c05",
-     "indicators": [],
-     "decision": {
-      "points": 7,
-      "rationale": "",
-      "decidedAt": "2026-10-28T10:00:00.000Z",
-      "decidedById": "u-ewa-mazur",
-      "suggestedPoints": null,
-      "suggestedAverage": null
-     }
-    }
-   ],
-   "conclusion": {
-    "justification": "",
-    "developmentPlan": "Wnioski do IPRZ zapisane w arkuszu.",
-    "promotionRequest": "nie-dotyczy",
-    "promotionJustification": "",
-    "draftedAt": "2026-10-28",
-    "sheetGeneratedAt": "2026-10-28T11:00:00.000Z",
-    "employeeAcknowledgedAt": "2026-10-30"
-   },
-   "documents": [
-    {
-     "id": "hist-jan-2026-doc",
-     "kind": "arkusz-okresowy",
-     "title": "Arkusz oceny okresowej C",
-     "status": "podpisany",
-     "createdAt": "2026-10-28T11:00:00.000Z",
-     "version": 1
-    }
-   ],
-   "history": [
-    {
-     "id": "h-x315ewo14d",
-     "at": "2024-11-20T08:00:00.000Z",
-     "actor": {
-      "id": "u-marta",
-      "fullName": "Marta Wiśniewska",
-      "jobTitle": "Główny specjalista ds. kadr"
-     },
-     "kind": "utworzenie",
-     "summary": "Uruchomiono ocenę okresową."
-    },
-    {
-     "id": "h-xymapxo14d",
-     "at": "2026-10-30T12:00:00.000Z",
-     "actor": {
-      "id": "u-ewa-mazur",
-      "fullName": "Ewa Mazur",
-      "jobTitle": "Naczelnik wydziału"
-     },
-     "kind": "zapoznanie",
-     "summary": "Oceniany zapoznał się z oceną.",
-     "stepId": "podsumowanie"
-    }
-   ]
-  },
-  {
-   "id": "hist-pawel-2026",
-   "path": "periodic",
-   "status": "zakonczona",
-   "employee": {
-    "id": "e-pawel",
-    "firstName": "Paweł",
-    "lastName": "Wróbel",
-    "fullName": "Paweł Wróbel",
-    "positionId": "pos-dwm-wkam-1",
-    "orgUnitId": "dwm-wkam",
-    "supervisorId": "u-karolina",
-    "status": "urzednik-sc",
-    "employment": {
-     "since": "2012-04-01",
-     "basis": "czas-nieokreslony"
-    },
-    "absences": [],
-    "previousAssessment": {
-     "draftedAt": "2026-10-30",
-     "acknowledgedAt": "2026-11-03",
-     "outcome": "pozytywna",
-     "level": "powyzej"
-    },
-    "civilServant": {
-     "appointedYear": 2015,
-     "grade": "trzeci",
-     "gradeGrantedAt": "2023-03-01"
-    }
-   },
-   "position": {
-    "id": "pos-dwm-wkam-1",
-    "code": "DWM WKAM 1",
-    "title": "Naczelnik wydziału",
-    "orgUnitId": "dwm-wkam",
-    "office": "Ministerstwo Cyfryzacji",
-    "department": "Departament Współpracy Międzynarodowej",
-    "division": "Wydział Koordynacji Aktywności Międzynarodowych",
-    "documentName": "OSP DWM WKAM 1 naczelnik wydziału.docx",
-    "fromOrganizer": true,
-    "purpose": "Zapewnienie organizacji aktywności członków kierownictwa MC na arenie międzynarodowej, w tym przygotowania i realizacji zagranicznych wizyt członków kierownictwa MC oraz wizyt gości zagranicznych w Polsce; koordynacja obsługi spraw budżetowo-finansowych Departamentu.",
-    "supervisedBy": {
-     "direct": "zastępca dyrektora",
-     "indirect": "dyrektor"
-    },
-    "subordinates": {
-     "range": "5-9",
-     "quote": "☒ bezpośrednio kieruje lub koordynuje pracę od 5 do 9 pracowników"
-    },
-    "tasks": [
-     {
-      "id": "dwm1-t1",
-      "no": 1,
-      "kind": "dominujace",
-      "text": "Koordynuje pracę zespołu poprzez planowanie, organizowanie oraz nadzorowanie realizacji zadań zgodnie z wyznaczonymi celami. Zapewnia skuteczne zarządzanie zespołem poprzez monitorowanie postępów, delegowanie obowiązków oraz dostosowywanie działań do zmieniających się warunków. Podejmuje działania motywacyjne i rozwojowe."
-     },
-     {
-      "id": "dwm1-t2",
-      "no": 2,
-      "kind": "dominujace",
-      "text": "Nadzoruje oraz bierze udział w przygotowaniu i organizacji zagranicznych wizyt członków kierownictwa MC oraz wizyt gości zagranicznych w Polsce, a także spotkań o charakterze międzynarodowym z podmiotami krajowymi."
-     },
-     {
-      "id": "dwm1-t3",
-      "no": 3,
-      "kind": "dominujace",
-      "text": "Koordynuje obsługę spraw finansowo-budżetowych departamentu, w tym udzielanie i rozliczanie dotacji, łącznie z wydawaniem stosownych decyzji administracyjnych oraz przygotowywaniem projektu budżetu."
-     },
-     {
-      "id": "dwm1-t4",
-      "no": 4,
-      "kind": "pozostale",
-      "text": "Koordynuje przygotowania materiałów tezowo-informacyjnych (stanowiska, opinie) z zakresu dwustronnej lub wielostronnej współpracy z państwami i organizacjami międzynarodowymi w obszarze cyfryzacji."
-     },
-     {
-      "id": "dwm1-t5",
-      "no": 5,
-      "kind": "pozostale",
-      "text": "Organizuje wydarzenia o charakterze międzynarodowym w obszarze cyfryzacji (m.in. konferencje, kongresy, seminaria, warsztaty, konsultacje), a także przygotowuje rekomendacje w zakresie uczestnictwa członków Kierownictwa MC."
-     },
-     {
-      "id": "dwm1-t6",
-      "no": 6,
-      "kind": "pozostale",
-      "text": "Bierze udział w pracach dotyczących realizacji umowy na zakup biletów oraz umowy na tłumaczenia (postępowania o udzielenie zamówień publicznych, monitorowanie realizacji umów)."
-     },
-     {
-      "id": "dwm1-t7",
-      "no": 7,
-      "kind": "pozostale",
-      "text": "Koordynuje przygotowanie wkładów do odpowiedzi na zapytania publiczne, medialne, interpelacje poselskie, kontrole (w tym kontrole KAS i NIK) oraz audytu."
-     },
-     {
-      "id": "dwm1-t8",
-      "no": 8,
-      "kind": "pozostale",
-      "text": "Uczestniczy w przygotowywaniu wkładu do planu zamówień publicznych Ministerstwa i koordynowania zamówień publicznych w ramach Departamentu."
-     }
-    ],
-    "authorizations": [],
-    "independence": "Osoba na tym stanowisku ma uprawnienia do podejmowania autonomicznych decyzji w przydzielonym zakresie bez konieczności konsultacji z przełożonymi. Pełni funkcję bezpośredniego przełożonego, zarządzając zespołem, kieruje pracą innych i ocenia ich efekty. Stanowisko wymaga zdolności przekonywania innych, a także ułatwiania rozwiązywania problemów i sporów.",
-    "softCompetencies": [
-     "zarządzanie ludźmi",
-     "podejmowanie decyzji i odpowiedzialność",
-     "wykorzystywanie wiedzy i doskonalenie zawodowe",
-     "organizacja pracy i orientacja na osiąganie celów",
-     "współpraca"
-    ]
-   },
-   "evaluator": {
-    "id": "u-karolina",
-    "fullName": "Karolina Sowa",
-    "jobTitle": "Zastępca dyrektora departamentu"
-   },
-   "orgUnitName": "Wydział Koordynacji Aktywności Międzynarodowych",
-   "createdAt": "2024-11-22T08:00:00.000Z",
-   "updatedAt": "2026-11-03T12:00:00.000Z",
-   "steps": {
-    "stanowisko": {
-     "completedAt": "2026-11-03T12:00:00.000Z",
-     "completedById": "u-karolina"
-    },
-    "kryteria": {
-     "completedAt": "2026-11-03T12:00:00.000Z",
-     "completedById": "u-karolina"
-    },
-    "rozmowa-wstepna": {
-     "completedAt": "2026-11-03T12:00:00.000Z",
-     "completedById": "u-karolina"
-    },
-    "obserwacje": {
-     "completedAt": "2026-11-03T12:00:00.000Z",
-     "completedById": "u-karolina"
-    },
-    "rozmowa-oceniajaca": {
-     "completedAt": "2026-11-03T12:00:00.000Z",
-     "completedById": "u-karolina"
-    },
-    "ocena": {
-     "completedAt": "2026-11-03T12:00:00.000Z",
-     "completedById": "u-karolina"
-    },
-    "podsumowanie": {
-     "completedAt": "2026-11-03T12:00:00.000Z",
-     "completedById": "u-karolina"
-    }
-   },
-   "deadlines": {
-    "dueDate": "2026-10-30",
-    "baseDueDate": "2028-10-30",
-    "basis": "24 miesiące od sporządzenia poprzedniej oceny (30.10.2026)",
-    "extensions": [],
-    "preliminaryDueDate": "2026-11-29"
-   },
-   "positionReview": {
-    "confirmedVariant": "B",
-    "confirmedAt": "2024-11-22T08:00:00.000Z"
-   },
-   "criteria": {
-    "additional": [
-     "c09",
-     "c12"
-    ],
-    "rejectedSuggestions": [],
-    "approvedAt": "2024-11-22T08:10:00.000Z"
-   },
-   "preliminary": {
-    "topics": {},
-    "expectations": [],
-    "goals": [],
-    "notes": "",
-    "meetingDate": "2024-11-22",
-    "employeeAcknowledgedAt": "2024-11-22"
-   },
-   "preparatoryService": {
-    "note": ""
-   },
-   "report": {
-    "summary": {
-     "tasks": "",
-     "problems": "",
-     "skills": "",
-     "improvements": ""
-    }
-   },
-   "observations": [],
-   "review": {
-    "topics": {},
-    "notes": "",
-    "employeePerspective": "",
-    "developmentNeeds": ""
-   },
-   "ratings": [
-    {
-     "criterionId": "c13",
-     "indicators": [],
-     "decision": {
-      "points": 7,
-      "rationale": "",
-      "decidedAt": "2026-10-30T10:00:00.000Z",
-      "decidedById": "u-karolina",
-      "suggestedPoints": null,
-      "suggestedAverage": null
-     }
-    },
-    {
-     "criterionId": "c14",
-     "indicators": [],
-     "decision": {
-      "points": 7,
-      "rationale": "",
-      "decidedAt": "2026-10-30T10:00:00.000Z",
-      "decidedById": "u-karolina",
-      "suggestedPoints": null,
-      "suggestedAverage": null
-     }
-    },
-    {
-     "criterionId": "c04",
-     "indicators": [],
-     "decision": {
-      "points": 7,
-      "rationale": "",
-      "decidedAt": "2026-10-30T10:00:00.000Z",
-      "decidedById": "u-karolina",
-      "suggestedPoints": null,
-      "suggestedAverage": null
-     }
-    },
-    {
-     "criterionId": "c06",
-     "indicators": [],
-     "decision": {
-      "points": 7,
-      "rationale": "",
-      "decidedAt": "2026-10-30T10:00:00.000Z",
-      "decidedById": "u-karolina",
-      "suggestedPoints": null,
-      "suggestedAverage": null
-     }
-    },
-    {
-     "criterionId": "c02",
-     "indicators": [],
-     "decision": {
-      "points": 5,
-      "rationale": "",
-      "decidedAt": "2026-10-30T10:00:00.000Z",
-      "decidedById": "u-karolina",
-      "suggestedPoints": null,
-      "suggestedAverage": null
-     }
-    },
-    {
-     "criterionId": "c09",
-     "indicators": [],
-     "decision": {
-      "points": 7,
-      "rationale": "",
-      "decidedAt": "2026-10-30T10:00:00.000Z",
-      "decidedById": "u-karolina",
-      "suggestedPoints": null,
-      "suggestedAverage": null
-     }
-    },
-    {
-     "criterionId": "c12",
-     "indicators": [],
-     "decision": {
-      "points": 7,
-      "rationale": "",
-      "decidedAt": "2026-10-30T10:00:00.000Z",
-      "decidedById": "u-karolina",
-      "suggestedPoints": null,
-      "suggestedAverage": null
-     }
-    }
-   ],
-   "conclusion": {
-    "justification": "",
-    "developmentPlan": "Wnioski do IPRZ zapisane w arkuszu.",
-    "promotionRequest": "nie",
-    "promotionJustification": "",
-    "draftedAt": "2026-10-30",
-    "sheetGeneratedAt": "2026-10-30T11:00:00.000Z",
-    "employeeAcknowledgedAt": "2026-11-03"
-   },
-   "documents": [
-    {
-     "id": "hist-pawel-2026-doc",
-     "kind": "arkusz-okresowy",
-     "title": "Arkusz oceny okresowej B",
-     "status": "podpisany",
-     "createdAt": "2026-10-30T11:00:00.000Z",
-     "version": 1
-    }
-   ],
-   "history": [
-    {
-     "id": "h-qmp8w3o14d",
-     "at": "2024-11-22T08:00:00.000Z",
-     "actor": {
-      "id": "u-marta",
-      "fullName": "Marta Wiśniewska",
-      "jobTitle": "Główny specjalista ds. kadr"
-     },
-     "kind": "utworzenie",
-     "summary": "Uruchomiono ocenę okresową."
-    },
-    {
-     "id": "h-h1xcu3o14d",
-     "at": "2026-11-03T12:00:00.000Z",
-     "actor": {
-      "id": "u-karolina",
-      "fullName": "Karolina Sowa",
-      "jobTitle": "Zastępca dyrektora departamentu"
-     },
-     "kind": "zapoznanie",
-     "summary": "Oceniany zapoznał się z oceną.",
-     "stepId": "podsumowanie"
-    }
-   ]
-  },
-  {
-   "id": "hist-katarzyna-2024",
-   "path": "periodic",
-   "status": "zakonczona",
-   "employee": {
-    "id": "e-katarzyna",
-    "firstName": "Katarzyna",
-    "lastName": "Wójcik",
-    "fullName": "Katarzyna Wójcik",
-    "positionId": "pos-bdg-wop-3",
-    "orgUnitId": "bdg-wop",
-    "supervisorId": "u-tomasz",
-    "status": "urzednik-sc",
-    "employment": {
-     "since": "2013-01-02",
-     "basis": "czas-nieokreslony"
-    },
-    "absences": [],
-    "previousAssessment": {
-     "draftedAt": "2024-11-20",
-     "acknowledgedAt": "2024-11-22",
-     "outcome": "pozytywna",
-     "level": "powyzej"
-    },
-    "civilServant": {
-     "appointedYear": 2016,
-     "grade": "drugi",
-     "gradeGrantedAt": "2022-07-01"
-    }
-   },
-   "position": {
-    "id": "pos-bdg-wop-3",
-    "code": "BDG WOP 3",
-    "title": "Główny specjalista",
-    "orgUnitId": "bdg-wop",
-    "office": "Ministerstwo Cyfryzacji",
-    "department": "Biuro Dyrektora Generalnego",
-    "division": "Wydział Organizacji Pracy",
-    "documentName": "OSP BDG WOP 3 główny specjalista.docx",
-    "fromOrganizer": false,
-    "purpose": "Koordynacja procesów organizacji pracy i obiegu dokumentów w urzędzie.",
-    "supervisedBy": {
-     "direct": "naczelnik wydziału",
-     "indirect": "dyrektor generalny"
-    },
-    "subordinates": {
-     "range": "brak",
-     "quote": "☒ brak podległych pracowników"
-    },
-    "tasks": [
-     {
-      "id": "bdg3-t1",
-      "no": 1,
-      "kind": "dominujace",
-      "text": "Opracowuje projekty regulaminów, zarządzeń i procedur wewnętrznych dotyczących organizacji pracy urzędu."
-     },
-     {
-      "id": "bdg3-t2",
-      "no": 2,
-      "kind": "dominujace",
-      "text": "Koordynuje wdrożenie elektronicznego zarządzania dokumentacją w komórkach organizacyjnych."
-     },
-     {
-      "id": "bdg3-t3",
-      "no": 3,
-      "kind": "pozostale",
-      "text": "Prowadzi szkolenia i konsultacje dla pracowników w zakresie obiegu dokumentów."
-     },
-     {
-      "id": "bdg3-t4",
-      "no": 4,
-      "kind": "pozostale",
-      "text": "Analizuje zgłoszenia pracowników i proponuje usprawnienia procesów."
-     },
-     {
-      "id": "bdg3-t5",
-      "no": 5,
-      "kind": "pozostale",
-      "text": "Udziela odpowiedzi na zapytania komórek organizacyjnych (klient wewnętrzny)."
-     }
-    ],
-    "authorizations": [],
-    "independence": "Samodzielnie przygotowuje projekty dokumentów i rekomendacje zmian; decyzje wdrożeniowe uzgadnia z przełożonym.",
-    "softCompetencies": [
-     "orientacja na klienta/interesanta",
-     "komunikacja",
-     "rzetelność"
-    ]
-   },
-   "evaluator": {
-    "id": "u-tomasz",
-    "fullName": "Tomasz Lis",
-    "jobTitle": "Naczelnik wydziału"
-   },
-   "orgUnitName": "Wydział Organizacji Pracy",
-   "createdAt": "2022-12-01T08:00:00.000Z",
-   "updatedAt": "2024-11-22T12:00:00.000Z",
-   "steps": {
-    "stanowisko": {
-     "completedAt": "2024-11-22T12:00:00.000Z",
-     "completedById": "u-tomasz"
-    },
-    "kryteria": {
-     "completedAt": "2024-11-22T12:00:00.000Z",
-     "completedById": "u-tomasz"
-    },
-    "rozmowa-wstepna": {
-     "completedAt": "2024-11-22T12:00:00.000Z",
-     "completedById": "u-tomasz"
-    },
-    "obserwacje": {
-     "completedAt": "2024-11-22T12:00:00.000Z",
-     "completedById": "u-tomasz"
-    },
-    "rozmowa-oceniajaca": {
-     "completedAt": "2024-11-22T12:00:00.000Z",
-     "completedById": "u-tomasz"
-    },
-    "ocena": {
-     "completedAt": "2024-11-22T12:00:00.000Z",
-     "completedById": "u-tomasz"
-    },
-    "podsumowanie": {
-     "completedAt": "2024-11-22T12:00:00.000Z",
-     "completedById": "u-tomasz"
-    }
-   },
-   "deadlines": {
-    "dueDate": "2024-11-20",
-    "baseDueDate": "2026-11-20",
-    "basis": "24 miesiące od sporządzenia poprzedniej oceny (20.11.2024)",
-    "extensions": [],
-    "preliminaryDueDate": "2024-12-20"
-   },
-   "positionReview": {
-    "confirmedVariant": "C",
-    "confirmedAt": "2022-12-01T08:00:00.000Z"
-   },
-   "criteria": {
-    "additional": [
-     "c10"
-    ],
-    "rejectedSuggestions": [],
-    "approvedAt": "2022-12-01T08:10:00.000Z"
-   },
-   "preliminary": {
-    "topics": {},
-    "expectations": [],
-    "goals": [],
-    "notes": "",
-    "meetingDate": "2022-12-01",
-    "employeeAcknowledgedAt": "2022-12-01"
-   },
-   "preparatoryService": {
-    "note": ""
-   },
-   "report": {
-    "summary": {
-     "tasks": "",
-     "problems": "",
-     "skills": "",
-     "improvements": ""
-    }
-   },
-   "observations": [],
-   "review": {
-    "topics": {},
-    "notes": "",
-    "employeePerspective": "",
-    "developmentNeeds": ""
-   },
-   "ratings": [
-    {
-     "criterionId": "c03",
-     "indicators": [],
-     "decision": {
-      "points": 7,
-      "rationale": "",
-      "decidedAt": "2024-11-20T10:00:00.000Z",
-      "decidedById": "u-tomasz",
-      "suggestedPoints": null,
-      "suggestedAverage": null
-     }
-    },
-    {
-     "criterionId": "c01",
-     "indicators": [],
-     "decision": {
-      "points": 7,
-      "rationale": "",
-      "decidedAt": "2024-11-20T10:00:00.000Z",
-      "decidedById": "u-tomasz",
-      "suggestedPoints": null,
-      "suggestedAverage": null
-     }
-    },
-    {
-     "criterionId": "c04",
-     "indicators": [],
-     "decision": {
-      "points": 7,
-      "rationale": "",
-      "decidedAt": "2024-11-20T10:00:00.000Z",
-      "decidedById": "u-tomasz",
-      "suggestedPoints": null,
-      "suggestedAverage": null
-     }
-    },
-    {
-     "criterionId": "c06",
-     "indicators": [],
-     "decision": {
-      "points": 5,
-      "rationale": "",
-      "decidedAt": "2024-11-20T10:00:00.000Z",
-      "decidedById": "u-tomasz",
-      "suggestedPoints": null,
-      "suggestedAverage": null
-     }
-    },
-    {
-     "criterionId": "c02",
-     "indicators": [],
-     "decision": {
-      "points": 7,
-      "rationale": "",
-      "decidedAt": "2024-11-20T10:00:00.000Z",
-      "decidedById": "u-tomasz",
-      "suggestedPoints": null,
-      "suggestedAverage": null
-     }
-    },
-    {
-     "criterionId": "c10",
-     "indicators": [],
-     "decision": {
-      "points": 7,
-      "rationale": "",
-      "decidedAt": "2024-11-20T10:00:00.000Z",
-      "decidedById": "u-tomasz",
-      "suggestedPoints": null,
-      "suggestedAverage": null
-     }
-    }
-   ],
-   "conclusion": {
-    "justification": "",
-    "developmentPlan": "Wnioski do IPRZ zapisane w arkuszu.",
-    "promotionRequest": "nie",
-    "promotionJustification": "",
-    "draftedAt": "2024-11-20",
-    "sheetGeneratedAt": "2024-11-20T11:00:00.000Z",
-    "employeeAcknowledgedAt": "2024-11-22"
-   },
-   "documents": [
-    {
-     "id": "hist-katarzyna-2024-doc",
-     "kind": "arkusz-okresowy",
-     "title": "Arkusz oceny okresowej C",
-     "status": "podpisany",
-     "createdAt": "2024-11-20T11:00:00.000Z",
-     "version": 1
-    }
-   ],
-   "history": [
-    {
-     "id": "h-iyhuvjo14d",
-     "at": "2022-12-01T08:00:00.000Z",
-     "actor": {
-      "id": "u-marta",
-      "fullName": "Marta Wiśniewska",
-      "jobTitle": "Główny specjalista ds. kadr"
-     },
-     "kind": "utworzenie",
-     "summary": "Uruchomiono ocenę okresową."
-    },
-    {
-     "id": "h-3gr4qio14d",
-     "at": "2024-11-22T12:00:00.000Z",
-     "actor": {
-      "id": "u-tomasz",
-      "fullName": "Tomasz Lis",
       "jobTitle": "Naczelnik wydziału"
      },
      "kind": "zapoznanie",
@@ -5154,31 +3251,6 @@
    "readAt": "2026-11-18T12:00:00.000Z",
    "caseId": "case-zofia",
    "link": "/oceny/case-zofia/rozmowa-oceniajaca"
-  },
-  {
-   "id": "n-4",
-   "recipientId": "u-ewa-mazur",
-   "kind": "przypomnienie",
-   "title": "Jan Kowalski — rozmowa wstępna do 27.11.2026",
-   "body": "Do terminu z § 7 zostało 6 dni. Zaplanuj rozmowę i podpis części I.",
-   "createdAt": "2026-11-20T08:00:00.000Z",
-   "caseId": "case-jan",
-   "link": "/oceny/case-jan/rozmowa-wstepna",
-   "sender": {
-    "id": "u-marta",
-    "fullName": "Marta Wiśniewska",
-    "jobTitle": "Główny specjalista ds. kadr"
-   }
-  },
-  {
-   "id": "n-5",
-   "recipientId": "u-marta",
-   "kind": "zapoznanie",
-   "title": "Katarzyna Wójcik — arkusz czeka na zapoznanie",
-   "body": "Arkusz wygenerowano 19.11.2026. Oceniający powinien niezwłocznie zapoznać ocenianą z oceną (§ 12).",
-   "createdAt": "2026-11-19T14:15:00.000Z",
-   "caseId": "case-katarzyna",
-   "link": "/oceny/case-katarzyna/podsumowanie"
   }
  ],
  "reminderRules": [
@@ -5258,24 +3330,6 @@
    "title": "Termin oceny 21.11.2026 (za 32 dni)",
    "channel": "aplikacja",
    "readAt": "2026-10-20T09:12:00.000Z"
-  },
-  {
-   "id": "rl-2",
-   "sentAt": "2026-11-20T08:00:00.000Z",
-   "sender": {
-    "id": "u-marta",
-    "fullName": "Marta Wiśniewska",
-    "jobTitle": "Główny specjalista ds. kadr"
-   },
-   "recipient": {
-    "id": "u-ewa-mazur",
-    "fullName": "Ewa Mazur",
-    "jobTitle": "Naczelnik wydziału"
-   },
-   "caseId": "case-jan",
-   "employeeName": "Jan Kowalski",
-   "title": "Rozmowa wstępna do 27.11.2026",
-   "channel": "aplikacja"
   }
  ],
  "candidates": [
@@ -5591,5 +3645,6 @@
    ],
    "committeeNote": ""
   }
- ]
+ ],
+ "employees": []
 }

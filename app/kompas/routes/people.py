@@ -1,11 +1,11 @@
 from __future__ import annotations
 
 from app.domain.dates import format_pl
-from app.domain.text import fold
+from app.domain.text import fold, new_id
 from app.kompas import reference as ref
 from app.kompas.access import can_see_case
 from app.kompas.cases import compute_deadlines, summarize_case
-from app.kompas.errors import forbidden
+from app.kompas.errors import bad_request, forbidden
 from app.kompas.router import RouteContext, Router
 from app.kompas.workspace import Workspace
 
@@ -46,18 +46,69 @@ def _pl_key(name: str) -> str:
 
 
 def _employees(ctx: RouteContext) -> list[dict]:
-    visible = [e for e in ref.employees() if _can_see_employee(ctx.ws, ctx.user, e)]
+    visible = [e for e in ctx.ws.employees() if _can_see_employee(ctx.ws, ctx.user, e)]
     return sorted((_list_item(ctx.ws, e) for e in visible), key=lambda i: _pl_key(i["fullName"]))
 
 
+def _create_employee(ctx: RouteContext) -> dict:
+    body = ctx.json()
+    user = ctx.user
+    first_name = str(body.get("firstName") or "").strip()
+    last_name = str(body.get("lastName") or "").strip()
+    if not first_name or not last_name:
+        raise bad_request("Podaj imię i nazwisko.")
+    position_id = str(body.get("positionId") or "").strip()
+    if not position_id:
+        raise bad_request("Wybierz stanowisko.")
+    position = ref.position(position_id)
+    is_hr = "hr" in user["roles"]
+    supervisor_id = str(body.get("supervisorId") or "").strip() if is_hr else user["id"]
+    if not supervisor_id:
+        raise bad_request("Wybierz przełożonego.")
+    ref.user(supervisor_id)
+    if not is_hr and supervisor_id != user["id"]:
+        raise forbidden("Przełożony może dodać tylko osoby do swojego zespołu.")
+    status = "urzednik-sc" if body.get("status") == "urzednik-sc" else "pracownik-sc"
+    basis = "pierwsza-umowa" if body.get("employmentBasis") == "pierwsza-umowa" else "czas-nieokreslony"
+    employed_since = str(body.get("employedSince") or "").strip() or ctx.ws.today
+    employment: dict = {"since": employed_since, "basis": basis}
+    if basis == "pierwsza-umowa":
+        year, month, day = employed_since.split("-")
+        employment["firstContractEnd"] = f"{int(year) + 1}-{month}-{day}"
+    employee = {
+        "id": new_id("e"),
+        "firstName": first_name,
+        "lastName": last_name,
+        "fullName": f"{first_name} {last_name}",
+        "positionId": position["id"],
+        "orgUnitId": position["orgUnitId"],
+        "supervisorId": supervisor_id,
+        "status": status,
+        "employment": employment,
+        "absences": [],
+    }
+    saved = ctx.ws.save_employee(employee)
+    return _list_item(ctx.ws, saved)
+
+
 def _employee(ctx: RouteContext) -> dict:
-    employee = ref.employee(ctx.params["employeeId"])
+    employee = ctx.ws.employee(ctx.params["employeeId"])
     if not _can_see_employee(ctx.ws, ctx.user, employee):
         raise forbidden("Dane pracownika są dostępne dla przełożonego i kadr.")
     cases = [summarize_case(c, ctx.ws.today) for c in ctx.ws.cases
              if c["employee"]["id"] == employee["id"] and can_see_case(c, ctx.user)]
     return {"employee": _list_item(ctx.ws, employee), "position": ref.position(employee["positionId"]),
             "cases": sorted(cases, key=lambda s: s["dueDate"], reverse=True)}
+
+
+def _positions(ctx: RouteContext) -> list[dict]:
+    user = ctx.user
+    is_hr = "hr" in user["roles"]
+    positions = ref.reference()["positions"] if is_hr else ref.positions_in_unit(user["orgUnitId"])
+    return [{
+        "id": p["id"], "code": p["code"], "title": p["title"], "orgUnitId": p["orgUnitId"],
+        "orgUnitName": ref.org_unit(p["orgUnitId"])["name"],
+    } for p in positions]
 
 
 def _users(ctx: RouteContext) -> list[dict]:
@@ -68,5 +119,7 @@ def _users(ctx: RouteContext) -> list[dict]:
 def register(router: Router) -> None:
     (router
      .get("/employees", _employees)
+     .post("/employees", _create_employee)
      .get("/employees/:employeeId", _employee)
+     .get("/positions", _positions)
      .get("/users", _users))

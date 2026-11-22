@@ -20,7 +20,7 @@ from app.rag.retrieve import Hit, retrieve_multi
 
 log = logging.getLogger("kompas.assistant")
 
-MAX_HISTORY = 6
+MAX_HISTORY = 10
 TOP_K = 10
 OFFLINE_FRAGMENTS = 3
 OFFLINE_INTENT_DEPTH = 5

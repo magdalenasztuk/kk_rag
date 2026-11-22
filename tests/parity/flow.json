@@ -1199,39 +1199,6 @@
   },
   {
     "m": "POST",
-    "p": "/demo/scenario",
-    "b": {
-      "scenarioId": "weto"
-    }
-  },
-  {
-    "m": "GET",
-    "p": "/cases"
-  },
-  {
-    "m": "GET",
-    "p": "/demo"
-  },
-  {
-    "m": "POST",
-    "p": "/demo/scenario",
-    "b": {
-      "scenarioId": "nope"
-    }
-  },
-  {
-    "m": "POST",
-    "p": "/demo/scenario",
-    "b": {
-      "scenarioId": "granica"
-    }
-  },
-  {
-    "m": "GET",
-    "p": "/cases"
-  },
-  {
-    "m": "POST",
     "p": "/demo/reset"
   },
   {

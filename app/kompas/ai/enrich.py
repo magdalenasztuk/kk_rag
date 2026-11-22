@@ -101,24 +101,38 @@ def analyze_observation(draft: dict, criteria: list[str], tasks: list[dict], ana
 
 # — Plan rozmowy —
 
-PLAN_SYSTEM = """Przygotowujesz przełożonego do rozmowy oceniającej. Dostajesz kontekst sprawy i szkielet planu (fakty z obserwacji \
-i luki dla każdego kryterium). Zaproponuj pytania otwarte odnoszące się do KONKRETNYCH obserwacji (data, sytuacja) i luk.
+PLAN_SYSTEM = """Przygotowujesz przełożonego do rozmowy oceniającej. Dostajesz kontekst sprawy, fakty z obserwacji i pytania bazowe.
+Każde pytanie ma dotyczyć INNEGO faktu z opisu sytuacji. Nie używaj jednej ramy w rodzaju „Jak oceniasz sytuację… Co zadziałało”.
+Gdy ta sama obserwacja wraca przy drugim kryterium, zapytaj o inny szczegół. Przy luce pytaj o brakujący wskaźnik, nie o całe kryterium tym samym zdaniem.
+Jeśli nie potrafisz rozróżnić pytań, zwróć pytania_bazowe bez zmian.
 Zwróć JSON:
 {"opening": "<2–3 zdania otwarcia rozmowy>",
- "items": [{"criterion_id": "<id>", "questions": ["<2–3 pytania otwarte>"]}],
+ "items": [{"criterion_id": "<id>", "questions": ["<2–3 różne pytania otwarte>"]}],
  "development_questions": ["<3 pytania o rozwój i wsparcie>"],
  "closing": "<1–2 zdania zamknięcia>"}"""
+
+
+def _uniform_questions(questions: list[str]) -> bool:
+    """Model czasem wstawia wszystkie pytania w to samo zdanie — wtedy zostawiamy pytania bazowe."""
+    if len(questions) < 3:
+        return False
+    openings = [collapse_whitespace(question)[:42] for question in questions]
+    return len(set(openings)) <= max(1, len(openings) // 2)
 
 
 def conversation_plan(c: dict, generated_at: str) -> dict:
     plan = drafts.build_conversation_plan(c, generated_at)
     skeleton = [{"criterion_id": i["criterionId"], "kryterium": criterion_name(i["criterionId"]),
-                 "fakty": [f"{f['date']}: {f['text']}" for f in i["facts"]], "luki": i["gaps"]} for i in plan["items"]]
+                 "fakty": [f"{f['date']}: {f['text']}" for f in i["facts"]], "luki": i["gaps"],
+                 "pytania_bazowe": i["questions"]} for i in plan["items"]]
     data = _call(PLAN_SYSTEM, f"KONTEKST SPRAWY:\n{case_context(c)}\n\nSZKIELET:\n{json.dumps(skeleton, ensure_ascii=False)}", 1600)
     if not data:
         return plan
     questions = {str(i.get("criterion_id")): _strings(i.get("questions"), 3, 260) for i in data.get("items") or [] if isinstance(i, dict)}
-    plan["items"] = [{**i, "questions": questions.get(i["criterionId"]) or i["questions"]} for i in plan["items"]]
+    proposed = [{**i, "questions": questions.get(i["criterionId"]) or i["questions"]} for i in plan["items"]]
+    flat = [question for item in proposed for question in item["questions"]]
+    if not _uniform_questions(flat):
+        plan["items"] = proposed
     if data.get("opening"):
         plan["opening"] = truncate(collapse_whitespace(str(data["opening"])), 600)
     if data.get("closing"):
