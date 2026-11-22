@@ -43,14 +43,22 @@ class Workspace:
         # Stan z chwili odczytu. Zapis dokłada tylko różnicę, żeby równoległy
         # autozapis innego kroku nie skasował notatek, ocen ani obserwacji.
         self._loaded: dict = copy.deepcopy(state)
+        self._replace = False
 
     # — persistence —
 
     def commit(self) -> None:
         if not self.dirty:
             return
-        saved = self._store.save_merged(self.id, self._loaded, self.state)
-        self.state = saved
+        if self._replace:
+            # Przywrócenie seeda musi nadpisać cały dokument — merge zostawiłby
+            # testowych pracowników i oceny dodane po starcie demo.
+            self._store.save(self.id, json.dumps(self.state, ensure_ascii=False))
+            saved = self.state
+            self._replace = False
+        else:
+            saved = self._store.save_merged(self.id, self._loaded, self.state)
+            self.state = saved
         self._loaded = copy.deepcopy(saved)
         self.dirty = False
 
@@ -59,6 +67,7 @@ class Workspace:
 
     def reset(self, scenario_id: str = "demo", session_user_id: str | None = None) -> None:
         self.state = seeded_state(scenario_id, session_user_id or self.state.get("sessionUserId", DEFAULT_USER_ID))
+        self._replace = True
         self.dirty = True
 
     # — time —
