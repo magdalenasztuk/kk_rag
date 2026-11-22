@@ -11,7 +11,7 @@ import logging
 
 from app.core.config import settings
 from app.domain.criteria import criterion_name
-from app.domain.text import collapse_whitespace, truncate
+from app.domain.text import collapse_whitespace, fold, truncate
 from app.domain.workflow import case_criteria, decision_points
 from app.domain.scales import points_label
 from app.kompas import reference as ref
@@ -27,11 +27,17 @@ Nie wystawiasz ocen: oceny cząstkowe wybiera oceniający. Pracownika nazywaj �
 Zwracasz WYŁĄCZNIE jeden obiekt JSON."""
 
 
-def _call(system: str, user: str, max_tokens: int = 1200) -> dict | None:
+def _call(system: str, user: str, max_tokens: int = 1200, *, fast: bool = True,
+          schema: dict | None = None) -> dict | None:
     if not settings.llm_available():
         return None
     try:
-        return generate.parse_json_object(generate.complete_text(f"{system}\n\n{_RULES}", user, max_tokens=max_tokens))
+        raw = generate.complete_text(
+            f"{system}\n\n{_RULES}", user, max_tokens=max_tokens, fast=fast, schema=schema)
+        data = generate.parse_json_object(raw)
+        if data is None:
+            log.warning("enrich: model nie zwrócił JSON (długość %s): %s", len(raw or ""), (raw or "")[:500])
+        return data
     except Exception as exc:  # noqa: BLE001 — wersja deterministyczna wystarcza
         log.warning("enrich call failed: %s", exc)
         return None
@@ -101,43 +107,124 @@ def analyze_observation(draft: dict, criteria: list[str], tasks: list[dict], ana
 
 # — Plan rozmowy —
 
-PLAN_SYSTEM = """Przygotowujesz przełożonego do rozmowy oceniającej. Dostajesz kontekst sprawy, fakty z obserwacji i pytania bazowe.
-Każde pytanie ma dotyczyć INNEGO faktu z opisu sytuacji. Nie używaj jednej ramy w rodzaju „Jak oceniasz sytuację… Co zadziałało”.
-Gdy ta sama obserwacja wraca przy drugim kryterium, zapytaj o inny szczegół. Przy luce pytaj o brakujący wskaźnik, nie o całe kryterium tym samym zdaniem.
-Jeśli nie potrafisz rozróżnić pytań, zwróć pytania_bazowe bez zmian.
+PLAN_SYSTEM = """Przygotowujesz przełożonego do rozmowy oceniającej w służbie cywilnej. Piszesz pytania, które może przeczytać na głos.
+Zasady języka:
+- poprawna, mówiona polszczyzna; przełożony zwraca się do pracownika w drugiej osobie;
+- czasowniki: „opowiedz”, „zrobiłeś”, „sprawdziłeś”, „jak to ułożyłeś”, „co powiedziałeś”;
+- zakaz strony biernej i bezosobowej: „zrobiono”, „sprawdzono”, „zaplanowano”, „wybrano”, „zastosowano”, „utrzymywano”, „skoordynowano”, „dostosowano”;
+- pełne zdania, bez cytowania nazw wskaźników i bez cudzysłowów z tekstu kompetencji;
+- zakaz ramek w rodzaju „było widać:”, „w tym rodzaju”, „jak to wygląda u Ciebie na co dzień: «…»”;
+- pytanie ma dać się przeczytać na głos i prowadzić do przykładu: co pracownik zrobił, jaki był skutek, co zależało od niego.
+Zasady treści:
+- obserwacje to jedyne fakty z okresu oceny; opisy kryteriów i zadania stanowiska to oczekiwania, nie zdarzenia, które już zaszły;
+- nie pisz „w notatkach pojawiło się” ani „jeśli miałeś związek z…”;
+- nie wymyślaj konkretnych ćwiczeń, pism ani konfliktów; jeśli obserwacji nie ma, pytaj o przykład z okresu, bez nazywania zdarzenia, którego nie zapisano;
+- gdy jest obserwacja, pierwsze pytanie dotyczy tej sytuacji (data i tytuł), drugie pyta o inny szczegół: skutek, udział innych osób albo co następnym razem;
+- gdy obserwacji nie ma, poproś o jeden przykład z okresu oceny, trybem „opowiedz o sytuacji, w której…”; nie zakładaj, że coś konkretnego się wydarzyło;
+- dwa pytania na kryterium, każde o czym innym; nie powtarzaj tej samej konstrukcji we wszystkich kryteriach;
+- nie wystawiaj ocen i nie sugeruj punktów.
 Zwróć JSON:
-{"opening": "<2–3 zdania otwarcia rozmowy>",
- "items": [{"criterion_id": "<id>", "questions": ["<2–3 różne pytania otwarte>"]}],
- "development_questions": ["<3 pytania o rozwój i wsparcie>"],
- "closing": "<1–2 zdania zamknięcia>"}"""
+{"opening": "<2–3 zdania, jak zacząć rozmowę>",
+ "items": [{"criterion_id": "<id z listy>", "questions": ["<pytanie 1>", "<pytanie 2>"]}],
+ "development_questions": ["<2–3 pytania o rozwój i potrzebne wsparcie>"],
+ "closing": "<1–2 zdania, jak zamknąć rozmowę>"}"""
+
+PLAN_SCHEMA = {
+    "type": "object",
+    "additionalProperties": False,
+    "properties": {
+        "opening": {"type": "string"},
+        "items": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "additionalProperties": False,
+                "properties": {
+                    "criterion_id": {"type": "string"},
+                    "questions": {"type": "array", "items": {"type": "string"}},
+                },
+                "required": ["criterion_id", "questions"],
+            },
+        },
+        "development_questions": {"type": "array", "items": {"type": "string"}},
+        "closing": {"type": "string"},
+    },
+    "required": ["opening", "items", "development_questions", "closing"],
+}
 
 
-def _uniform_questions(questions: list[str]) -> bool:
-    """Model czasem wstawia wszystkie pytania w to samo zdanie — wtedy zostawiamy pytania bazowe."""
-    if len(questions) < 3:
-        return False
-    openings = [collapse_whitespace(question)[:42] for question in questions]
-    return len(set(openings)) <= max(1, len(openings) // 2)
+_BAD_QUESTION = (
+    "było widać", "w tym rodzaju", "jak to wygląda u ciebie na co dzień:",
+    "w notatkach", "miałeś związek",
+)
+_IMPERSONAL = (
+    "zastosowano", "sprawdzono", "zweryfikowano", "zaplanowano", "skoordynowano",
+    "dostosowano", "wybrano", "utrzymywano", "ustalano", "zrobiono", "przekazano",
+)
+
+
+def _spoken_questions(raw, banned: list[str]) -> list[str]:
+    accepted = []
+    for question in _strings(raw, 3, 280):
+        low = question.lower()
+        if any(bad in low for bad in _BAD_QUESTION) or any(word in low for word in _IMPERSONAL):
+            continue
+        if any(len(snippet) > 36 and snippet.lower() in low for snippet in banned):
+            continue
+        if len(question) < 40:
+            continue
+        accepted.append(question)
+    return accepted
+
+
+def _mentions_observation(question: str, observations: list[dict]) -> bool:
+    folded = fold(question)
+    for observation in observations:
+        for token in fold(observation.get("title") or "").split():
+            if len(token) > 3 and token in folded:
+                return True
+    return False
 
 
 def conversation_plan(c: dict, generated_at: str) -> dict:
     plan = drafts.build_conversation_plan(c, generated_at)
-    skeleton = [{"criterion_id": i["criterionId"], "kryterium": criterion_name(i["criterionId"]),
-                 "fakty": [f"{f['date']}: {f['text']}" for f in i["facts"]], "luki": i["gaps"],
-                 "pytania_bazowe": i["questions"]} for i in plan["items"]]
-    data = _call(PLAN_SYSTEM, f"KONTEKST SPRAWY:\n{case_context(c)}\n\nSZKIELET:\n{json.dumps(skeleton, ensure_ascii=False)}", 1600)
+    skeleton = []
+    for item in plan["items"]:
+        competency = ref.competency(item["criterionId"]) or {}
+        skeleton.append({
+            "criterion_id": item["criterionId"],
+            "kryterium": criterion_name(item["criterionId"]),
+            "znaczenie": [truncate(i["text"], 140) for i in competency.get("indicators", [])[:3]],
+            "obserwacje": [f"{f['date']}: {f['text']}" for f in item["facts"]],
+            "czego_brakuje": item["gaps"],
+        })
+    data = _call(
+        PLAN_SYSTEM,
+        f"KONTEKST SPRAWY:\n{case_context(c)}\n\nKRYTERIA DO PYTAŃ:\n{json.dumps(skeleton, ensure_ascii=False)}",
+        4000,
+        fast=False,
+        schema=PLAN_SCHEMA,
+    )
     if not data:
         return plan
-    questions = {str(i.get("criterion_id")): _strings(i.get("questions"), 3, 260) for i in data.get("items") or [] if isinstance(i, dict)}
-    proposed = [{**i, "questions": questions.get(i["criterionId"]) or i["questions"]} for i in plan["items"]]
-    flat = [question for item in proposed for question in item["questions"]]
-    if not _uniform_questions(flat):
-        plan["items"] = proposed
-    if data.get("opening"):
-        plan["opening"] = truncate(collapse_whitespace(str(data["opening"])), 600)
-    if data.get("closing"):
-        plan["closing"] = truncate(collapse_whitespace(str(data["closing"])), 400)
-    plan["developmentQuestions"] = _strings(data.get("development_questions"), 4, 260) or plan["developmentQuestions"]
+    by_id = {str(i.get("criterion_id")): i for i in data.get("items") or [] if isinstance(i, dict)}
+    items = []
+    for item in plan["items"]:
+        competency = ref.competency(item["criterionId"]) or {}
+        banned = [i["text"][:80] for i in competency.get("indicators", [])]
+        proposed = _spoken_questions((by_id.get(item["criterionId"]) or {}).get("questions"), banned)
+        observations = [o for o in c["observations"] if item["criterionId"] in o.get("criterionIds", [])]
+        if observations and proposed and not any(_mentions_observation(q, observations) for q in proposed):
+            proposed = [item["questions"][0], *proposed]
+        items.append({**item, "questions": (proposed or item["questions"])[:3]})
+    plan["items"] = items
+    opening = collapse_whitespace(str(data.get("opening") or ""))
+    closing = collapse_whitespace(str(data.get("closing") or ""))
+    if len(opening) > 40 and not any(bad in opening.lower() for bad in _BAD_QUESTION):
+        plan["opening"] = truncate(opening, 600)
+    if len(closing) > 20 and not any(bad in closing.lower() for bad in _BAD_QUESTION):
+        plan["closing"] = truncate(closing, 400)
+    plan["developmentQuestions"] = _spoken_questions(data.get("development_questions"), []) or plan["developmentQuestions"]
     return plan
 
 

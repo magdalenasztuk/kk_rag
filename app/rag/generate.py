@@ -1,8 +1,11 @@
 """Wywołania LLM (Anthropic SDK; Gemini / Ollama przez litellm) + parsowanie JSON + walidacja cytowań."""
 from __future__ import annotations
 import json
+import logging
 import re
 from functools import lru_cache
+
+log = logging.getLogger("kompas.generate")
 
 from app.core.config import settings
 from app.rag.prompts import ABSTAIN_SENTENCE, CONDENSE_SYSTEM, FORMAL_SYSTEM, CONVERSATION_SYSTEM, build_user_prompt
@@ -24,13 +27,28 @@ def _mock_complete(system: str, messages: list[dict]) -> str:
     return json.dumps({"answer": f"[MOCK] {frag} [1]", "citations": [1], "abstained": not bool(frag)}, ensure_ascii=False)
 
 
-def _complete(model: str, system: str, messages: list[dict], max_tokens: int, json_mode: bool = False) -> str:
+def _complete(model: str, system: str, messages: list[dict], max_tokens: int, json_mode: bool = False,
+              schema: dict | None = None) -> str:
     if settings.llm_provider == "mock":
         return _mock_complete(system, messages)
     if settings.llm_provider == "anthropic":
-        resp = _anthropic().messages.create(
-            model=model.removeprefix("anthropic/"), system=system, messages=messages, max_tokens=max_tokens)
-        return "".join(block.text for block in resp.content if getattr(block, "type", "") == "text")
+        kwargs = dict(model=model.removeprefix("anthropic/"), system=system, messages=messages, max_tokens=max_tokens)
+        if schema:
+            kwargs["output_config"] = {"format": {"type": "json_schema", "schema": schema}}
+        try:
+            resp = _anthropic().messages.create(**kwargs)
+        except Exception as exc:
+            if not schema:
+                raise
+            log.warning("structured output odrzucone: %s", str(exc)[:300])
+            kwargs.pop("output_config", None)
+            resp = _anthropic().messages.create(**kwargs)
+        for block in resp.content:
+            if getattr(block, "type", "") == "tool_use":
+                payload = getattr(block, "input", None)
+                if payload:
+                    return payload if isinstance(payload, str) else json.dumps(payload, ensure_ascii=False)
+        return "".join(getattr(block, "text", "") for block in resp.content if getattr(block, "text", ""))
     import litellm
     litellm.drop_params = True
     kwargs = dict(model=model, messages=[{"role": "system", "content": system}, *messages],
@@ -41,10 +59,11 @@ def _complete(model: str, system: str, messages: list[dict], max_tokens: int, js
     return resp.choices[0].message.content or ""
 
 
-def complete_text(system: str, user: str, max_tokens: int = 1200, fast: bool = True) -> str:
+def complete_text(system: str, user: str, max_tokens: int = 1200, fast: bool = True,
+                  schema: dict | None = None) -> str:
     """Pojedyncze wywołanie modelu (szkice, analiza obserwacji, plan rozmowy)."""
     model = settings.resolved_fast_model() if fast else settings.resolved_answer_model()
-    return _complete(model, system, [{"role": "user", "content": user}], max_tokens, json_mode=True)
+    return _complete(model, system, [{"role": "user", "content": user}], max_tokens, json_mode=True, schema=schema)
 
 
 def parse_json_object(raw: str) -> dict | None:

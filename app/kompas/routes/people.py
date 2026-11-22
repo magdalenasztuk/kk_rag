@@ -1,6 +1,8 @@
 from __future__ import annotations
 
-from app.domain.dates import format_pl
+import copy
+
+from app.domain.dates import format_pl, is_iso_date
 from app.domain.text import fold, new_id
 from app.kompas import reference as ref
 from app.kompas.access import can_see_case
@@ -71,10 +73,8 @@ def _create_employee(ctx: RouteContext) -> dict:
     status = "urzednik-sc" if body.get("status") == "urzednik-sc" else "pracownik-sc"
     basis = "pierwsza-umowa" if body.get("employmentBasis") == "pierwsza-umowa" else "czas-nieokreslony"
     employed_since = str(body.get("employedSince") or "").strip() or ctx.ws.today
-    employment: dict = {"since": employed_since, "basis": basis}
-    if basis == "pierwsza-umowa":
-        year, month, day = employed_since.split("-")
-        employment["firstContractEnd"] = f"{int(year) + 1}-{month}-{day}"
+    if not is_iso_date(employed_since):
+        raise bad_request("Podaj datę zatrudnienia.")
     employee = {
         "id": new_id("e"),
         "firstName": first_name,
@@ -84,9 +84,41 @@ def _create_employee(ctx: RouteContext) -> dict:
         "orgUnitId": position["orgUnitId"],
         "supervisorId": supervisor_id,
         "status": status,
-        "employment": employment,
+        "employment": _employment(basis, employed_since),
         "absences": [],
     }
+    saved = ctx.ws.save_employee(employee)
+    return _list_item(ctx.ws, saved)
+
+
+def _contract_end(employed_since: str) -> str:
+    year, month, day = employed_since.split("-")
+    return f"{int(year) + 1}-{month}-{day}"
+
+
+def _employment(basis: str, employed_since: str) -> dict:
+    employment: dict = {"since": employed_since, "basis": basis}
+    if basis == "pierwsza-umowa":
+        employment["firstContractEnd"] = _contract_end(employed_since)
+    return employment
+
+
+def _can_edit_employee(user: dict, employee: dict) -> bool:
+    return "hr" in user["roles"] or employee["supervisorId"] == user["id"]
+
+
+def _update_employee(ctx: RouteContext) -> dict:
+    employee = copy.deepcopy(ctx.ws.employee(ctx.params["employeeId"]))
+    if not _can_edit_employee(ctx.user, employee):
+        raise forbidden("Umowę zmieniają kadry albo bezpośredni przełożony.")
+    body = ctx.json()
+    basis = body.get("employmentBasis")
+    if basis not in ("pierwsza-umowa", "czas-nieokreslony"):
+        raise bad_request("Wybierz rodzaj umowy.")
+    employed_since = str(body.get("employedSince") or "").strip()
+    if not is_iso_date(employed_since):
+        raise bad_request("Podaj datę zatrudnienia.")
+    employee["employment"] = _employment(basis, employed_since)
     saved = ctx.ws.save_employee(employee)
     return _list_item(ctx.ws, saved)
 
@@ -120,6 +152,7 @@ def register(router: Router) -> None:
     (router
      .get("/employees", _employees)
      .post("/employees", _create_employee)
+     .patch("/employees/:employeeId", _update_employee)
      .get("/employees/:employeeId", _employee)
      .get("/positions", _positions)
      .get("/users", _users))

@@ -214,8 +214,7 @@ def _complete_step(ctx: RouteContext) -> dict:
         names = ", ".join(criterion_name(cid) for cid in original["criteria"]["additional"]) or "brak"
         events.append(history_event(now, actor, "krok", f"Zatwierdzono kryteria dodatkowe: {names}.", step_id))
     elif step_id == "rozmowa-wstepna":
-        title = ("Pierwsza ocena — ustalenia rozmowy wstępnej i termin sprawozdania" if c["path"] == "first"
-                 else f"Arkusz {original['positionReview'].get('confirmedVariant') or ''} — część I (kryteria i termin)")
+        title = _part_one_title(original)
         c["documents"] = _upsert_document(c, "czesc-i", title, "podpisany", now)
         events.append(history_event(now, actor, "krok",
                                     "Zapisano rozmowę wstępną; oceniany potwierdził zapoznanie podpisem.", step_id))
@@ -408,11 +407,27 @@ def _position_analysis(ctx: RouteContext) -> dict:
 
 # — Dokumenty —
 
+def _part_one_title(c: dict) -> str:
+    if c["path"] == "first":
+        return "Pierwsza ocena — ustalenia rozmowy wstępnej i termin sprawozdania"
+    return f"Arkusz {c['positionReview'].get('confirmedVariant') or ''} — część I (kryteria i termin)"
+
+
 def _generate_document(ctx: RouteContext) -> dict:
     c = _editable(ctx)
     kind = ctx.json().get("kind")
     now = ctx.ws.now()
     actor = _actor(ctx)
+    if kind == "czesc-i":
+        _require_step_open(c, "rozmowa-wstepna")
+        title = _part_one_title(c)
+        signed = bool(c["preliminary"].get("employeeAcknowledgedAt"))
+        c["documents"] = _upsert_document(c, kind, title, "podpisany" if signed else "wygenerowany", now)
+        c["history"].append(history_event(
+            now, actor, "dokument",
+            f"{'Zapisano podpisaną' if signed else 'Wygenerowano'} {title[0].lower() + title[1:]}.",
+            "rozmowa-wstepna"))
+        return present_case(ctx.ws.save_case(c), ctx.user)
     if kind in SHEET_KINDS:
         _require_step_open(c, "podsumowanie")
         c["conclusion"] = {**c["conclusion"], "draftedAt": c["conclusion"].get("draftedAt") or ctx.ws.today}

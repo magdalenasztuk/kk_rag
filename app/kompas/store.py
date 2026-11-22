@@ -1,7 +1,7 @@
 """Trwały zapis przestrzeni roboczych (workspace) — jeden dokument JSON na przestrzeń.
 
-Każda przeglądarka demo dostaje własną przestrzeń (nagłówek `X-Kompas-Workspace`), więc jurorzy
-nie nadpisują sobie danych. Produkcyjnie: Postgres (`DATABASE_URL`); lokalnie i awaryjnie: SQLite.
+Produkcja trzyma jedną przestrzeń `default` w Postgresie (`DATABASE_URL`).
+Lokalnie, bez adresu bazy, ten sam dokument ląduje w SQLite.
 """
 from __future__ import annotations
 

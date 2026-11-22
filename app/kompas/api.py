@@ -53,9 +53,8 @@ def handle(method: str, path: str, query: dict[str, str], body, workspace_id: st
 
     ws = Workspace(workspace_id, get_store())
     if user_id:
-        if ws.state.get("sessionUserId") != user_id:
-            ws.state["sessionUserId"] = user_id
-            ws.touch()
+        # Nie zapisuj tu całego stanu. Równoległy odczyt ze starym sessionUserId
+        # nadpisywałby właśnie dodanego pracownika albo sprawę.
         user = ref.user(user_id)
     else:
         # Publiczne trasy (login / lista kont) — kontekst użytkownika workspace tylko pomocniczo.

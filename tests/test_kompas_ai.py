@@ -24,8 +24,8 @@ def llm(monkeypatch):
     calls: list[dict] = []
     replies: list = []
 
-    def fake(model, system, messages, max_tokens, json_mode=False):
-        calls.append({"model": model, "system": system, "messages": messages})
+    def fake(model, system, messages, max_tokens, json_mode=False, schema=None):
+        calls.append({"model": model, "system": system, "messages": messages, "schema": schema})
         reply = replies.pop(0) if replies else "{}"
         if isinstance(reply, Exception):
             raise reply
@@ -141,6 +141,37 @@ def test_conversation_questions_use_different_facts():
     assert len(nato) == 2 and nato[0] != nato[1]
     assert all("Jak oceniasz sytuację" not in question for question in questions)
     assert any("komunikat był niepełny" in question for question in questions)
+
+
+def test_conversation_plan_uses_model_and_drops_template_questions(llm):
+    from app.domain.workflow import case_criteria
+
+    calls, replies = llm
+    case = _case("case-anna")
+    criterion_id = case_criteria(case)[0]
+    good = "Opowiedz o sprawie z tego okresu, w której musiałeś dotrzymać trudnego terminu. Co zrobiłeś i jaki był skutek?"
+    replies.append({
+        "opening": "Zacznij od pytania, jak pracownik sam widzi ten okres, i dopiero potem przejdź do przykładów.",
+        "items": [{
+            "criterion_id": criterion_id,
+            "questions": [
+                good,
+                "Opowiedz o jednej sytuacji z tego okresu, w której było widać: „wystąpienia publiczne”.",
+            ],
+        }],
+        "development_questions": [
+            "W jakim obszarze chcesz w kolejnym okresie pracować pewniej i jakiego wsparcia do tego potrzebujesz?",
+        ],
+        "closing": "Na koniec zbierz ustalenia i powiedz, co trafi do oceny na piśmie.",
+    })
+    plan = enrich.conversation_plan(case, NOW)
+    assert calls and "claude-sonnet" in calls[0]["model"]
+    assert calls[0]["schema"]["required"] == ["opening", "items", "development_questions", "closing"]
+    assert "pytania_bazowe" not in calls[0]["messages"][0]["content"]
+    questions = next(item["questions"] for item in plan["items"] if item["criterionId"] == criterion_id)
+    assert good in questions
+    assert all("było widać" not in question.lower() for question in questions)
+    assert plan["opening"].startswith("Zacznij od pytania")
 
 
 def test_drafts_fall_back_without_key(monkeypatch):

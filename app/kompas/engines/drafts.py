@@ -42,11 +42,65 @@ _OPENING = (
     "Wracając do sytuacji „{title}” ({date}): {fact}. {ask}",
     "{date}, „{title}” — {fact}. {ask}",
 )
-_GAP = (
-    "Opowiedz o jednej sytuacji z tego okresu, w której było widać: „{text}”.",
-    "Kiedy ostatnio nie wyszło coś w tym rodzaju: „{text}”? Co stanęło na przeszkodzie?",
-    "Jak to wygląda u Ciebie na co dzień: „{text}”? Podaj przykład z okresu oceny.",
-)
+# Pytania awaryjne, gdy model nie odpowie. Mówione na głos, bez cytowania wskaźnika.
+_GAP_BY_CRITERION = {
+    "c01": (
+        "Opowiedz o sytuacji z okresu oceny, w której szczególnie liczyła się rzetelność: przepis, termin albo jakość pracy. Co zrobiłeś i jaki był skutek?",
+        "Kiedy w tym okresie coś nie zostało dopięte tak, jak powinno? Co stanęło na przeszkodzie i jak to naprawiłeś?",
+    ),
+    "c02": (
+        "Opowiedz o rozmowie albo piśmie z tego okresu, w którym musiałeś coś wyjaśnić innej osobie. Co powiedziałeś i czy rozmówca Cię zrozumiał?",
+        "Kiedy informacja, którą przekazałeś, okazała się niejasna albo spóźniona? Co byś następnym razem zrobił inaczej?",
+    ),
+    "c03": (
+        "Opowiedz o zadaniu z tego okresu, do którego brakowało Ci wiedzy albo umiejętności. Jak je uzupełniłeś i co z tego zostało w pracy?",
+        "Czego nauczyłeś się w tym okresie i przy jakim zadaniu z tego skorzystałeś? Podaj jeden przykład.",
+    ),
+    "c04": (
+        "Opowiedz o zadaniu z tego okresu, które miało termin i kilka zależnych czynności. Jak ułożyłeś pracę i co udało się skończyć na czas?",
+        "Kiedy nie udało się dotrzymać terminu albo ułożona kolejność prac się zmieniła? Co wtedy zrobiłeś, żeby dojść do celu?",
+    ),
+    "c05": (
+        "Opowiedz o problemie z tego okresu, który rozwiązałeś inaczej niż zwykle. Na czym polegał pomysł i czy się sprawdził?",
+        "Kiedy utknąłeś w znanym sposobie działania? Co pomogło ruszyć dalej?",
+    ),
+    "c06": (
+        "Opowiedz o sprawie z tego okresu, którą prowadziłeś razem z kimś innym. Jaki był Twój wkład i jak podzieliliście się robotą?",
+        "Kiedy współpraca szła opornie? Co zrobiłeś, żeby ją ułożyć?",
+    ),
+    "c07": (
+        "Opowiedz o sprawie z tego okresu, w której musiałeś rozłożyć problem na części, zanim coś zaproponowałeś. Jak do tego doszedłeś?",
+        "Kiedy wniosek okazał się nietrafiony, bo zabrakło jakiejś informacji? Czego wtedy nie sprawdziłeś?",
+    ),
+    "c08": (
+        "Opowiedz o uzgodnieniu z tego okresu, w którym strony chciały czegoś innego. Do czego doszliście i czym się kierowałeś?",
+        "Kiedy nie udało się dojść do porozumienia? Co stanęło na przeszkodzie?",
+    ),
+    "c09": (
+        "Opowiedz o wystąpieniu albo prezentacji z tego okresu. Dla kogo mówiłeś, co było najważniejsze i jak to zostało przyjęte?",
+        "Kiedy wystąpienie nie poszło tak, jak chciałeś? Co byś następnym razem zmienił?",
+    ),
+    "c10": (
+        "Opowiedz o kontakcie z interesantem albo inną osobą z zewnątrz z tego okresu. O co prosiła i jak sprawę zakończyłeś?",
+        "Kiedy nie udało się odpowiedzieć tak, jak ktoś oczekiwał? Co było przyczyną i co zrobiłeś dalej?",
+    ),
+    "c11": (
+        "Opowiedz o nagłej albo trudnej sytuacji z tego okresu. Co zrobiłeś w pierwszej kolejności i jaki był skutek?",
+        "Czego w takiej sytuacji zabrakło — informacji, ludzi, decyzji? Jak to nadrobiłeś?",
+    ),
+    "c12": (
+        "Opowiedz o zadaniu z tego okresu, które wykraczało poza bieżączkę i dotyczyło dłuższego celu. Jak je połączyłeś z pracą wydziału?",
+        "Kiedy bieżące sprawy odsunęły coś ważniejszego na później? Jak wtedy wybrałeś, czym się zająć?",
+    ),
+    "c13": (
+        "Opowiedz o sytuacji z tego okresu, w której od Twojej decyzji zależała praca innych osób. Co ustaliłeś i jak to sprawdziłeś?",
+        "Kiedy ktoś z zespołu nie dostał od Ciebie na czas tego, czego potrzebował? Co wtedy zmieniłeś?",
+    ),
+    "c14": (
+        "Opowiedz o decyzji z tego okresu, którą podjąłeś sam. Na czym ją oparłeś i jakie miała skutki?",
+        "Kiedy wahałeś się z decyzją albo oddałeś ją komuś innemu? Co o tym zdecydowało?",
+    ),
+}
 
 
 def _observations_for(c: dict, criterion_id: str) -> list[dict]:
@@ -83,9 +137,24 @@ def _kind(clause: str) -> str:
     return "result"
 
 
+def _thin_observation_question(observation: dict, use: int) -> str:
+    title = observation.get("title") or "tę sytuację"
+    date = format_pl(observation["date"])
+    options = (
+        f"{date} zapisałeś sytuację „{title}”. Opowiedz, co dokładnie wtedy zrobiłeś i jaki był skutek.",
+        f"Wracając do „{title}” ({date}): co w tej sytuacji zależało od Ciebie, a co od innych osób?",
+        f"Czego sytuacja „{title}” ({date}) uczy na kolejny okres? Co warto powtórzyć, a czego uniknąć?",
+    )
+    return options[use % len(options)]
+
+
 def observation_question(observation: dict, use: int) -> str:
     """Inny fakt i inna forma pytania przy każdym użyciu tej samej obserwacji."""
-    clauses = _clauses(observation.get("description") or "")
+    description = collapse_whitespace(observation.get("description") or "")
+    title = collapse_whitespace(observation.get("title") or "")
+    if len(description) < 40 or fold(description) == fold(title):
+        return _thin_observation_question(observation, use)
+    clauses = _clauses(description)
     order = sorted(range(len(clauses)), key=lambda i: (_KIND_RANK[_kind(clauses[i])], -len(clauses[i])))
     clause = clauses[order[use % len(order)]]
     ask = _FOLLOW[_kind(clause)][use % len(_FOLLOW[_kind(clause)])]
@@ -93,8 +162,15 @@ def observation_question(observation: dict, use: int) -> str:
         title=observation["title"], date=format_pl(observation["date"]), fact=_lead(clause), ask=ask)
 
 
-def gap_question(indicator_text: str, use: int) -> str:
-    return _GAP[use % len(_GAP)].format(text=truncate(indicator_text, 90))
+def gap_question(criterion_id: str, use: int) -> str:
+    options = _GAP_BY_CRITERION.get(criterion_id)
+    if not options:
+        name = criterion_name(criterion_id).lower()
+        options = (
+            f"Opowiedz o jednej sytuacji z okresu oceny związanej z obszarem „{name}”. Co zrobiłeś i jaki był skutek?",
+            f"Przypomnij sytuację z tego okresu, w której w obszarze „{name}” coś poszło nie tak. Co stanęło na przeszkodzie?",
+        )
+    return options[use % len(options)]
 
 
 def build_conversation_plan(c: dict, generated_at: str) -> dict:
@@ -106,14 +182,17 @@ def build_conversation_plan(c: dict, generated_at: str) -> dict:
         competency = ref.competency(cid) or {"indicators": []}
         covered = {iid for o in observations for iid in o["indicatorIds"]}
         missing = [i for i in competency["indicators"] if i["id"] not in covered][:2]
-        gaps = [f"Brak obserwacji: „{truncate(i['text'], 90)}” — zapytaj o przykład z okresu oceny." for i in missing]
+        gaps = [f"Brak przykładu dotyczącego: {truncate(i['text'], 90)}." for i in missing]
         questions = []
         for observation in observations[-2:]:
             questions.append(observation_question(observation, seen.get(observation["id"], 0)))
             seen[observation["id"]] = seen.get(observation["id"], 0) + 1
-        for indicator in missing[:1] if questions else missing:
-            questions.append(gap_question(indicator["text"], gap_uses))
+        if not questions:
+            questions.append(gap_question(cid, gap_uses))
             gap_uses += 1
+            if len(missing) > 1:
+                questions.append(gap_question(cid, gap_uses))
+                gap_uses += 1
         items.append({
             "criterionId": cid,
             "facts": [{"observationId": o["id"], "date": o["date"], "text": f"{o['title']}: {truncate(o['description'], 140)}"}
