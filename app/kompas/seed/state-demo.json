@@ -816,7 +816,7 @@
    ],
    "history": [
     {
-     "id": "h-nvm9anyhzz",
+     "id": "h-75hfil6n6o",
      "at": "2024-10-15T08:30:00.000Z",
      "actor": {
       "id": "u-marta",
@@ -827,7 +827,7 @@
      "summary": "Uruchomiono ocenę okresową."
     },
     {
-     "id": "h-94phmayi00",
+     "id": "h-q2971v6n6p",
      "at": "2024-10-28T09:05:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -839,7 +839,7 @@
      "stepId": "stanowisko"
     },
     {
-     "id": "h-qic51ryi00",
+     "id": "h-khr9md6n6p",
      "at": "2024-10-28T09:12:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -851,7 +851,7 @@
      "stepId": "stanowisko"
     },
     {
-     "id": "h-kpe28uyi00",
+     "id": "h-zw38uq6n6p",
      "at": "2024-10-28T09:40:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -863,7 +863,7 @@
      "stepId": "kryteria"
     },
     {
-     "id": "h-pbv6f7yi00",
+     "id": "h-qzedoo6n6p",
      "at": "2024-11-05T12:20:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -875,7 +875,7 @@
      "stepId": "rozmowa-wstepna"
     },
     {
-     "id": "h-3jcl76yi00",
+     "id": "h-7mzhui6n6p",
      "at": "2025-03-14T16:20:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -887,7 +887,7 @@
      "stepId": "obserwacje"
     },
     {
-     "id": "h-r9sce3yi00",
+     "id": "h-ljv5im6n6p",
      "at": "2025-06-18T16:20:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -899,7 +899,7 @@
      "stepId": "obserwacje"
     },
     {
-     "id": "h-tjq2vuyi00",
+     "id": "h-wogy4w6n6p",
      "at": "2025-09-16T16:20:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -911,7 +911,7 @@
      "stepId": "obserwacje"
     },
     {
-     "id": "h-hvpnm9yi00",
+     "id": "h-bvswym6n6p",
      "at": "2026-02-12T16:20:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -923,7 +923,7 @@
      "stepId": "obserwacje"
     },
     {
-     "id": "h-tqrwhbyi00",
+     "id": "h-s2vwjc6n6p",
      "at": "2026-05-22T16:20:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -935,7 +935,7 @@
      "stepId": "obserwacje"
     },
     {
-     "id": "h-x3nb4cyi00",
+     "id": "h-5mrv5a6n6p",
      "at": "2026-09-08T16:20:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -947,7 +947,7 @@
      "stepId": "obserwacje"
     },
     {
-     "id": "h-seyxw7yi00",
+     "id": "h-261knk6n6p",
      "at": "2025-05-26T10:00:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -958,7 +958,7 @@
      "summary": "Przedłużono termin oceny o 42 dni (art. 81 ust. 7); oceniana zawiadomiona pisemnie."
     },
     {
-     "id": "h-zocfc3yi00",
+     "id": "h-pm4w846n6p",
      "at": "2026-10-20T08:00:00.000Z",
      "actor": {
       "id": "u-marta",
@@ -969,7 +969,7 @@
      "summary": "Kadry przypomniały o terminie oceny 21.11.2026."
     },
     {
-     "id": "h-agj2a5yi00",
+     "id": "h-z3b89p6n6p",
      "at": "2026-11-17T15:40:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -981,7 +981,7 @@
      "stepId": "rozmowa-oceniajaca"
     },
     {
-     "id": "h-penakgyi00",
+     "id": "h-zk3fhp6n6p",
      "at": "2026-11-18T11:30:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -993,7 +993,7 @@
      "stepId": "rozmowa-oceniajaca"
     },
     {
-     "id": "h-x2d17byi00",
+     "id": "h-wpffv76n6p",
      "at": "2026-11-20T14:05:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -1005,7 +1005,7 @@
      "stepId": "ocena"
     },
     {
-     "id": "h-ixcj45yi00",
+     "id": "h-5opqvv6n6p",
      "at": "2026-11-20T14:12:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -1017,7 +1017,7 @@
      "stepId": "ocena"
     },
     {
-     "id": "h-389g8nyi00",
+     "id": "h-5u5dd26n6p",
      "at": "2026-11-20T14:20:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -1029,7 +1029,7 @@
      "stepId": "ocena"
     },
     {
-     "id": "h-k026r9yi00",
+     "id": "h-6hzm9l6n6p",
      "at": "2026-11-20T14:26:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -1041,7 +1041,7 @@
      "stepId": "ocena"
     },
     {
-     "id": "h-6iti6nyi00",
+     "id": "h-hdu23i6n6p",
      "at": "2026-11-20T14:31:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -1053,7 +1053,7 @@
      "stepId": "ocena"
     },
     {
-     "id": "h-skl271yi00",
+     "id": "h-fmpjdg6n6p",
      "at": "2026-11-20T14:38:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -1065,7 +1065,7 @@
      "stepId": "ocena"
     },
     {
-     "id": "h-y77gfryi00",
+     "id": "h-miea906n6p",
      "at": "2026-11-20T14:46:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -1232,7 +1232,7 @@
    "documents": [],
    "history": [
     {
-     "id": "h-0xi8uzyi00",
+     "id": "h-t441216n6p",
      "at": "2026-11-16T09:05:00.000Z",
      "actor": {
       "id": "u-marta",
@@ -1551,7 +1551,7 @@
    "documents": [],
    "history": [
     {
-     "id": "h-3gf89ayi00",
+     "id": "h-q1admm6n6p",
      "at": "2024-12-18T10:00:00.000Z",
      "actor": {
       "id": "u-marta",
@@ -1562,7 +1562,7 @@
      "summary": "Uruchomiono ocenę okresową."
     },
     {
-     "id": "h-at4eutyi01",
+     "id": "h-ect1ud6n6p",
      "at": "2025-01-10T13:00:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -1574,7 +1574,7 @@
      "stepId": "rozmowa-wstepna"
     },
     {
-     "id": "h-aqkg2qyi01",
+     "id": "h-y91llz6n6p",
      "at": "2025-06-03T16:20:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -1586,7 +1586,7 @@
      "stepId": "obserwacje"
     },
     {
-     "id": "h-u2zk78yi01",
+     "id": "h-rtxn7v6n6p",
      "at": "2025-11-20T16:20:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -1598,7 +1598,7 @@
      "stepId": "obserwacje"
     },
     {
-     "id": "h-4fdqh7yi01",
+     "id": "h-v8x1wm6n6p",
      "at": "2026-06-12T16:20:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -1859,7 +1859,7 @@
    "documents": [],
    "history": [
     {
-     "id": "h-ooacpqyi01",
+     "id": "h-lqvsnw6n6p",
      "at": "2026-03-03T08:30:00.000Z",
      "actor": {
       "id": "u-marta",
@@ -1870,7 +1870,7 @@
      "summary": "Uruchomiono pierwszą ocenę."
     },
     {
-     "id": "h-w6vvn4yi01",
+     "id": "h-funpse6n6p",
      "at": "2026-03-16T11:00:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -1882,7 +1882,7 @@
      "stepId": "rozmowa-wstepna"
     },
     {
-     "id": "h-l34zttyi01",
+     "id": "h-5c9uew6n6p",
      "at": "2026-06-30T09:00:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -1894,7 +1894,7 @@
      "stepId": "sluzba-przygotowawcza"
     },
     {
-     "id": "h-5suejjyi01",
+     "id": "h-cmn3z06n6p",
      "at": "2026-05-12T16:20:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -1906,7 +1906,7 @@
      "stepId": "obserwacje"
     },
     {
-     "id": "h-9r30zgyi01",
+     "id": "h-34xz6c6n6p",
      "at": "2026-07-08T16:20:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -1918,7 +1918,7 @@
      "stepId": "obserwacje"
     },
     {
-     "id": "h-m37oz3yi01",
+     "id": "h-l7aip16n6p",
      "at": "2026-09-24T16:20:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -1930,7 +1930,7 @@
      "stepId": "obserwacje"
     },
     {
-     "id": "h-aqyyk8yi01",
+     "id": "h-9fxbmq6n6p",
      "at": "2026-11-18T10:00:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -2260,7 +2260,7 @@
    ],
    "history": [
     {
-     "id": "h-d140toyi01",
+     "id": "h-1nw8xa6n6p",
      "at": "2022-11-03T08:00:00.000Z",
      "actor": {
       "id": "u-marta",
@@ -2271,7 +2271,7 @@
      "summary": "Uruchomiono ocenę okresową."
     },
     {
-     "id": "h-vsrdx3yi01",
+     "id": "h-e357qr6n6p",
      "at": "2024-10-14T12:00:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -2545,7 +2545,7 @@
    ],
    "history": [
     {
-     "id": "h-1jue65yi01",
+     "id": "h-tkoetg6n6p",
      "at": "2023-01-12T08:00:00.000Z",
      "actor": {
       "id": "u-marta",
@@ -2556,7 +2556,7 @@
      "summary": "Uruchomiono ocenę okresową."
     },
     {
-     "id": "h-f6rawzyi01",
+     "id": "h-g2s4rv6n6p",
      "at": "2024-12-18T12:00:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -2872,7 +2872,7 @@
    ],
    "history": [
     {
-     "id": "h-imjx57yi01",
+     "id": "h-mloe6c6n6p",
      "at": "2024-11-25T08:00:00.000Z",
      "actor": {
       "id": "u-marta",
@@ -2883,7 +2883,7 @@
      "summary": "Uruchomiono ocenę okresową."
     },
     {
-     "id": "h-h64nngyi01",
+     "id": "h-3sng3q6n6p",
      "at": "2026-11-09T12:00:00.000Z",
      "actor": {
       "id": "u-piotr",
@@ -3190,7 +3190,7 @@
    ],
    "history": [
     {
-     "id": "h-mj95pgyi01",
+     "id": "h-169j496n6p",
      "at": "2024-12-02T08:00:00.000Z",
      "actor": {
       "id": "u-marta",
@@ -3201,7 +3201,7 @@
      "summary": "Uruchomiono ocenę okresową."
     },
     {
-     "id": "h-9njkqlyi01",
+     "id": "h-xfckyw6n6p",
      "at": "2026-11-13T12:00:00.000Z",
      "actor": {
       "id": "u-piotr",
