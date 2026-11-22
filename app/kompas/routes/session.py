@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from app.domain.dates import plural_pl
 from app.kompas import reference as ref
+from app.kompas.auth import public_user
 from app.kompas.errors import bad_request
 from app.kompas.router import RouteContext, Router
 from app.kompas.workspace import Workspace
@@ -15,7 +16,7 @@ def _root_unit(unit: dict) -> dict:
 
 def session_info(ws: Workspace, user: dict) -> dict:
     org_unit = ref.org_unit(user["orgUnitId"])
-    return {"user": user, "orgUnit": org_unit, "office": _root_unit(org_unit), "today": ws.today}
+    return {"user": public_user(user), "orgUnit": org_unit, "office": _root_unit(org_unit), "today": ws.today}
 
 
 def _account_hint(ws: Workspace, user: dict) -> str:
@@ -43,13 +44,6 @@ def _demo_info(ws: Workspace) -> dict:
     }
 
 
-def _switch_user(ctx: RouteContext) -> dict:
-    user = ref.user(str(ctx.json().get("userId") or ""))
-    ctx.ws.state["sessionUserId"] = user["id"]
-    ctx.ws.touch()
-    return session_info(ctx.ws, user)
-
-
 def _switch_scenario(ctx: RouteContext) -> dict:
     scenario_id = ctx.json().get("scenarioId")
     scenario = next((s for s in ref.scenarios() if s["id"] == scenario_id), None)
@@ -68,6 +62,5 @@ def register(router: Router) -> None:
     (router
      .get("/session", lambda ctx: session_info(ctx.ws, ctx.user))
      .get("/demo", lambda ctx: _demo_info(ctx.ws))
-     .post("/demo/session", _switch_user)
      .post("/demo/scenario", _switch_scenario)
      .post("/demo/reset", _reset))

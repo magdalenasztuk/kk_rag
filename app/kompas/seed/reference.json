@@ -9,7 +9,9 @@
     "manager"
    ],
    "email": "piotr.zielinski@kompas.demo",
-   "avatarUrl": "/avatars/piotr-zielinski.png"
+   "avatarUrl": "/avatars/piotr-zielinski.png",
+   "login": "piotr",
+   "password": "piotr"
   },
   {
    "id": "u-marta",
@@ -19,7 +21,9 @@
    "roles": [
     "hr"
    ],
-   "email": "marta.wisniewska@kompas.demo"
+   "email": "marta.wisniewska@kompas.demo",
+   "login": "marta",
+   "password": "marta"
   },
   {
    "id": "u-ewa-mazur",
@@ -29,7 +33,9 @@
    "roles": [
     "manager"
    ],
-   "email": "ewa.mazur@kompas.demo"
+   "email": "ewa.mazur@kompas.demo",
+   "login": "ewa.mazur",
+   "password": "ewa"
   },
   {
    "id": "u-karolina",
@@ -39,7 +45,9 @@
    "roles": [
     "manager"
    ],
-   "email": "karolina.sowa@kompas.demo"
+   "email": "karolina.sowa@kompas.demo",
+   "login": "karolina",
+   "password": "karolina"
   },
   {
    "id": "u-tomasz",
@@ -49,7 +57,9 @@
    "roles": [
     "manager"
    ],
-   "email": "tomasz.lis@kompas.demo"
+   "email": "tomasz.lis@kompas.demo",
+   "login": "tomasz",
+   "password": "tomasz"
   },
   {
    "id": "u-adam",
@@ -59,7 +69,9 @@
    "roles": [
     "manager"
    ],
-   "email": "adam.sikora@kompas.demo"
+   "email": "adam.sikora@kompas.demo",
+   "login": "adam",
+   "password": "adam"
   }
  ],
  "employees": [

@@ -56,7 +56,12 @@ class Settings(BaseSettings):
 
     # --- api ---
     admin_token: str = "change-me"
-    cors_origins: list[str] = ["http://localhost:3000", "http://localhost:4200", "http://localhost:5173"]
+    auth_secret: str = ""  # podpis tokenów sesji; pusty → domyślny sekret demo (ustaw na Vercel)
+    auth_ttl_hours: int = 12
+    cors_origins: list[str] = [
+        "http://localhost:3000", "http://localhost:4200", "http://localhost:4300", "http://localhost:5173",
+        "http://127.0.0.1:4300", "https://kompas-kompetencji.vercel.app",
+    ]
 
     def resolved_answer_model(self) -> str:
         return {"anthropic": self.answer_model, "mock": "mock",

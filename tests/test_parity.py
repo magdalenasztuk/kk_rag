@@ -22,6 +22,7 @@ from app.kompas.errors import ApiError  # noqa: E402
 PARITY = Path(__file__).parent / "parity"
 GENERATED_ID = re.compile(r"^(obs|case|doc|h|n|ans|goal)-[0-9a-z]{10}$")
 NOW = re.compile(r"^2026-11-21T\d{2}:\d{2}:\d{2}\.000Z$")
+AUTH_TOKEN = re.compile(r"^(mock\.[A-Za-z0-9_-]+|[A-Za-z0-9_\-=]+)$")
 
 
 class MemoryStore:
@@ -40,7 +41,17 @@ class MemoryStore:
 def normalize(value):
     if isinstance(value, dict):
         # Etykieta silnika analizy różni się celowo (mock frontu vs. backend).
-        return {k: "<model>" if k == "model" and isinstance(v, str) else normalize(v) for k, v in value.items()}
+        out = {}
+        for k, v in value.items():
+            if k == "model" and isinstance(v, str):
+                out[k] = "<model>"
+            elif k == "token" and isinstance(v, str):
+                out[k] = "<token>"
+            elif k == "expiresAt" and isinstance(v, str):
+                out[k] = "<expires>"
+            else:
+                out[k] = normalize(v)
+        return out
     if isinstance(value, list):
         return [normalize(v) for v in value]
     if isinstance(value, str):
@@ -48,6 +59,8 @@ def normalize(value):
             return f"<{value.split('-')[0]}-id>"
         if NOW.match(value):
             return "<now>"
+        if value.startswith("mock.") or (len(value) > 40 and AUTH_TOKEN.match(value)):
+            return "<token>"
         value = re.sub(r"\b(obs|case|doc|h|n)-[0-9a-z]{10}\b", lambda m: f"<{m.group(1)}-id>", value)
     return value
 
@@ -87,6 +100,8 @@ def run_flow(steps):
     store = MemoryStore()
     variables: dict[str, object] = {}
     fill = lambda text: re.sub(r"\$\{(\w+)\}", lambda m: str(variables.get(m.group(1), "")), text)  # noqa: E731
+    api.get_store = lambda: store  # type: ignore[assignment]
+    token = api.handle("POST", "/auth/login", {}, {"login": "piotr", "password": "piotr"}, "parity-test")["token"]
     results = []
     for step in steps:
         path = fill(step["p"])
@@ -94,8 +109,10 @@ def run_flow(steps):
         query = dict(p.split("=", 1) for p in qs.split("&") if p) if qs else {}
         body = json.loads(fill(json.dumps(step["b"], ensure_ascii=False))) if "b" in step else None
         try:
-            api.get_store = lambda: store  # type: ignore[assignment]
-            result = json.loads(json.dumps(api.handle(step["m"], route, query, body, "parity-test")))
+            result = json.loads(json.dumps(api.handle(
+                step["m"], route, query, body, "parity-test", f"Bearer {token}")))
+            if step["p"] == "/auth/login" and isinstance(result, dict) and result.get("token"):
+                token = result["token"]
             for name, p in (step.get("save") or {}).items():
                 variables[name] = pick(result, p)
             results.append({"status": 200, "body": result})

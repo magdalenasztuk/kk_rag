@@ -15,6 +15,10 @@ Angular (Vercel) ──/api/*──▶ FastAPI (Vercel, api/index.py)
                               └─ stan demo: przestrzeń robocza (JSON) na przeglądarkę → Postgres albo SQLite
 ```
 
+- **Logowanie**: `POST /api/auth/login` (login + hasło kont demo) → Bearer token HMAC. Bez tokenu całe `/api/*`
+  (poza `auth/login`, `auth/accounts`, `auth/logout`, health) zwraca 401 — chroni klucz Anthropic przed
+  anonimowym użyciem. Konta: `piotr/piotr`, `marta/marta`, `ewa.mazur/ewa`, `karolina/karolina`,
+  `tomasz/tomasz`, `adam/adam`.
 - **Przestrzeń robocza**: każda przeglądarka wysyła `X-Kompas-Workspace` (losowe id z localStorage) i dostaje
   własną kopię danych demo — jurorzy nie nadpisują sobie spraw. Bez nagłówka: cookie `kompas_ws`, potem `default`.
 - **Magazyn**: `DATABASE_URL` / `POSTGRES_URL` (np. Neon z integracji Vercel) → tabela `kompas_workspaces` (JSONB);
@@ -44,8 +48,8 @@ KOMPAS_DENSE_ENABLED=false KOMPAS_USE_RERANKER=false .venv/bin/uvicorn app.main:
 
 1. Projekt Vercel z tego repo (root = katalog repo). Vercel wykrywa FastAPI (`api/index.py`), Python 3.12
    i zależności z `pyproject.toml` / `uv.lock` (lekki zestaw: BM25 + SDK Anthropic, bez modeli ML).
-2. Zmienne środowiskowe: `ANTHROPIC_API_KEY` (wymagany dla Claude), opcjonalnie `DATABASE_URL`
-   (Storage → Neon Postgres; zalecane, gdy funkcja skaluje się na kilka instancji).
+2. Zmienne środowiskowe: `ANTHROPIC_API_KEY` (wymagany dla Claude), `KOMPAS_AUTH_SECRET` (losowy podpis
+   tokenów logowania), opcjonalnie `DATABASE_URL` (Storage → Neon Postgres; zalecane przy wielu instancjach).
 3. Front (`kompas-web/vercel.json`) przekierowuje `/api/:path*` na domenę backendu
    (`https://kompas-kompetencji-api.vercel.app` — przy innej nazwie projektu zmień ten adres).
 4. Sprawdzenie wdrożenia tym samym scenariuszem co testy (143 żądania):

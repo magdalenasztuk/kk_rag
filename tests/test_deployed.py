@@ -27,11 +27,17 @@ def test_deployed_flow_matches_frontend_mock():
     headers = {"X-Kompas-Workspace": f"e2e-{uuid.uuid4().hex[:12]}"}
     problems = []
     with httpx.Client(base_url=f"{URL}/api", headers=headers, timeout=90) as client:
+        boot = client.post("/auth/login", json={"login": "piotr", "password": "piotr"})
+        assert boot.status_code == 200, boot.text
+        token = boot.json()["token"]
+        client.headers["Authorization"] = f"Bearer {token}"
         for i, (step, exp) in enumerate(zip(steps, expected)):
             body = json.loads(fill(json.dumps(step["b"], ensure_ascii=False))) if "b" in step else None
             r = client.request(step["m"], fill(step["p"]), json=body)
             act = {"status": r.status_code, "body": r.json()}
             if r.status_code == 200:
+                if step["p"] == "/auth/login" and isinstance(act["body"], dict) and act["body"].get("token"):
+                    client.headers["Authorization"] = f"Bearer {act['body']['token']}"
                 for name, p in (step.get("save") or {}).items():
                     variables[name] = pick(act["body"], p)
             keys = step.get("cmp")
