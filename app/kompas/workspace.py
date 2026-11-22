@@ -1,6 +1,7 @@
 """Stan jednej przestrzeni roboczej: sprawy, powiadomienia, przypomnienia, kandydaci."""
 from __future__ import annotations
 
+import copy
 import json
 import re
 from datetime import datetime, timedelta, timezone
@@ -39,13 +40,19 @@ class Workspace:
             state = seeded_state()
             self.dirty = True
         self.state: dict = state
+        # Stan z chwili odczytu. Zapis dokłada tylko różnicę, żeby równoległy
+        # autozapis innego kroku nie skasował notatek, ocen ani obserwacji.
+        self._loaded: dict = copy.deepcopy(state)
 
     # — persistence —
 
     def commit(self) -> None:
-        if self.dirty:
-            self._store.save(self.id, json.dumps(self.state, ensure_ascii=False))
-            self.dirty = False
+        if not self.dirty:
+            return
+        saved = self._store.save_merged(self.id, self._loaded, self.state)
+        self.state = saved
+        self._loaded = copy.deepcopy(saved)
+        self.dirty = False
 
     def touch(self) -> None:
         self.dirty = True

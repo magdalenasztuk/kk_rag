@@ -8,6 +8,7 @@ from __future__ import annotations
 import json
 import os
 import re
+from datetime import datetime
 from pathlib import Path
 
 import pytest
@@ -18,6 +19,7 @@ os.environ.setdefault("KOMPAS_USE_RERANKER", "false")
 from app.core.config import settings  # noqa: E402
 from app.kompas import api  # noqa: E402
 from app.kompas.errors import ApiError  # noqa: E402
+from app.kompas.merge import merge_state  # noqa: E402
 
 PARITY = Path(__file__).parent / "parity"
 GENERATED_ID = re.compile(r"^(obs|case|doc|h|n|ans|goal)-[0-9a-z]{10}$")
@@ -36,6 +38,12 @@ class MemoryStore:
 
     def save(self, workspace_id, state_json):
         self.data[workspace_id] = state_json
+
+    def save_merged(self, workspace_id, before, after):
+        raw = self.data.get(workspace_id)
+        merged = after if raw is None else merge_state(json.loads(raw), before, after)
+        self.data[workspace_id] = json.dumps(merged, ensure_ascii=False)
+        return merged
 
 
 def normalize(value):
@@ -121,10 +129,19 @@ def run_flow(steps):
     return results
 
 
+class _Clock(datetime):
+    """Godzina sprzed powiadomienia n-1 (07:00), żeby kolejność listy nie zależała od pory dnia."""
+
+    @classmethod
+    def now(cls, tz=None):
+        return datetime(2026, 11, 21, 5, 23, 19, tzinfo=tz)
+
+
 @pytest.fixture(autouse=True)
 def offline(monkeypatch):
     monkeypatch.setattr(settings, "llm_provider", "anthropic")
     monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
+    monkeypatch.setattr("app.kompas.workspace.datetime", _Clock)
 
 
 def test_flow_matches_frontend_mock():

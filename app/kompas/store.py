@@ -5,6 +5,7 @@ Lokalnie, bez adresu bazy, ten sam dokument ląduje w SQLite.
 """
 from __future__ import annotations
 
+import json
 import sqlite3
 import threading
 from functools import lru_cache
@@ -12,6 +13,7 @@ from pathlib import Path
 from typing import Protocol
 
 from app.core.config import settings
+from app.kompas.merge import merge_state
 
 
 class WorkspaceStore(Protocol):
@@ -20,6 +22,8 @@ class WorkspaceStore(Protocol):
     def load(self, workspace_id: str) -> str | None: ...
 
     def save(self, workspace_id: str, state_json: str) -> None: ...
+
+    def save_merged(self, workspace_id: str, before: dict, after: dict) -> dict: ...
 
 
 class SqliteStore:
@@ -34,6 +38,24 @@ class SqliteStore:
                 "CREATE TABLE IF NOT EXISTS kompas_workspaces (id TEXT PRIMARY KEY, state TEXT NOT NULL, "
                 "updated_at TEXT DEFAULT CURRENT_TIMESTAMP)")
             self._conn.commit()
+
+    def save_merged(self, workspace_id: str, before: dict, after: dict) -> dict:
+        with self._lock:
+            self._conn.execute("BEGIN IMMEDIATE")
+            try:
+                row = self._conn.execute(
+                    "SELECT state FROM kompas_workspaces WHERE id = ?", (workspace_id,)).fetchone()
+                merged = after if row is None else merge_state(json.loads(row[0]), before, after)
+                payload = json.dumps(merged, ensure_ascii=False)
+                self._conn.execute(
+                    "INSERT INTO kompas_workspaces (id, state, updated_at) VALUES (?, ?, CURRENT_TIMESTAMP) "
+                    "ON CONFLICT(id) DO UPDATE SET state = excluded.state, updated_at = CURRENT_TIMESTAMP",
+                    (workspace_id, payload))
+                self._conn.commit()
+                return merged
+            except Exception:
+                self._conn.rollback()
+                raise
 
     def load(self, workspace_id: str) -> str | None:
         with self._lock:
@@ -77,6 +99,23 @@ class PostgresStore:
                 "INSERT INTO kompas_workspaces (id, state, updated_at) VALUES (%s, %s::jsonb, now()) "
                 "ON CONFLICT (id) DO UPDATE SET state = excluded.state, updated_at = now()",
                 (workspace_id, state_json))
+
+    def save_merged(self, workspace_id: str, before: dict, after: dict) -> dict:
+        payload_after = json.dumps(after, ensure_ascii=False)
+        with self._connect() as conn:
+            conn.autocommit = False
+            conn.execute(
+                "INSERT INTO kompas_workspaces (id, state, updated_at) VALUES (%s, %s::jsonb, now()) "
+                "ON CONFLICT (id) DO NOTHING",
+                (workspace_id, payload_after))
+            row = conn.execute(
+                "SELECT state::text FROM kompas_workspaces WHERE id = %s FOR UPDATE", (workspace_id,)).fetchone()
+            merged = after if row is None else merge_state(json.loads(row[0]), before, after)
+            conn.execute(
+                "UPDATE kompas_workspaces SET state = %s::jsonb, updated_at = now() WHERE id = %s",
+                (json.dumps(merged, ensure_ascii=False), workspace_id))
+            conn.commit()
+            return merged
 
 
 @lru_cache(maxsize=1)
